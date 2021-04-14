@@ -35,9 +35,13 @@ public class HomeFragment extends Fragment {
                 textView.setText(s);
             }
         });*/
+        MainActivity activity = (MainActivity) getActivity();
+        //String myDataFromActivity = activity;
+
         String correo = getArguments().getString("correo");
 
         HiloCliente hilo = new HiloCliente(5, correo);
+
         hilo.start();
 
         try {
