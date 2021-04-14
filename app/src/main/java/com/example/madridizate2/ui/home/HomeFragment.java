@@ -35,12 +35,8 @@ public class HomeFragment extends Fragment {
                 textView.setText(s);
             }
         });*/
-        MainActivity activity = (MainActivity) getActivity();
-        //String myDataFromActivity = activity;
 
-        String correo = getArguments().getString("correo");
-
-        HiloCliente hilo = new HiloCliente(5, correo);
+        /*HiloCliente hilo = new HiloCliente(5, correo);
 
         hilo.start();
 
@@ -61,7 +57,7 @@ public class HomeFragment extends Fragment {
         tlf.setText(hilo.nombre);
 
         EditText direccion = root.findViewById(R.id.address_user);
-        direccion.setText(hilo.nombre);
+        direccion.setText(hilo.nombre);*/
 
         return root;
     }

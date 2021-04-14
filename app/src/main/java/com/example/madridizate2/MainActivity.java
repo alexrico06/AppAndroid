@@ -14,6 +14,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     boolean bandera = false;
+    String textCorreo = "lolaso";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +31,8 @@ public class MainActivity extends AppCompatActivity {
     public void pulsarInicioSesion(View view) {
 
         EditText correo = findViewById(R.id.correo);
-        String textCorreo = correo.getText().toString();
+        textCorreo = correo.getText().toString();
+
 
         EditText contrasena = findViewById(R.id.contrasena);
         String textContrasena = contrasena.getText().toString();
@@ -51,13 +53,6 @@ public class MainActivity extends AppCompatActivity {
 
         if(hilo.existe){
 
-            Bundle bundle = new Bundle();
-            bundle.putString("correo", textCorreo);
-            System.out.println(textCorreo);
-            // Set Fragmentclass Arguments
-            HomeFragment hf = new HomeFragment();
-            hf.setArguments(bundle);
-
             Intent i = new Intent(this, Principal.class);
             //i.putExtra("correo", textCorreo);
             startActivity(i);
@@ -67,4 +62,5 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
 }
