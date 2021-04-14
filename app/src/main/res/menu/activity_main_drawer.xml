@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_account"
+            android:icon="@drawable/user"
+            android:title="@string/menu_account" />
+        <item
+            android:id="@+id/nav_payment"
+            android:icon="@drawable/card"
+            android:title="@string/menu_payment" />
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/menu_settings" />
+        <item
+            android:id="@+id/nav_parkings"
+            android:icon="@android:drawable/ic_dialog_map"
+            android:title="@string/menu_parkings" />
+    </group>
+</menu>

@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">Madridizate2</string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="title_activity_main3">MainActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="buttonRegistrarUser">Registrarse</string>
+    <string name="buttonIniciarUser">Iniciar Sesión</string>
+    <string name="textViewDni">DNI:</string>
+    <string name="textViewNombre">Nombre:</string>
+    <string name="textViewApellido">Apellidos:</string>
+    <string name="textViewTelefono">Teléfono:</string>
+    <string name="textViewCorreo">Correo:</string>
+    <string name="textViewFecha">Fecha Nacimiento:</string>
+    <string name="textViewCalle">Calle:</string>
+    <string name="textViewNumero">Numero:</string>
+    <string name="textViewPortal">Portal:</string>
+    <string name="textViewPiso">Piso:</string>
+    <string name="textViewCiudad">Ciudad:</string>
+    <string name="textViewCP">Código Postal:</string>
+    <string name="textViewPassword">Contrasena:</string>
+
+    <string name="textViewMatricula">Matricula:</string>
+    <string name="textViewMarca">Marca:</string>
+    <string name="textViewModelo">Modelo:</string>
+
+    <string name="buttonCoche">Registrar Vehículo</string>
+    <string name="buttonDespues">registrar mas tarde</string>
+    <string name="buttonGuardarcontrasena">Establecer</string>
+
+    <string name="menu_account">Mi cuenta</string>
+    <string name="menu_settings">Ajustes</string>
+    <string name="menu_payment">Opciones de pago</string>
+    <string name="menu_parkings">Parkings</string>
+</resources>
