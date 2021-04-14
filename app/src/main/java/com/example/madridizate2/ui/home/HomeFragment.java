@@ -46,6 +46,8 @@ public class HomeFragment extends Fragment {
             e.printStackTrace();
         }
 
+        System.out.println("RICOOOOOOOOOOOO");
+
 
         EditText name = root.findViewById(R.id.name_user);
         name.setText(hilo.nombre);
