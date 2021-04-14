@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     boolean bandera = false;
-    String textCorreo = "lolaso";
+    static String textCorreo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         if(hilo.existe){
 
             Intent i = new Intent(this, Principal.class);
-            //i.putExtra("correo", textCorreo);
+            i.putExtra("correo", textCorreo);
             startActivity(i);
 
         }else{
@@ -63,4 +63,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public static String getTextCorreo() {
+        return textCorreo;
+    }
+
+    public void setTextCorreo(String textCorreo) {
+        this.textCorreo = textCorreo;
+    }
 }

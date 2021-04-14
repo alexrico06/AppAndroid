@@ -36,7 +36,9 @@ public class HomeFragment extends Fragment {
             }
         });*/
 
-        /*HiloCliente hilo = new HiloCliente(5, correo);
+        String correo = MainActivity.getTextCorreo();
+
+        HiloCliente hilo = new HiloCliente(5, correo);
 
         hilo.start();
 
@@ -46,20 +48,17 @@ public class HomeFragment extends Fragment {
             e.printStackTrace();
         }
 
-        System.out.println("RICOOOOOOOOOOOO");
-
-
         EditText name = root.findViewById(R.id.name_user);
         name.setText(hilo.nombre);
 
         EditText mail = root.findViewById(R.id.mail_user);
-        mail.setText(hilo.nombre);
+        mail.setText(correo);
 
         EditText tlf = root.findViewById(R.id.mobile_user);
-        tlf.setText(hilo.nombre);
+        tlf.setText(hilo.telefono);
 
         EditText direccion = root.findViewById(R.id.address_user);
-        direccion.setText(hilo.nombre);*/
+        direccion.setText(hilo.direccion);
 
         return root;
     }

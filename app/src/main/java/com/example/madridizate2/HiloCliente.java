@@ -149,7 +149,6 @@ public class HiloCliente extends Thread{
                 try {
                     dis = new DataInputStream(s.getInputStream());
                     nombre = dis.readUTF();
-                    correo = dis.readUTF();
                     telefono = dis.readUTF();
                     direccion = dis.readUTF();
                 } catch (IOException e) {
