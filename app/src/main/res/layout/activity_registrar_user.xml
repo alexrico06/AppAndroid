@@ -20,19 +20,19 @@
         app:layout_constraintVertical_bias="0.951">
 
         <Button
+            android:id="@+id/botonVehiculo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="registrarCoches"
+            android:text="@string/buttonCoche" />
+
+        <Button
             android:id="@+id/botonSiguiente"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="pulsarMasTarde"
             android:text="@string/buttonDespues"
             app:backgroundTint="@android:color/darker_gray" />
-
-        <Button
-            android:id="@+id/botonVehiculo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="registrarCoches"
-            android:text="@string/buttonCoche" />
 
         <LinearLayout
             android:layout_width="wrap_content"
