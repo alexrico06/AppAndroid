@@ -19,7 +19,7 @@
             android:layout_weight="1"
             android:paddingTop="25dp"
             android:paddingBottom="25dp"
-            android:text="TIPO DE VEHÍCULO" />
+            android:text="TIPO DE VEHÍCULO 2" />
     </LinearLayout>
 
     <RadioGroup
@@ -126,6 +126,7 @@
         </LinearLayout>
     </LinearLayout>
 
+<<<<<<< HEAD
     <Button
         android:id="@+id/buttonGuardarVehiculo"
         android:layout_width="0dp"
@@ -136,6 +137,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.433"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" /><![CDATA[
+=======
+    >>>>>>> origin/master
 
+]]>
 </androidx.constraintlayout.widget.ConstraintLayout>
