@@ -5,14 +5,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.madridizate2.HiloCliente;
+import com.example.madridizate2.MainActivity;
 import com.example.madridizate2.R;
 
 public class GalleryFragment extends Fragment {
@@ -35,19 +34,35 @@ public class GalleryFragment extends Fragment {
             }
         });*/
 
+        String correo = MainActivity.getTextCorreo();
+
+        HiloCliente hilo = new HiloCliente(5, correo);
+
+        hilo.start();
+
+        try {
+            hilo.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         EditText codigo = root.findViewById(R.id.codigo_promocional);
         cod = codigo.getText().toString();
 
         if(!cod.isEmpty()) {
-            root.findViewById(R.id.canjear).setEnabled(true);
+            root.findViewById(R.id.edit_card).setEnabled(true);
         }
 
         return root;
     }
 
-    private void canjear(View v) {
+    public void canjear(View v) {
 
         System.out.println("BOTON CANJEAR");
+
+    }
+
+    public void eitarTarjeta(View v) {
 
     }
 

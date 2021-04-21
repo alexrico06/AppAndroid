@@ -12,17 +12,18 @@
         android:layout_height="0dp"
         android:background="#860091B5"
         android:orientation="vertical"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#610031AC"
             android:paddingTop="15dp"
             android:paddingBottom="15dp"
             android:text="Métodos de pago"
@@ -40,27 +41,73 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Tarjeta:"
+                android:text="Número de tarjeta"
                 android:textSize="16sp" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName"
+                android:id="@+id/cardNum"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Name" />
+                android:hint="Número de tarjeta"
+                android:inputType="textPersonName" />
 
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="111dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Fecha de caducixdad" />
+
+            <EditText
+                android:id="@+id/fechaCaducidad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Fecha caducidad"
+                android:inputType="textPersonName" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="109dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="CVV" />
+
+            <EditText
+                android:id="@+id/cvv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="CVV"
+                android:inputType="textPersonName" />
         </LinearLayout>
 
         <TextView
             android:id="@+id/textView7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#610031AC"
             android:paddingTop="15dp"
             android:paddingBottom="15dp"
-            android:text="Crédito"
+            android:text="CRÉDITO"
             android:textSize="18sp" />
 
         <LinearLayout
@@ -85,23 +132,40 @@
                 android:text="110€" />
         </LinearLayout>
 
-        <EditText
-            android:id="@+id/codigo_promocional"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="CÓDIGO PROMOCIONAL"
-            android:inputType="textPersonName" />
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/codigo_promocional"
+                android:layout_width="326dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="CÓDIGO PROMOCIONAL"
+                android:inputType="textPersonName" />
+
+            <Button
+                android:id="@+id/canjear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="canjear"
+                android:text="+"
+                android:enabled="false"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </LinearLayout>
 
     </LinearLayout>
 
     <Button
-        android:id="@+id/canjear"
+        android:id="@+id/edit_card"
         android:layout_width="409dp"
         android:layout_height="58dp"
         android:height="60dp"
-        android:text="CANJEAR"
-        android:enabled="false"
+        android:onClick="eitarTarjeta"
+        android:text="EDITAR TARJETA"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
