@@ -49,17 +49,25 @@ public class HomeFragment extends Fragment {
         }
 
         EditText name = root.findViewById(R.id.name_user);
+        name.setEnabled(false);
         name.setText(hilo.nombre);
 
         EditText mail = root.findViewById(R.id.mail_user);
+        mail.setEnabled(false);
         mail.setText(correo);
 
         EditText tlf = root.findViewById(R.id.mobile_user);
+        tlf.setEnabled(false);
         tlf.setText(hilo.telefono);
 
         EditText direccion = root.findViewById(R.id.address_user);
+        direccion.setEnabled(false);
         direccion.setText(hilo.direccion);
 
         return root;
+    }
+
+    public void pressEditProfile(View view){
+
     }
 }

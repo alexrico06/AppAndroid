@@ -133,8 +133,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:background="#FFFFFF"
-        android:text="Editar perfil"
+        android:onClick="pressEditProfile"
         android:padding="20dp"
+        android:text="Editar perfil"
         android:textStyle="bold"
         app:backgroundTint="@color/cardview_shadow_end_color"
         app:layout_constraintBottom_toBottomOf="@+id/linearLayout" />
