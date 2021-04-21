@@ -13,6 +13,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.madridizate2.HiloCliente;
 import com.example.madridizate2.MainActivity;
 import com.example.madridizate2.R;
+import com.example.madridizate2.RegistrarUserActivity;
 
 public class GalleryFragment extends Fragment {
 
@@ -21,7 +22,6 @@ public class GalleryFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-
 
         galleryViewModel =
                 new ViewModelProvider(this).get(GalleryViewModel.class);
@@ -34,9 +34,9 @@ public class GalleryFragment extends Fragment {
             }
         });*/
 
-        String correo = MainActivity.getTextCorreo();
+        String[] datosP = RegistrarUserActivity.getDatosP();
 
-        HiloCliente hilo = new HiloCliente(5, correo);
+        HiloCliente hilo = new HiloCliente(6, datosP[0]);
 
         hilo.start();
 
@@ -45,6 +45,23 @@ public class GalleryFragment extends Fragment {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
+        /*EditText name = root.findViewById(R.id.name_user);
+        name.setEnabled(false);
+        name.setText(hilo.nombre);
+
+        EditText mail = root.findViewById(R.id.mail_user);
+        mail.setEnabled(false);
+        mail.setText(correo);
+
+        EditText tlf = root.findViewById(R.id.mobile_user);
+        tlf.setEnabled(false);
+        tlf.setText(hilo.telefono);
+
+        EditText direccion = root.findViewById(R.id.address_user);
+        direccion.setEnabled(false);
+        direccion.setText(hilo.direccion);*/
+
 
         EditText codigo = root.findViewById(R.id.codigo_promocional);
         cod = codigo.getText().toString();

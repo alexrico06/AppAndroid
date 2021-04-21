@@ -23,17 +23,24 @@ public class HiloCliente extends Thread{
     DataInputStream dis = null;
     ObjectOutputStream oos = null;
 
+    public String dni;
     public String correo;
     public String nombre;
     public String telefono;
     public String direccion;
     String contrasena;
+    String texto;
 
+
+    String numt;
+    String cvv;
+    String dateCaduc;
 
     public ArrayList<String[]> listaResultados;
     String[] datosP = new String[7];
     String[] datosD = new String[5];
     String[] datosV = new String[5];
+    String[] datosT = new String[4];
     int consulta;
     boolean existe;
 
@@ -43,24 +50,34 @@ public class HiloCliente extends Thread{
         this.consulta = consulta;
     }
 
+    //INSERTAR USUARIO Y DIRECCION
     public HiloCliente(int consulta, String[] datosP, String[] datosD){
         this.consulta=consulta;
         this.datosP=datosP;
         this.datosD=datosD;
     }
 
+    //INSERTAR DATOS VEHICULO
     public HiloCliente(int consulta,String[] datosV) {
         this.consulta = consulta;
         this.datosV = datosV;
     }
 
+
     public HiloCliente(int consulta) {
         this.consulta=consulta;
     }
 
-    public HiloCliente(int consulta, String correo) {
+    public HiloCliente(int consulta, String texto) {
         this.consulta=consulta;
-        this.correo=correo;
+        this.texto=texto;
+    }
+
+    //INSERTAR TARJETA
+    public HiloCliente(int consulta,String[] datosT,String dni) {
+        this.consulta = consulta;
+        this.datosT = datosT;
+        this.dni = dni;
     }
 
     @Override
@@ -91,7 +108,7 @@ public class HiloCliente extends Thread{
                     e.printStackTrace();
                 }
 
-                DataInputStream dis = null;
+                //DataInputStream dis = null;
                 try {
                     dis = new DataInputStream(s.getInputStream());
                     existe = dis.readBoolean();
@@ -141,7 +158,7 @@ public class HiloCliente extends Thread{
             case 5:
 
                 try {
-                    dos.writeUTF(correo);
+                    dos.writeUTF(texto);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -151,6 +168,34 @@ public class HiloCliente extends Thread{
                     nombre = dis.readUTF();
                     telefono = dis.readUTF();
                     direccion = dis.readUTF();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                break;
+            case 6:
+
+                try {
+                    dos.writeUTF(texto);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                try {
+                    dis = new DataInputStream(s.getInputStream());
+                    numt = dis.readUTF();
+                    cvv = dis.readUTF();
+                    dateCaduc = dis.readUTF();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                break;
+
+            case 7:
+
+                try {
+                    oos = new ObjectOutputStream(s.getOutputStream());
+                    oos.writeObject(datosT);
+                    dos.writeUTF(dni);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

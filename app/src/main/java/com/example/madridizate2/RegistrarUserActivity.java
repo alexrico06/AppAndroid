@@ -24,7 +24,7 @@ public class RegistrarUserActivity extends AppCompatActivity {
     String textCodPostal;
     String textCiudad;
     String editTextTextPassword;
-    String[] datosP = new String[7];
+    static String[] datosP = new String[7];
     String[] datosD = new String[6];
 
     @Override
@@ -51,7 +51,7 @@ public class RegistrarUserActivity extends AppCompatActivity {
         startActivity(i);
     }
 
-    public void insertarUsuario(){
+    private void insertarUsuario(){
 
         EditText dni = findViewById(R.id.textDNI);
         textDNI = dni.getText().toString();
@@ -115,5 +115,13 @@ public class RegistrarUserActivity extends AppCompatActivity {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    public static String[] getDatosP() {
+        return datosP;
+    }
+
+    public void setDatosP(String[] datosP) {
+        this.datosP = datosP;
     }
 }
