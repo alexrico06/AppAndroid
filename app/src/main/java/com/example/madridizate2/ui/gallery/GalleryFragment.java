@@ -14,6 +14,7 @@ import com.example.madridizate2.HiloCliente;
 import com.example.madridizate2.MainActivity;
 import com.example.madridizate2.R;
 import com.example.madridizate2.RegistrarUserActivity;
+import com.example.madridizate2.User;
 
 public class GalleryFragment extends Fragment {
 
@@ -34,7 +35,7 @@ public class GalleryFragment extends Fragment {
             }
         });*/
 
-        HiloCliente hilo = new HiloCliente(6, cod);
+        HiloCliente hilo = new HiloCliente(6, User.getEmail());
 
         hilo.start();
 
@@ -44,21 +45,21 @@ public class GalleryFragment extends Fragment {
             e.printStackTrace();
         }
 
-        /*EditText name = root.findViewById(R.id.name_user);
+        EditText name = root.findViewById(R.id.name_user);
         name.setEnabled(false);
-        name.setText(hilo.nombre);
+        name.setText(User.getNombre());
 
         EditText mail = root.findViewById(R.id.mail_user);
         mail.setEnabled(false);
-        mail.setText(correo);
+        mail.setText(User.getEmail());
 
         EditText tlf = root.findViewById(R.id.mobile_user);
         tlf.setEnabled(false);
-        tlf.setText(hilo.telefono);
+        tlf.setText(User.getTel());
 
         EditText direccion = root.findViewById(R.id.address_user);
         direccion.setEnabled(false);
-        direccion.setText(hilo.direccion);*/
+        direccion.setText(hilo.direccion);
 
 
         EditText codigo = root.findViewById(R.id.codigo_promocional);
@@ -72,9 +73,7 @@ public class GalleryFragment extends Fragment {
     }
 
     public void canjear(View v) {
-
         System.out.println("BOTON CANJEAR");
-
     }
 
     public void eitarTarjeta(View v) {

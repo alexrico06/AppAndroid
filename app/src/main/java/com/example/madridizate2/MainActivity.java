@@ -37,12 +37,12 @@ public class MainActivity extends AppCompatActivity {
 
 
         EditText contrasena = findViewById(R.id.contrasena);
-        String textContrasena = contrasena.getText().toString();
+        user.setPassword(contrasena.getText().toString());
 
         //Intent i = new Intent(this, Principal.class);
         //startActivity(i);
 
-        HiloCliente hilo = new HiloCliente(1, user.getEmail(),textContrasena);
+        HiloCliente hilo = new HiloCliente(1, user.getEmail(), user.getPassword());
         hilo.start();
 
         try {

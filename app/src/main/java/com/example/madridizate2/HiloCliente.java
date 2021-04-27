@@ -184,9 +184,9 @@ public class HiloCliente extends Thread{
                 }
                 try {
                     dis = new DataInputStream(s.getInputStream());
-                    numt = dis.readUTF();
-                    cvv = dis.readUTF();
-                    dateCaduc = dis.readUTF();
+                    User.setNumTarjeta(dis.readUTF());
+                    User.setCvv(dis.readUTF());
+                    User.setFechaCaducidad(dis.readUTF());
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

@@ -8,6 +8,7 @@ public class User {
     static String tel;
     static String email;
     static String fechaNacimiento;
+    static String password;
     static String calle;
     static String numero;
     static String portal;
@@ -182,5 +183,13 @@ public class User {
 
     public static void setDireccion(String direccion) {
         User.direccion = direccion;
+    }
+
+    public static String getPassword() {
+        return password;
+    }
+
+    public static void setPassword(String password) {
+        User.password = password;
     }
 }
