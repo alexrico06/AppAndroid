@@ -37,19 +37,19 @@
             android:id="@+id/radioButtonMoto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="Moto" />
 
         <RadioButton
             android:id="@+id/radioButtonCoche"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="Coche" />
 
         <RadioButton
             android:id="@+id/radioButtonFurgoneta"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="Furgoneta" />
     </RadioGroup>
 
     <LinearLayout
