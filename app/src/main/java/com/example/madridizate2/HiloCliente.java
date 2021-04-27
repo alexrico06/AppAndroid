@@ -165,6 +165,7 @@ public class HiloCliente extends Thread{
 
                 try {
                     dis = new DataInputStream(s.getInputStream());
+                    dni = dis.readUTF();
                     nombre = dis.readUTF();
                     telefono = dis.readUTF();
                     direccion = dis.readUTF();
@@ -175,6 +176,7 @@ public class HiloCliente extends Thread{
                 break;
             case 6:
 
+                System.out.println(dni);
                 try {
                     dos.writeUTF(texto);
                 } catch (IOException e) {

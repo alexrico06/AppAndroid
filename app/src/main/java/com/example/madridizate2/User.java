@@ -2,175 +2,175 @@ package com.example.madridizate2;
 
 public class User {
 
-    String dni;
-    String nombre;
-    String apellidos;
-    String tel;
-    String email;
-    String fechaNacimiento;
-    String calle;
-    String numero;
-    String portal;
-    String piso;
-    String cp;
-    String ciudad;
-    String numTarjeta;
-    String fechaCaducidad;
-    String cvv;
-    String tipoVehiculo;
-    String marcaVehiculo;
-    String modeloVehiculo;
-    String matricula;
+    static String dni;
+    static String nombre;
+    static String apellidos;
+    static String tel;
+    static String email;
+    static String fechaNacimiento;
+    static String calle;
+    static String numero;
+    static String portal;
+    static String piso;
+    static String cp;
+    static String ciudad;
+    static String numTarjeta;
+    static String fechaCaducidad;
+    static String cvv;
+    static String tipoVehiculo;
+    static String marcaVehiculo;
+    static String modeloVehiculo;
+    static String matricula;
 
-    public String getDni() {
+    public static String getDni() {
         return dni;
     }
 
-    public void setDni(String dni) {
-        this.dni = dni;
+    public static void setDni(String dni) {
+        User.dni = dni;
     }
 
-    public String getNombre() {
+    public static String getNombre() {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public static void setNombre(String nombre) {
+        User.nombre = nombre;
     }
 
-    public String getApellidos() {
+    public static String getApellidos() {
         return apellidos;
     }
 
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
+    public static void setApellidos(String apellidos) {
+        User.apellidos = apellidos;
     }
 
-    public String getTel() {
+    public static String getTel() {
         return tel;
     }
 
-    public void setTel(String tel) {
-        this.tel = tel;
+    public static void setTel(String tel) {
+        User.tel = tel;
     }
 
-    public String getEmail() {
+    public static String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public static void setEmail(String email) {
+        User.email = email;
     }
 
-    public String getFechaNacimiento() {
+    public static String getFechaNacimiento() {
         return fechaNacimiento;
     }
 
-    public void setFechaNacimiento(String fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
+    public static void setFechaNacimiento(String fechaNacimiento) {
+        User.fechaNacimiento = fechaNacimiento;
     }
 
-    public String getCalle() {
+    public static String getCalle() {
         return calle;
     }
 
-    public void setCalle(String calle) {
-        this.calle = calle;
+    public static void setCalle(String calle) {
+        User.calle = calle;
     }
 
-    public String getNumero() {
+    public static String getNumero() {
         return numero;
     }
 
-    public void setNumero(String numero) {
-        this.numero = numero;
+    public static void setNumero(String numero) {
+        User.numero = numero;
     }
 
-    public String getPortal() {
+    public static String getPortal() {
         return portal;
     }
 
-    public void setPortal(String portal) {
-        this.portal = portal;
+    public static void setPortal(String portal) {
+        User.portal = portal;
     }
 
-    public String getPiso() {
+    public static String getPiso() {
         return piso;
     }
 
-    public void setPiso(String piso) {
-        this.piso = piso;
+    public static void setPiso(String piso) {
+        User.piso = piso;
     }
 
-    public String getCp() {
+    public static String getCp() {
         return cp;
     }
 
-    public void setCp(String cp) {
-        this.cp = cp;
+    public static void setCp(String cp) {
+        User.cp = cp;
     }
 
-    public String getCiudad() {
+    public static String getCiudad() {
         return ciudad;
     }
 
-    public void setCiudad(String ciudad) {
-        this.ciudad = ciudad;
+    public static void setCiudad(String ciudad) {
+        User.ciudad = ciudad;
     }
 
-    public String getNumTarjeta() {
+    public static String getNumTarjeta() {
         return numTarjeta;
     }
 
-    public void setNumTarjeta(String numTarjeta) {
-        this.numTarjeta = numTarjeta;
+    public static void setNumTarjeta(String numTarjeta) {
+        User.numTarjeta = numTarjeta;
     }
 
-    public String getFechaCaducidad() {
+    public static String getFechaCaducidad() {
         return fechaCaducidad;
     }
 
-    public void setFechaCaducidad(String fechaCaducidad) {
-        this.fechaCaducidad = fechaCaducidad;
+    public static void setFechaCaducidad(String fechaCaducidad) {
+        User.fechaCaducidad = fechaCaducidad;
     }
 
-    public String getCvv() {
+    public static String getCvv() {
         return cvv;
     }
 
-    public void setCvv(String cvv) {
-        this.cvv = cvv;
+    public static void setCvv(String cvv) {
+        User.cvv = cvv;
     }
 
-    public String getTipoVehiculo() {
+    public static String getTipoVehiculo() {
         return tipoVehiculo;
     }
 
-    public void setTipoVehiculo(String tipoVehiculo) {
-        this.tipoVehiculo = tipoVehiculo;
+    public static void setTipoVehiculo(String tipoVehiculo) {
+        User.tipoVehiculo = tipoVehiculo;
     }
 
-    public String getMarcaVehiculo() {
+    public static String getMarcaVehiculo() {
         return marcaVehiculo;
     }
 
-    public void setMarcaVehiculo(String marcaVehiculo) {
-        this.marcaVehiculo = marcaVehiculo;
+    public static void setMarcaVehiculo(String marcaVehiculo) {
+        User.marcaVehiculo = marcaVehiculo;
     }
 
-    public String getModeloVehiculo() {
+    public static String getModeloVehiculo() {
         return modeloVehiculo;
     }
 
-    public void setModeloVehiculo(String modeloVehiculo) {
-        this.modeloVehiculo = modeloVehiculo;
+    public static void setModeloVehiculo(String modeloVehiculo) {
+        User.modeloVehiculo = modeloVehiculo;
     }
 
-    public String getMatricula() {
+    public static String getMatricula() {
         return matricula;
     }
 
-    public void setMatricula(String matricula) {
-        this.matricula = matricula;
+    public static void setMatricula(String matricula) {
+        User.matricula = matricula;
     }
 }

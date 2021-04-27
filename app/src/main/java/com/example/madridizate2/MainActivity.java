@@ -14,7 +14,8 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     boolean bandera = false;
-    static String textCorreo;
+
+    User user = new User();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +32,8 @@ public class MainActivity extends AppCompatActivity {
     public void pulsarInicioSesion(View view) {
 
         EditText correo = findViewById(R.id.correo);
-        textCorreo = correo.getText().toString();
+        //String textCorreo = correo.getText().toString();
+        user.setEmail(correo.getText().toString());
 
 
         EditText contrasena = findViewById(R.id.contrasena);
@@ -40,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         //Intent i = new Intent(this, Principal.class);
         //startActivity(i);
 
-        HiloCliente hilo = new HiloCliente(1, textCorreo,textContrasena);
+        HiloCliente hilo = new HiloCliente(1, user.getEmail(),textContrasena);
         hilo.start();
 
         try {
@@ -54,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         if(hilo.existe){
 
             Intent i = new Intent(this, Principal.class);
-            i.putExtra("correo", textCorreo);
+            //i.putExtra("correo", user.getEmail());
             startActivity(i);
 
         }else{
@@ -63,11 +65,4 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public static String getTextCorreo() {
-        return textCorreo;
-    }
-
-    public void setTextCorreo(String textCorreo) {
-        this.textCorreo = textCorreo;
-    }
 }

@@ -34,9 +34,7 @@ public class GalleryFragment extends Fragment {
             }
         });*/
 
-        String[] datosP = RegistrarUserActivity.getDatosP();
-
-        HiloCliente hilo = new HiloCliente(6, datosP[0]);
+        HiloCliente hilo = new HiloCliente(6, cod);
 
         hilo.start();
 

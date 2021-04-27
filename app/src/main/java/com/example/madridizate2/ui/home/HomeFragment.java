@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.madridizate2.HiloCliente;
 import com.example.madridizate2.MainActivity;
 import com.example.madridizate2.R;
+import com.example.madridizate2.User;
 
 public class HomeFragment extends Fragment {
 
@@ -32,9 +33,8 @@ public class HomeFragment extends Fragment {
             }
         });*/
 
-        String correo = MainActivity.getTextCorreo();
-
-        HiloCliente hilo = new HiloCliente(5, correo);
+        System.out.println(User.getEmail());
+        HiloCliente hilo = new HiloCliente(5, User.getEmail());
 
         hilo.start();
 
@@ -50,7 +50,7 @@ public class HomeFragment extends Fragment {
 
         EditText mail = root.findViewById(R.id.mail_user);
         mail.setEnabled(false);
-        mail.setText(correo);
+        mail.setText(User.getEmail());
 
         EditText tlf = root.findViewById(R.id.mobile_user);
         tlf.setEnabled(false);
