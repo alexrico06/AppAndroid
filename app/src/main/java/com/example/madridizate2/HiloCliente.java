@@ -165,10 +165,10 @@ public class HiloCliente extends Thread{
 
                 try {
                     dis = new DataInputStream(s.getInputStream());
-                    dni = dis.readUTF();
-                    nombre = dis.readUTF();
-                    telefono = dis.readUTF();
-                    direccion = dis.readUTF();
+                    User.setDni(dis.readUTF());
+                    User.setNombre(dis.readUTF());
+                    User.setTel(dis.readUTF());
+                    User.setDireccion(dis.readUTF());
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

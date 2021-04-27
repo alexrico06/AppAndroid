@@ -46,7 +46,7 @@ public class HomeFragment extends Fragment {
 
         EditText name = root.findViewById(R.id.name_user);
         name.setEnabled(false);
-        name.setText(hilo.nombre);
+        name.setText(User.getNombre());
 
         EditText mail = root.findViewById(R.id.mail_user);
         mail.setEnabled(false);
@@ -54,11 +54,11 @@ public class HomeFragment extends Fragment {
 
         EditText tlf = root.findViewById(R.id.mobile_user);
         tlf.setEnabled(false);
-        tlf.setText(hilo.telefono);
+        tlf.setText(User.getTel());
 
         EditText direccion = root.findViewById(R.id.address_user);
         direccion.setEnabled(false);
-        direccion.setText(hilo.direccion);
+        direccion.setText(User.getDireccion());
 
         return root;
     }

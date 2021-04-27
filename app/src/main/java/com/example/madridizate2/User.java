@@ -22,6 +22,8 @@ public class User {
     static String modeloVehiculo;
     static String matricula;
 
+    static String direccion;
+
     public static String getDni() {
         return dni;
     }
@@ -172,5 +174,13 @@ public class User {
 
     public static void setMatricula(String matricula) {
         User.matricula = matricula;
+    }
+
+    public static String getDireccion() {
+        return direccion;
+    }
+
+    public static void setDireccion(String direccion) {
+        User.direccion = direccion;
     }
 }
