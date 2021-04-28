@@ -133,10 +133,22 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:background="#FFFFFF"
-        android:onClick="pressEditProfile"
         android:padding="20dp"
         android:text="Editar perfil"
         android:textStyle="bold"
+        app:backgroundTint="@color/cardview_shadow_end_color"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout" />
+
+    <Button
+        android:id="@+id/save_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="#FFFFFF"
+        android:padding="20dp"
+        android:text="Guardar perfil"
+        android:textStyle="bold"
+        android:visibility="invisible"
         app:backgroundTint="@color/cardview_shadow_end_color"
         app:layout_constraintBottom_toBottomOf="@+id/linearLayout" />
 

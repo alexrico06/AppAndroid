@@ -22,6 +22,9 @@ public class HomeFragment extends Fragment {
     private HomeViewModel homeViewModel;
     EditText name,mail,tlf,direccion;
 
+    Button pressEditProfile;
+    Button pressSaveProfile;
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         homeViewModel =
@@ -29,7 +32,7 @@ public class HomeFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_account, container, false);
 
 
-        Button pressEditProfile = (Button) root.findViewById(R.id.edit_profile);
+        pressEditProfile = (Button) root.findViewById(R.id.edit_profile);
         pressEditProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -37,6 +40,22 @@ public class HomeFragment extends Fragment {
                 mail.setEnabled(true);
                 tlf.setEnabled(true);
                 direccion.setEnabled(true);
+
+                pressEditProfile.setVisibility(View.INVISIBLE);
+                pressSaveProfile.setVisibility(View.VISIBLE);
+
+            }
+        });
+
+        pressSaveProfile = (Button) root.findViewById(R.id.save_profile);
+        pressSaveProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                name.setEnabled(true);
+                mail.setEnabled(true);
+                tlf.setEnabled(true);
+                direccion.setEnabled(true);
+
             }
         });
 
