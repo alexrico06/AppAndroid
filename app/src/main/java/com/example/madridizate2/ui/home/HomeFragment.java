@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.annotation.NonNull;
@@ -26,13 +27,18 @@ public class HomeFragment extends Fragment {
         homeViewModel =
                 new ViewModelProvider(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_account, container, false);
-        /*final TextView textView = root.findViewById(R.id.text_home);
-        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+
+
+        Button pressEditProfile = (Button) root.findViewById(R.id.edit_profile);
+        pressEditProfile.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
+            public void onClick(View v) {
+                name.setEnabled(true);
+                mail.setEnabled(true);
+                tlf.setEnabled(true);
+                direccion.setEnabled(true);
             }
-        });*/
+        });
 
         System.out.println(User.getEmail());
         HiloCliente hilo = new HiloCliente(5, User.getEmail());
@@ -64,13 +70,4 @@ public class HomeFragment extends Fragment {
         return root;
     }
 
-    public void pressEditProfile(View view){
-
-        name.setEnabled(false);
-        mail.setEnabled(false);
-        tlf.setEnabled(false);
-        direccion.setEnabled(false);
-
-
-    }
 }
