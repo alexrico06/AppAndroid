@@ -11,19 +11,6 @@ import java.util.ArrayList;
 
 public class RegistrarUserActivity extends AppCompatActivity {
 
-    String textDNI;
-    String textNombre;
-    String textApellidos;
-    String textPhone;
-    String textEmail;
-    String textFechaNacimiento;
-    String textCalle;
-    String textNumero;
-    String textPortal;
-    String textPiso;
-    String textCodPostal;
-    String textCiudad;
-    String editTextTextPassword;
     static String[] datosP = new String[7];
     String[] datosD = new String[6];
 
@@ -39,7 +26,7 @@ public class RegistrarUserActivity extends AppCompatActivity {
         insertarUsuario();
 
         Intent i = new Intent(this, RegistrarVehiculoActivity.class);
-        i.putExtra("DNI",textDNI);
+        i.putExtra("DNI",datosP[0]);
         startActivity(i);
     }
 
@@ -54,58 +41,46 @@ public class RegistrarUserActivity extends AppCompatActivity {
     private void insertarUsuario(){
 
         EditText dni = findViewById(R.id.textDNI);
-        textDNI = dni.getText().toString();
+        datosP[0] = dni.getText().toString();
 
         EditText nombre = findViewById(R.id.textNombre);
-        textNombre = nombre.getText().toString();
+        datosP[1] = nombre.getText().toString();
 
         EditText apellidos = findViewById(R.id.textApellidos);
-        textApellidos = apellidos.getText().toString();
+        datosP[2] = apellidos.getText().toString();
 
         EditText telefone =  findViewById(R.id.textPhone);
-        textPhone = telefone.getText().toString();
+        datosP[3] = telefone.getText().toString();
 
         EditText correo =  findViewById(R.id.textEmail);
-        textEmail = correo.getText().toString();
+        datosP[4] = correo.getText().toString();
+        User.setEmail(datosP[4]);
 
         EditText fecha =  findViewById(R.id.textFechaNacimiento);
-        textFechaNacimiento = fecha.getText().toString();
-
-        EditText calle = findViewById(R.id.textCalle);
-        textCalle = calle.getText().toString();
-
-        EditText numero =  findViewById(R.id.textNumero);
-        textNumero = numero.getText().toString();
-
-        EditText portal =  findViewById(R.id.textPortal);
-        textPortal = portal.getText().toString();
-
-        EditText piso =  findViewById(R.id.textPiso);
-        textPiso = piso.getText().toString();
-
-        EditText cp =  findViewById(R.id.textCodPostal);
-        textCodPostal = cp.getText().toString();
-
-        EditText ciudad =  findViewById(R.id.textCiudad);
-        textCiudad = ciudad.getText().toString();
+        datosP[5] = fecha.getText().toString();
 
         EditText password = findViewById(R.id.editTextTextPassword);
-        editTextTextPassword = password.getText().toString();
+        datosP[6] = password.getText().toString();
+        User.setPassword(datosP[6]);
 
-        datosP[0] = textDNI;
-        datosP[1] = textNombre;
-        datosP[2] = textApellidos;
-        datosP[3] = textPhone;
-        datosP[4] = textEmail;
-        datosP[5] = textFechaNacimiento;
-        datosP[6] = editTextTextPassword;
+        //////////////////////////////////////////
+        EditText calle = findViewById(R.id.textCalle);
+        datosD[0] = calle.getText().toString();
 
-        datosD[0] = textCalle;
-        datosD[1] = textNumero;
-        datosD[2] = textPortal;
-        datosD[3] = textPiso;
-        datosD[4] = textCodPostal;
-        datosD[5] = textCiudad;
+        EditText numero =  findViewById(R.id.textNumero);
+        datosD[1] = numero.getText().toString();
+
+        EditText portal =  findViewById(R.id.textPortal);
+        datosD[2] = portal.getText().toString();
+
+        EditText piso =  findViewById(R.id.textPiso);
+        datosD[3] = piso.getText().toString();
+
+        EditText cp =  findViewById(R.id.textCodPostal);
+        datosD[4] = cp.getText().toString();
+
+        EditText ciudad =  findViewById(R.id.textCiudad);
+        datosD[5] = ciudad.getText().toString();
 
         HiloCliente hilo = new HiloCliente(2, datosP,datosD);
         hilo.start();

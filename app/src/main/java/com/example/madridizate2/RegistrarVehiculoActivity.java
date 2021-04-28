@@ -21,42 +21,36 @@ public class RegistrarVehiculoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_registrar_vehiculo);
 
         Intent i = getIntent();
-        dni = i.getStringExtra("DNI");
+        //User.setDni(i.getStringExtra("DNI"));
+        datosV[4] = i.getStringExtra("DNI");
     }
 
     public void guardarVehiculo(View view) {
 
-        System.out.println(dni);
+        System.out.println(datosV[4]);
 
         RadioButton moto = findViewById(R.id.radioButtonMoto);
         RadioButton coche = findViewById(R.id.radioButtonCoche);
         RadioButton furgoneta = findViewById(R.id.radioButtonFurgoneta);
 
         EditText matricula = findViewById(R.id.textMatricula);
-        String textMatricula = matricula.getText().toString();
+        datosV[0] = matricula.getText().toString();
 
         EditText marca = findViewById(R.id.textMarca);
-        String textMarca = marca.getText().toString();
+        datosV[2] = marca.getText().toString();
 
         EditText modelo = findViewById(R.id.textModelo);
-        String textModelo = modelo.getText().toString();
+        datosV[3] = modelo.getText().toString();
 
         if(moto.isChecked()){
-            tipo="m";
+            datosV[1]="m";
         }else if(coche.isChecked()){
-            tipo="c";
+            datosV[1]="c";
         }else if(furgoneta.isChecked()){
-            tipo="f";
+            datosV[1]="f";
         }
 
-        System.out.println(tipo);
-
-
-        datosV[0] = textMatricula;
-        datosV[1] = tipo;
-        datosV[2] = textMarca;
-        datosV[3] = textModelo;
-        datosV[4] = dni;
+        System.out.println(datosV[1]);
 
         HiloCliente hilo = new HiloCliente(3,datosV);
         hilo.start();

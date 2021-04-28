@@ -22,6 +22,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        EditText correo = findViewById(R.id.correo);
+        correo.setText(User.getEmail());
+
+        EditText contrasena = findViewById(R.id.contrasena);
+        contrasena.setText(User.getPassword());
     }
 
     public void pulsarRegistrar(View view) {
