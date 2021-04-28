@@ -18,12 +18,13 @@ public class User {
     static String numTarjeta;
     static String fechaCaducidad;
     static String cvv;
+    static String tipoTarjeta;
     static String tipoVehiculo;
     static String marcaVehiculo;
     static String modeloVehiculo;
     static String matricula;
-
     static String direccion;
+    static String codigoPromocional;
 
     public static String getDni() {
         return dni;
@@ -191,5 +192,21 @@ public class User {
 
     public static void setPassword(String password) {
         User.password = password;
+    }
+
+    public static String getTipoTarjeta() {
+        return tipoTarjeta;
+    }
+
+    public static void setTipoTarjeta(String tipoTarjeta) {
+        User.tipoTarjeta = tipoTarjeta;
+    }
+
+    public static String getCodigoPromocional() {
+        return codigoPromocional;
+    }
+
+    public static void setCodigoPromocional(String codigoPromocional) {
+        User.codigoPromocional = codigoPromocional;
     }
 }

@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.annotation.NonNull;
@@ -27,13 +28,14 @@ public class GalleryFragment extends Fragment {
         galleryViewModel =
                 new ViewModelProvider(this).get(GalleryViewModel.class);
         View root = inflater.inflate(R.layout.fragment_payment, container, false);
-/*        final TextView textView = root.findViewById(R.id.text_gallery);
-        galleryViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+
+        Button pressEditProfile = (Button) root.findViewById(R.id.edit_profile);
+        pressEditProfile.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
+            public void onClick(View v) {
+
             }
-        });*/
+        });
 
         HiloCliente hilo = new HiloCliente(6, User.getEmail());
 
@@ -45,39 +47,26 @@ public class GalleryFragment extends Fragment {
             e.printStackTrace();
         }
 
-        EditText name = root.findViewById(R.id.name_user);
-        name.setEnabled(false);
-        name.setText(User.getNombre());
+        EditText cardNum = root.findViewById(R.id.cardNum);
+        cardNum.setEnabled(false);
+        cardNum.setText(User.getNumTarjeta());
 
-        EditText mail = root.findViewById(R.id.mail_user);
-        mail.setEnabled(false);
-        mail.setText(User.getEmail());
+        EditText fechaCaducidad = root.findViewById(R.id.fechaCaducidad);
+        fechaCaducidad.setEnabled(false);
+        fechaCaducidad.setText(User.getFechaCaducidad());
 
-        EditText tlf = root.findViewById(R.id.mobile_user);
-        tlf.setEnabled(false);
-        tlf.setText(User.getTel());
+        EditText cvv = root.findViewById(R.id.cvv);
+        cvv.setEnabled(false);
+        cvv.setText(User.getCvv());
 
-        EditText direccion = root.findViewById(R.id.address_user);
-        direccion.setEnabled(false);
-        direccion.setText(hilo.direccion);
-
+        EditText tipoTarjeta = root.findViewById(R.id.tipoTarjeta);
+        tipoTarjeta.setEnabled(false);
+        tipoTarjeta.setText(User.getTipoTarjeta());
 
         EditText codigo = root.findViewById(R.id.codigo_promocional);
         cod = codigo.getText().toString();
 
-        if(!cod.isEmpty()) {
-            root.findViewById(R.id.edit_card).setEnabled(true);
-        }
-
         return root;
-    }
-
-    public void canjear(View v) {
-        System.out.println("BOTON CANJEAR");
-    }
-
-    public void eitarTarjeta(View v) {
-
     }
 
 }
