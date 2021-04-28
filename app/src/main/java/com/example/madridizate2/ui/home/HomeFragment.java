@@ -19,6 +19,7 @@ import com.example.madridizate2.User;
 public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
+    EditText name,mail,tlf,direccion;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -44,19 +45,19 @@ public class HomeFragment extends Fragment {
             e.printStackTrace();
         }
 
-        EditText name = root.findViewById(R.id.name_user);
+        name = root.findViewById(R.id.name_user);
         name.setEnabled(false);
         name.setText(User.getNombre());
 
-        EditText mail = root.findViewById(R.id.mail_user);
+        mail = root.findViewById(R.id.mail_user);
         mail.setEnabled(false);
         mail.setText(User.getEmail());
 
-        EditText tlf = root.findViewById(R.id.mobile_user);
+        tlf = root.findViewById(R.id.mobile_user);
         tlf.setEnabled(false);
         tlf.setText(User.getTel());
 
-        EditText direccion = root.findViewById(R.id.address_user);
+        direccion = root.findViewById(R.id.address_user);
         direccion.setEnabled(false);
         direccion.setText(User.getDireccion());
 
@@ -64,6 +65,12 @@ public class HomeFragment extends Fragment {
     }
 
     public void pressEditProfile(View view){
+
+        name.setEnabled(false);
+        mail.setEnabled(false);
+        tlf.setEnabled(false);
+        direccion.setEnabled(false);
+
 
     }
 }
