@@ -32,6 +32,7 @@ public class HomeFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_account, container, false);
 
 
+        //BOTON EDITAR PERFIL
         pressEditProfile = (Button) root.findViewById(R.id.edit_profile);
         pressEditProfile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,21 +48,49 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        //BOTON GUARDAR PERFIL EDITADO
         pressSaveProfile = (Button) root.findViewById(R.id.save_profile);
         pressSaveProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                name.setEnabled(true);
-                mail.setEnabled(true);
-                tlf.setEnabled(true);
-                direccion.setEnabled(true);
+
+                name = root.findViewById(R.id.name_user);
+                String nombre = name.toString();
+                name.setEnabled(false);
+                User.setNombre(nombre);
+
+                mail = root.findViewById(R.id.mail_user);
+                String email = mail.toString();
+                mail.setEnabled(false);
+                User.setEmail(email);
+
+
+                tlf = root.findViewById(R.id.mobile_user);
+                String tel = tlf.toString();
+                tlf.setEnabled(false);
+                User.setTel(tel);
+
+                direccion = root.findViewById(R.id.address_user);
+                String direc = direccion.toString();
+                direccion.setEnabled(false);
+                User.setDireccion(direc);
+
+               /* HiloCliente hilo = new HiloCliente(7, User.getEmail());
+                hilo.start();
+
+                try {
+                    hilo.join();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }*/
+
+                pressEditProfile.setVisibility(View.VISIBLE);
+                pressSaveProfile.setVisibility(View.INVISIBLE);
 
             }
         });
 
-        System.out.println(User.getEmail());
         HiloCliente hilo = new HiloCliente(5, User.getEmail());
-
         hilo.start();
 
         try {
