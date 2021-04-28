@@ -186,8 +186,17 @@
         android:layout_width="409dp"
         android:layout_height="58dp"
         android:height="60dp"
-        android:onClick="eitarTarjeta"
         android:text="EDITAR TARJETA"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/save_card"
+        android:layout_width="409dp"
+        android:layout_height="58dp"
+        android:height="60dp"
+        android:text="GUARDAR INFORMACION"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

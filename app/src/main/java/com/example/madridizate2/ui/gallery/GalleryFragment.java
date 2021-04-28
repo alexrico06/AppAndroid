@@ -21,6 +21,7 @@ public class GalleryFragment extends Fragment {
 
     private GalleryViewModel galleryViewModel;
     String cod;
+    Button pressSaveCard;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -28,14 +29,6 @@ public class GalleryFragment extends Fragment {
         galleryViewModel =
                 new ViewModelProvider(this).get(GalleryViewModel.class);
         View root = inflater.inflate(R.layout.fragment_payment, container, false);
-
-        Button pressEditProfile = (Button) root.findViewById(R.id.edit_profile);
-        pressEditProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
 
         HiloCliente hilo = new HiloCliente(6, User.getEmail());
 
@@ -65,6 +58,39 @@ public class GalleryFragment extends Fragment {
 
         EditText codigo = root.findViewById(R.id.codigo_promocional);
         cod = codigo.getText().toString();
+
+
+        Button pressEditCard = (Button) root.findViewById(R.id.edit_profile);
+        pressEditCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                cardNum.setEnabled(true);
+                fechaCaducidad.setEnabled(true);
+                cvv.setEnabled(true);
+                tipoTarjeta.setEnabled(true);
+
+                pressEditCard.setVisibility(View.INVISIBLE);
+                pressSaveCard.setVisibility(View.VISIBLE);
+
+            }
+        });
+
+        pressSaveCard = (Button) root.findViewById(R.id.edit_profile);
+        pressSaveCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                cardNum.setEnabled(false);
+                fechaCaducidad.setEnabled(false);
+                cvv.setEnabled(false);
+                tipoTarjeta.setEnabled(false);
+
+                pressEditCard.setVisibility(View.VISIBLE);
+                pressEditCard.setVisibility(View.INVISIBLE);
+
+            }
+        });
 
         return root;
     }

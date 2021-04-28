@@ -176,7 +176,7 @@ public class HiloCliente extends Thread{
                 break;
             case 6:
 
-                System.out.println(dni);
+                System.out.println(texto);
                 try {
                     dos.writeUTF(texto);
                 } catch (IOException e) {
