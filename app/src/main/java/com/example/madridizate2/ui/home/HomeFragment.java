@@ -34,7 +34,6 @@ public class HomeFragment extends Fragment {
         pressEditProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mail.setEnabled(true);
                 tlf.setEnabled(true);
                 calle.setEnabled(true);
                 numero.setEnabled(true);
@@ -54,14 +53,6 @@ public class HomeFragment extends Fragment {
         pressSaveProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                name = root.findViewById(R.id.name_user);
-                String nombre = name.toString();
-                name.setEnabled(false);
-
-                mail = root.findViewById(R.id.mail_user);
-                String email = mail.toString();
-                mail.setEnabled(false);
 
                 tlf = root.findViewById(R.id.mobile_user);
                 String tel = tlf.toString();
