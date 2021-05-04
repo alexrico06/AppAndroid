@@ -168,6 +168,12 @@ public class HiloCliente extends Thread{
                     User.setNombre(dis.readUTF());
                     User.setTel(dis.readUTF());
                     User.setDireccion(dis.readUTF());
+                    /*User.setCalle(dis.readUTF());
+                    User.setNumero(dis.readUTF());
+                    User.setPortal(dis.readUTF());
+                    User.setPiso(dis.readUTF());
+                    User.setCiudad(dis.readUTF());
+                    User.setCp(dis.readUTF());*/
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

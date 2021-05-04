@@ -1,6 +1,5 @@
 package com.example.madridizate2.ui.home;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,14 +12,13 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.madridizate2.HiloCliente;
-import com.example.madridizate2.MainActivity;
 import com.example.madridizate2.R;
 import com.example.madridizate2.User;
 
 public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
-    EditText name,mail,tlf,direccion;
+    EditText name,mail,tlf,calle, numero, portal, piso, ciudad, codigoPostal;
 
     Button pressEditProfile;
     Button pressSaveProfile;
@@ -36,10 +34,14 @@ public class HomeFragment extends Fragment {
         pressEditProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                name.setEnabled(true);
                 mail.setEnabled(true);
                 tlf.setEnabled(true);
-                direccion.setEnabled(true);
+                calle.setEnabled(true);
+                numero.setEnabled(true);
+                portal.setEnabled(true);
+                piso.setEnabled(true);
+                ciudad.setEnabled(true);
+                codigoPostal.setEnabled(true);
 
                 pressEditProfile.setVisibility(View.INVISIBLE);
                 pressSaveProfile.setVisibility(View.VISIBLE);
@@ -65,11 +67,31 @@ public class HomeFragment extends Fragment {
                 String tel = tlf.toString();
                 tlf.setEnabled(false);
 
-                direccion = root.findViewById(R.id.address_user);
-                String direc = direccion.toString();
-                direccion.setEnabled(false);
+                calle = root.findViewById(R.id.calle);
+                String direc = calle.toString();
+                calle.setEnabled(false);
 
-               /* HiloCliente hilo = new HiloCliente(7, User.getEmail());
+                numero = root.findViewById(R.id.numero_calle);
+                String num = numero.toString();
+                numero.setEnabled(false);
+
+                portal = root.findViewById(R.id.portal);
+                String port = portal.toString();
+                portal.setEnabled(false);
+
+                piso = root.findViewById(R.id.piso);
+                String pisoo = piso.toString();
+                piso.setEnabled(false);
+
+                ciudad = root.findViewById(R.id.ciudad);
+                String city = ciudad.toString();
+                ciudad.setEnabled(false);
+
+                codigoPostal = root.findViewById(R.id.codigo_postal);
+                String cp = codigoPostal.toString();
+                codigoPostal.setEnabled(false);
+
+                /*HiloCliente hilo = new HiloCliente(7, User.getEmail());
                 hilo.start();
 
                 try {
@@ -105,9 +127,30 @@ public class HomeFragment extends Fragment {
         tlf.setEnabled(false);
         tlf.setText(User.getTel());
 
-        direccion = root.findViewById(R.id.address_user);
-        direccion.setEnabled(false);
-        direccion.setText(User.getDireccion());
+        calle = root.findViewById(R.id.calle);
+        calle.setEnabled(false);
+        calle.setText(User.getDireccion());
+
+        numero = root.findViewById(R.id.numero_calle);
+        numero.setEnabled(false);
+        numero.setText(User.getNumero());
+
+        portal = root.findViewById(R.id.portal);
+        portal.setEnabled(false);
+        portal.setText(User.getPortal());
+
+        piso = root.findViewById(R.id.piso);
+        piso.setEnabled(false);
+        piso.setText(User.getPiso());
+
+        ciudad = root.findViewById(R.id.ciudad);
+        ciudad.setEnabled(false);
+        ciudad.setText(User.getCiudad());
+
+        codigoPostal = root.findViewById(R.id.codigo_postal);
+        codigoPostal.setEnabled(false);
+        codigoPostal.setText(User.getCp());
+
 
         return root;
     }
