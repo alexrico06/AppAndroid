@@ -86,17 +86,25 @@ public class GalleryFragment extends Fragment {
                 cvv.setEnabled(false);
                 tipoTarjeta.setEnabled(false);
 
-                /*HiloCliente hilo = new HiloCliente(8, User.getEmail());
-                hilo.start();
+                String[] datosT = new String[4];
 
-                try {
-                    hilo.join();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }*/
+                datosT[0] = cardNum.toString();
+                datosT[1] = fechaCaducidad.toString();
+                datosT[2] = cvv.toString();
+                datosT[3] = tipoTarjeta.toString();
+
+                HiloCliente hilo = new HiloCliente(8, datosT, User.getEmail());
+                hilo.start();
 
                 pressSaveCard.setVisibility(View.INVISIBLE);
                 pressEditCard.setVisibility(View.VISIBLE);
+
+/*
+                User.setNumTarjeta(cardNum.toString());
+                User.setFechaCaducidad(fechaCaducidad.toString());
+                User.setCvv(cvv.toString());
+                User.setTipoTarjeta(tipoTarjeta.toString());
+                */
 
             }
         });

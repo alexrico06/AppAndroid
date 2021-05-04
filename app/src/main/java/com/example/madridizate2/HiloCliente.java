@@ -25,22 +25,17 @@ public class HiloCliente extends Thread{
 
     public String dni;
     public String correo;
-    public String nombre;
-    public String telefono;
-    public String direccion;
+
     String contrasena;
     String texto;
-
-
-    String numt;
-    String cvv;
-    String dateCaduc;
+    char letra;
 
     public ArrayList<String[]> listaResultados;
     String[] datosP = new String[7];
     String[] datosD = new String[5];
     String[] datosV = new String[5];
     String[] datosT = new String[4];
+    String [] datos;
     int consulta;
     boolean existe;
 
@@ -63,21 +58,25 @@ public class HiloCliente extends Thread{
         this.datosV = datosV;
     }
 
-
+    //LISTADO PLAZAS
     public HiloCliente(int consulta) {
         this.consulta=consulta;
     }
 
+    //INFORMACION USUARIO
+    //INFORMACION TARJETA
     public HiloCliente(int consulta, String texto) {
         this.consulta=consulta;
         this.texto=texto;
     }
 
-    //INSERTAR TARJETA
-    public HiloCliente(int consulta,String[] datosT,String dni) {
+    //MODIFICAR TARJETA
+    //
+    public HiloCliente(int consulta,String[] datos,String correo,char letra) {
         this.consulta = consulta;
-        this.datosT = datosT;
-        this.dni = dni;
+        this.datos = datos;
+        this.correo = correo;
+        this.letra = letra;
     }
 
     @Override
@@ -175,6 +174,7 @@ public class HiloCliente extends Thread{
 
                 break;
             case 6:
+                Boolean flag;
 
                 System.out.println(texto);
                 try {
@@ -183,8 +183,8 @@ public class HiloCliente extends Thread{
                     e.printStackTrace();
                 }
                 try {
+
                     dis = new DataInputStream(s.getInputStream());
-                    Boolean flag;
                     flag = dis.readBoolean();
                     System.out.println(flag);
                     if(flag){
@@ -209,16 +209,30 @@ public class HiloCliente extends Thread{
                 break;
 
             case 7:
+                try {
+
+                if(letra == 'a'){
+                    dos.writeChar('u');
+                }else{
+                    dos.writeChar('t');
+                }
+
+                } catch (IOException e) {
+                e.printStackTrace();
+                }
 
                 try {
+
                     oos = new ObjectOutputStream(s.getOutputStream());
-                    oos.writeObject(datosT);
-                    dos.writeUTF(dni);
+                    dos.writeUTF(correo);
+                    oos.writeObject(datos);
+
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
 
                 break;
+
         }
 
     }
