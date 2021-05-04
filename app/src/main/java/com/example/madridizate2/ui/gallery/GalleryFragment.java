@@ -30,8 +30,8 @@ public class GalleryFragment extends Fragment {
                 new ViewModelProvider(this).get(GalleryViewModel.class);
         View root = inflater.inflate(R.layout.fragment_payment, container, false);
 
-        HiloCliente hilo = new HiloCliente(6, User.getEmail());
 
+        HiloCliente hilo = new HiloCliente(6, User.getEmail());
         hilo.start();
 
         try {
@@ -60,7 +60,7 @@ public class GalleryFragment extends Fragment {
         cod = codigo.getText().toString();
 
 
-        Button pressEditCard = (Button) root.findViewById(R.id.edit_profile);
+        Button pressEditCard = (Button) root.findViewById(R.id.edit_card);
         pressEditCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -76,7 +76,7 @@ public class GalleryFragment extends Fragment {
             }
         });
 
-        pressSaveCard = (Button) root.findViewById(R.id.edit_profile);
+        pressSaveCard = (Button) root.findViewById(R.id.save_card);
         pressSaveCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,8 +86,17 @@ public class GalleryFragment extends Fragment {
                 cvv.setEnabled(false);
                 tipoTarjeta.setEnabled(false);
 
+                /*HiloCliente hilo = new HiloCliente(8, User.getEmail());
+                hilo.start();
+
+                try {
+                    hilo.join();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }*/
+
+                pressSaveCard.setVisibility(View.INVISIBLE);
                 pressEditCard.setVisibility(View.VISIBLE);
-                pressEditCard.setVisibility(View.INVISIBLE);
 
             }
         });

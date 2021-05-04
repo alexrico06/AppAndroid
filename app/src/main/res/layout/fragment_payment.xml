@@ -32,6 +32,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
             android:orientation="horizontal"
             android:paddingTop="15dp"
             android:paddingRight="15dp">
@@ -58,6 +60,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
             android:orientation="horizontal">
 
             <TextView
@@ -81,6 +85,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
             android:orientation="horizontal">
 
             <TextView
@@ -103,6 +109,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
             android:orientation="horizontal">
 
             <TextView
@@ -135,6 +143,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
             android:orientation="horizontal"
             android:paddingTop="15dp"
             android:paddingBottom="15dp">
@@ -157,11 +167,15 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginRight="2dp"
             android:orientation="horizontal">
 
             <EditText
                 android:id="@+id/codigo_promocional"
-                android:layout_width="326dp"
+                android:layout_width="273dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="CÓDIGO PROMOCIONAL"
@@ -172,9 +186,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:enabled="false"
                 android:onClick="canjear"
                 android:text="+"
-                android:enabled="false"
                 android:textSize="24sp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -197,6 +211,7 @@
         android:layout_height="58dp"
         android:height="60dp"
         android:text="GUARDAR INFORMACION"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

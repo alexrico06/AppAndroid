@@ -187,6 +187,7 @@ public class HiloCliente extends Thread{
                     User.setNumTarjeta(dis.readUTF());
                     User.setCvv(dis.readUTF());
                     User.setFechaCaducidad(dis.readUTF());
+                    User.setTipoTarjeta(dis.readUTF());
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

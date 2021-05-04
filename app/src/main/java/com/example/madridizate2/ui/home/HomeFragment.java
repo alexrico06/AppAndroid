@@ -31,7 +31,6 @@ public class HomeFragment extends Fragment {
                 new ViewModelProvider(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_account, container, false);
 
-
         //BOTON EDITAR PERFIL
         pressEditProfile = (Button) root.findViewById(R.id.edit_profile);
         pressEditProfile.setOnClickListener(new View.OnClickListener() {
@@ -57,23 +56,18 @@ public class HomeFragment extends Fragment {
                 name = root.findViewById(R.id.name_user);
                 String nombre = name.toString();
                 name.setEnabled(false);
-                User.setNombre(nombre);
 
                 mail = root.findViewById(R.id.mail_user);
                 String email = mail.toString();
                 mail.setEnabled(false);
-                User.setEmail(email);
-
 
                 tlf = root.findViewById(R.id.mobile_user);
                 String tel = tlf.toString();
                 tlf.setEnabled(false);
-                User.setTel(tel);
 
                 direccion = root.findViewById(R.id.address_user);
                 String direc = direccion.toString();
                 direccion.setEnabled(false);
-                User.setDireccion(direc);
 
                /* HiloCliente hilo = new HiloCliente(7, User.getEmail());
                 hilo.start();
