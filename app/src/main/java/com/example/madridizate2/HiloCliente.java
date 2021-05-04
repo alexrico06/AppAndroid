@@ -184,10 +184,25 @@ public class HiloCliente extends Thread{
                 }
                 try {
                     dis = new DataInputStream(s.getInputStream());
-                    User.setNumTarjeta(dis.readUTF());
-                    User.setCvv(dis.readUTF());
-                    User.setFechaCaducidad(dis.readUTF());
-                    User.setTipoTarjeta(dis.readUTF());
+                    Boolean flag;
+                    flag = dis.readBoolean();
+                    System.out.println(flag);
+                    if(flag){
+
+                        User.setNumTarjeta(dis.readUTF());
+                        User.setCvv(dis.readUTF());
+                        User.setFechaCaducidad(dis.readUTF());
+                        User.setTipoTarjeta(dis.readUTF());
+
+                    }else{
+
+                        User.setNumTarjeta("");
+                        User.setCvv("");
+                        User.setFechaCaducidad("");
+                        User.setTipoTarjeta("");
+
+                    }
+
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
