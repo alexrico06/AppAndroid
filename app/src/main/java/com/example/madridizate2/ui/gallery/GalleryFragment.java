@@ -93,7 +93,13 @@ public class GalleryFragment extends Fragment {
                 datosT[2] = cvv.toString();
                 datosT[3] = tipoTarjeta.toString();
 
-                HiloCliente hilo = new HiloCliente(8, datosT, User.getEmail());
+                System.out.println(datosT[0]);
+                System.out.println(datosT[0]);
+                System.out.println(datosT[0]);
+                System.out.println(datosT[0]);
+
+
+                HiloCliente hilo = new HiloCliente(7, datosT, User.getEmail(),'t');
                 hilo.start();
 
                 pressSaveCard.setVisibility(View.INVISIBLE);

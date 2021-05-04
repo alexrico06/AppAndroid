@@ -92,11 +92,4 @@ public class RegistrarUserActivity extends AppCompatActivity {
         }
     }
 
-    public static String[] getDatosP() {
-        return datosP;
-    }
-
-    public void setDatosP(String[] datosP) {
-        this.datosP = datosP;
-    }
 }

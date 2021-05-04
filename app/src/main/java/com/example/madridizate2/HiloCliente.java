@@ -217,11 +217,11 @@ public class HiloCliente extends Thread{
             case 7:
                 try {
 
-                if(letra == 'a'){
-                    dos.writeChar('u');
-                }else{
-                    dos.writeChar('t');
-                }
+                    if(letra == 'a'){
+                        dos.writeChar('u');
+                    }else{
+                        dos.writeChar('t');
+                    }
 
                 } catch (IOException e) {
                 e.printStackTrace();
@@ -229,8 +229,9 @@ public class HiloCliente extends Thread{
 
                 try {
 
-                    oos = new ObjectOutputStream(s.getOutputStream());
                     dos.writeUTF(correo);
+
+                    oos = new ObjectOutputStream(s.getOutputStream());
                     oos.writeObject(datos);
 
                 } catch (IOException e) {
