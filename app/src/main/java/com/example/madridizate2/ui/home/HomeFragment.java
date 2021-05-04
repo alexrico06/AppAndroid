@@ -91,14 +91,17 @@ public class HomeFragment extends Fragment {
                 String cp = codigoPostal.toString();
                 codigoPostal.setEnabled(false);
 
-                /*HiloCliente hilo = new HiloCliente(7, User.getEmail());
+                String[] datos = new String[6];
+                datos[0] = tlf.getText().toString();
+
+                HiloCliente hilo = new HiloCliente(7, datos,User.getEmail(),'u');
                 hilo.start();
 
                 try {
                     hilo.join();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
-                }*/
+                }
 
                 pressEditProfile.setVisibility(View.VISIBLE);
                 pressSaveProfile.setVisibility(View.INVISIBLE);
@@ -129,7 +132,7 @@ public class HomeFragment extends Fragment {
 
         calle = root.findViewById(R.id.calle);
         calle.setEnabled(false);
-        calle.setText(User.getDireccion());
+        calle.setText(User.getCalle());
 
         numero = root.findViewById(R.id.numero_calle);
         numero.setEnabled(false);
