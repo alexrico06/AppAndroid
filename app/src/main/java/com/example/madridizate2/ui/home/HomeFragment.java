@@ -55,35 +55,34 @@ public class HomeFragment extends Fragment {
             public void onClick(View v) {
 
                 tlf = root.findViewById(R.id.mobile_user);
-                String tel = tlf.toString();
                 tlf.setEnabled(false);
 
                 calle = root.findViewById(R.id.calle);
-                String direc = calle.toString();
                 calle.setEnabled(false);
 
                 numero = root.findViewById(R.id.numero_calle);
-                String num = numero.toString();
                 numero.setEnabled(false);
 
                 portal = root.findViewById(R.id.portal);
-                String port = portal.toString();
                 portal.setEnabled(false);
 
                 piso = root.findViewById(R.id.piso);
-                String pisoo = piso.toString();
                 piso.setEnabled(false);
 
                 ciudad = root.findViewById(R.id.ciudad);
-                String city = ciudad.toString();
                 ciudad.setEnabled(false);
 
                 codigoPostal = root.findViewById(R.id.codigo_postal);
-                String cp = codigoPostal.toString();
                 codigoPostal.setEnabled(false);
 
-                String[] datos = new String[6];
+                String[] datos = new String[7];
                 datos[0] = tlf.getText().toString();
+                datos[1] = calle.getText().toString();
+                datos[2] = numero.getText().toString();
+                datos[3] = portal.getText().toString();
+                datos[4] = piso.getText().toString();
+                datos[5] = ciudad.getText().toString();
+                datos[6] = codigoPostal.getText().toString();
 
                 HiloCliente hilo = new HiloCliente(7, datos,User.getEmail(),'u');
                 hilo.start();
