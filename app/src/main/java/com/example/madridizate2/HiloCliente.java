@@ -217,7 +217,7 @@ public class HiloCliente extends Thread{
             case 7:
                 try {
 
-                    if(letra == 'a'){
+                    if(letra == 'u'){
                         dos.writeChar('u');
                     }else{
                         dos.writeChar('t');
