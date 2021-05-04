@@ -88,16 +88,10 @@ public class GalleryFragment extends Fragment {
 
                 String[] datosT = new String[4];
 
-                datosT[0] = cardNum.toString();
-                datosT[1] = fechaCaducidad.toString();
-                datosT[2] = cvv.toString();
-                datosT[3] = tipoTarjeta.toString();
-
-                System.out.println(datosT[0]);
-                System.out.println(datosT[0]);
-                System.out.println(datosT[0]);
-                System.out.println(datosT[0]);
-
+                datosT[0] = cardNum.getText().toString();
+                datosT[1] = fechaCaducidad.getText().toString();
+                datosT[2] = cvv.getText().toString();
+                datosT[3] = tipoTarjeta.getText().toString();
 
                 HiloCliente hilo = new HiloCliente(7, datosT, User.getEmail(),'t');
                 hilo.start();
