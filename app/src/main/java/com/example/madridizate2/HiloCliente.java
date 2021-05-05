@@ -71,7 +71,7 @@ public class HiloCliente extends Thread{
     }
 
     //MODIFICAR TARJETA
-    //
+    //MODIFICAR DATOS USUARIO
     public HiloCliente(int consulta,String[] datos,String correo,char letra) {
         this.consulta = consulta;
         this.datos = datos;

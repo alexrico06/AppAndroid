@@ -81,8 +81,8 @@ public class HomeFragment extends Fragment {
                 datos[2] = numero.getText().toString();
                 datos[3] = portal.getText().toString();
                 datos[4] = piso.getText().toString();
-                datos[5] = ciudad.getText().toString();
-                datos[6] = codigoPostal.getText().toString();
+                datos[5] = codigoPostal.getText().toString();
+                datos[6] = ciudad.getText().toString();
 
                 HiloCliente hilo = new HiloCliente(7, datos,User.getEmail(),'u');
                 hilo.start();
