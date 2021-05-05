@@ -1,5 +1,6 @@
 package com.example.madridizate2;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,6 +26,15 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.MyViewHolder> {
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             direccion = itemView.findViewById(R.id.parking_direccion);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i = new Intent(itemView.getContext(),ReservaParking.class);
+                    i.putExtra("direccion", direccion.getText().toString());
+                    itemView.getContext().startActivity(i);
+                }
+            });
         }
     }
 

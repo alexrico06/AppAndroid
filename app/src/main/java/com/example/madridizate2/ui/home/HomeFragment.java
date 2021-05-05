@@ -1,5 +1,6 @@
 package com.example.madridizate2.ui.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,8 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.madridizate2.HiloCliente;
 import com.example.madridizate2.R;
+import com.example.madridizate2.RegistrarUserActivity;
+import com.example.madridizate2.RegistrarVehiculoActivity;
 import com.example.madridizate2.User;
 
 public class HomeFragment extends Fragment {
@@ -22,6 +25,7 @@ public class HomeFragment extends Fragment {
 
     Button pressEditProfile;
     Button pressSaveProfile;
+    Button adminVehiculos;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -98,6 +102,17 @@ public class HomeFragment extends Fragment {
 
             }
         });
+
+        //BOTON ADMINISTRAR VEHICULOS
+        adminVehiculos = (Button) root.findViewById(R.id.admin_vehiculos);
+        adminVehiculos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(), RegistrarVehiculoActivity.class);
+                startActivity(i);
+            }
+        });
+
 
         HiloCliente hilo = new HiloCliente(5, User.getEmail());
         hilo.start();
