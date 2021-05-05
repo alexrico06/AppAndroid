@@ -39,6 +39,7 @@ public class HiloCliente extends Thread{
     int consulta;
     boolean existe;
 
+    //VERIFICAR USUARIO
     public HiloCliente(int consulta, String correo, String contrasena) {
         this.correo = correo;
         this.contrasena = contrasena;
@@ -65,6 +66,7 @@ public class HiloCliente extends Thread{
 
     //INFORMACION USUARIO
     //INFORMACION TARJETA
+    //INFORMACION VEHICULOS
     public HiloCliente(int consulta, String texto) {
         this.consulta=consulta;
         this.texto=texto;
@@ -240,6 +242,26 @@ public class HiloCliente extends Thread{
 
                 break;
 
+            case 8:
+
+                try {
+                    dos.writeUTF(texto);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                ArrayList<String> listaApodos = new ArrayList<>();
+                ObjectInputStream ois2 = null;
+
+                try {
+                    ois2 =new ObjectInputStream(s.getInputStream());
+                    listaApodos = (ArrayList<String>) ois2.readObject();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                }
+
+                break;
         }
 
     }

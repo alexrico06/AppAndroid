@@ -26,7 +26,9 @@ public class RegistrarUserActivity extends AppCompatActivity {
         insertarUsuario();
 
         Intent i = new Intent(this, RegistrarVehiculoActivity.class);
-        i.putExtra("DNI",datosP[0]);
+
+
+        //i.putExtra("DNI",datosP[0]);
         startActivity(i);
     }
 
@@ -42,6 +44,7 @@ public class RegistrarUserActivity extends AppCompatActivity {
 
         EditText dni = findViewById(R.id.textDNI);
         datosP[0] = dni.getText().toString();
+        User.setDni(datosP[0]);
 
         EditText nombre = findViewById(R.id.textNombre);
         datosP[1] = nombre.getText().toString();
