@@ -109,6 +109,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getActivity(), RegistrarVehiculoActivity.class);
+                i.putExtra("registro","B");
                 startActivity(i);
             }
         });

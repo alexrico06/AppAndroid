@@ -23,6 +23,40 @@ public class RegistrarVehiculoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrar_vehiculo);
 
+        Intent i = getIntent();
+        String ruta = i.getStringExtra("registro");
+
+
+        if(ruta.equals("A")){
+
+            Button insertar = findViewById(R.id.buttonInsertarVehiculo);
+            insertar.setVisibility(View.INVISIBLE);
+
+            Button guardar = findViewById(R.id.buttonGuardarVehiculo);
+            guardar.setVisibility(View.VISIBLE);
+
+            EditText alias = findViewById(R.id.textAlias);
+            alias.setVisibility(View.VISIBLE);
+
+            Spinner spinner = findViewById(R.id.planets_spinner);
+            spinner.setVisibility(View.GONE);
+
+        }else{
+            EditText matricula = findViewById(R.id.textMatricula);
+            matricula.setEnabled(false);
+
+            EditText marca = findViewById(R.id.textMarca);
+            marca.setEnabled(false);
+
+            EditText modelo = findViewById(R.id.textModelo);
+            modelo.setEnabled(false);
+
+            EditText tamano = findViewById(R.id.textTamaño);
+            tamano.setEnabled(false);
+
+
+        }
+
         String correo;
         correo = User.getEmail();
 
@@ -49,6 +83,9 @@ public class RegistrarVehiculoActivity extends AppCompatActivity {
         EditText modelo = findViewById(R.id.textModelo);
         modelo.setEnabled(true);
 
+        EditText tamano = findViewById(R.id.textTamaño);
+        tamano.setEnabled(true);
+
         EditText alias = findViewById(R.id.textAlias);
         alias.setVisibility(View.VISIBLE);
 
@@ -58,7 +95,9 @@ public class RegistrarVehiculoActivity extends AppCompatActivity {
 
     public void guardarVehiculo(View view) {
 
+        datosV[4]= User.getEmail();
         System.out.println(datosV[4]);
+
 
         RadioButton moto = findViewById(R.id.radioButtonMoto);
         RadioButton coche = findViewById(R.id.radioButtonCoche);
@@ -79,6 +118,8 @@ public class RegistrarVehiculoActivity extends AppCompatActivity {
             datosV[1]="c";
         }else if(furgoneta.isChecked()){
             datosV[1]="f";
+        }else{
+            datosV[1]="n";
         }
 
         System.out.println(datosV[1]);
