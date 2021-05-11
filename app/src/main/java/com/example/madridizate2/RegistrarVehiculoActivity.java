@@ -40,6 +40,15 @@ public class RegistrarVehiculoActivity extends AppCompatActivity {
         Button guardar = findViewById(R.id.buttonGuardarVehiculo);
         guardar.setVisibility(View.VISIBLE);
 
+        EditText matricula = findViewById(R.id.textMatricula);
+        matricula.setEnabled(true);
+
+        EditText marca = findViewById(R.id.textMarca);
+        marca.setEnabled(true);
+
+        EditText modelo = findViewById(R.id.textModelo);
+        modelo.setEnabled(true);
+
         EditText alias = findViewById(R.id.textAlias);
         alias.setVisibility(View.VISIBLE);
 

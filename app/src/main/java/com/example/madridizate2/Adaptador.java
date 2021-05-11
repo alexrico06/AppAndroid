@@ -51,7 +51,7 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.MyViewHolder> {
     public void onBindViewHolder(@NonNull Adaptador.MyViewHolder holder, int position) {
 
         String[] plaza = listaPlazas.get(position);
-        holder.direccion.setText(plaza[0]+"-"+plaza[1]+"-"+plaza[2]);
+        holder.direccion.setText(plaza[1]);
 
     }
 

@@ -73,7 +73,7 @@ public class PlaceholderFragment extends Fragment {
         }
 
         for (String[] plaza: hilo.listaResultados) {
-            System.out.println(plaza[0] +"-"+plaza[1] +"-"+plaza[2]);
+            System.out.println(plaza[0] +"-"+plaza[1]);
         }
 
         RecyclerView.Adapter miAdaptador = new Adaptador(hilo.listaResultados);
