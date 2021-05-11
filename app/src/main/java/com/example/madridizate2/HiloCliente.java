@@ -86,7 +86,7 @@ public class HiloCliente extends Thread{
 
         try {
             //s = new Socket("192.168.1.18", 1522);
-            s = new Socket("87.219.49.39", 1522);
+            s = new Socket("37.11.224.72", 1522);
         } catch (IOException e) {
             e.printStackTrace();
         }

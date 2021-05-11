@@ -23,7 +23,6 @@ public class RegistrarVehiculoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrar_vehiculo);
 
-
         String correo;
         correo = User.getEmail();
 
@@ -97,7 +96,6 @@ public class RegistrarVehiculoActivity extends AppCompatActivity {
         //eliminar vehiculo según la matricula
         HiloCliente hilo = new HiloCliente(3,matricula.getText().toString());
         hilo.start();
-
 
     }
 
