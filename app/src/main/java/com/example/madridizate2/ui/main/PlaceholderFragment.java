@@ -54,7 +54,14 @@ public class PlaceholderFragment extends Fragment {
     public View onCreateView(
             @NonNull LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_parkings, container, false);
+
+        View root = inflater.inflate(R.layout.activity_listado_parkings, container, false);
+
+
+
+
+
+/*
 
 
         HiloCliente hilo = new HiloCliente(4);
@@ -79,6 +86,10 @@ public class PlaceholderFragment extends Fragment {
         RecyclerView.Adapter miAdaptador = new Adaptador(hilo.listaResultados);
         listaplazas.setAdapter(miAdaptador);
 
+
+*/
+
         return root;
+
     }
 }
