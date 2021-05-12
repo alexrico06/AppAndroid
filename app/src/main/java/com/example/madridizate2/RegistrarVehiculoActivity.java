@@ -165,7 +165,7 @@ public class RegistrarVehiculoActivity extends AppCompatActivity implements Adap
 
         //eliminar vehiculo según la matricula
         HiloCliente hilo = new HiloCliente(3,matricula.getText().toString());
-        hilo.start();
+        //hilo.start();
 
     }
 
