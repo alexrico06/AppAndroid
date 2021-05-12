@@ -9,6 +9,7 @@ public class User {
     static String email;
     static String fechaNacimiento;
     static String password;
+
     static String calle;
     static String numero;
     static String portal;
@@ -19,10 +20,13 @@ public class User {
     static String fechaCaducidad;
     static String cvv;
     static String tipoTarjeta;
+
+    static String matricula;
     static String tipoVehiculo;
     static String marcaVehiculo;
     static String modeloVehiculo;
-    static String matricula;
+    static String tamanoVehiculo;
+
     static String direccion;
     static String codigoPromocional;
 
@@ -208,5 +212,13 @@ public class User {
 
     public static void setCodigoPromocional(String codigoPromocional) {
         User.codigoPromocional = codigoPromocional;
+    }
+
+    public static String getTamanoVehiculo() {
+        return tamanoVehiculo;
+    }
+
+    public static void setTamanoVehiculo(String tamanoVehiculo) {
+        User.tamanoVehiculo = tamanoVehiculo;
     }
 }

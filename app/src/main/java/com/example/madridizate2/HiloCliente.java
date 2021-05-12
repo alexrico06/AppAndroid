@@ -31,10 +31,11 @@ public class HiloCliente extends Thread{
     char letra;
 
     public ArrayList<String[]> listaResultados;
+    public ArrayList<String> listaApodos = new ArrayList<>();
     String[] datosP = new String[7];
     String[] datosD = new String[5];
     String[] datosV = new String[5];
-    String[] datosT = new String[4];
+    //String[] datosT = new String[4];
     String [] datos;
     int consulta;
     boolean existe;
@@ -64,9 +65,10 @@ public class HiloCliente extends Thread{
         this.consulta=consulta;
     }
 
-    //INFORMACION USUARIO
-    //INFORMACION TARJETA
-    //INFORMACION VEHICULOS
+    //INFORMACION USUARIO POR CORREO
+    //INFORMACION TARJETA POR CORREO
+    //INFORMACION ALIAS VEHICULOS POR CORREO
+    //INFORMACION VEHICULOS POR ALIAS
     public HiloCliente(int consulta, String texto) {
         this.consulta=consulta;
         this.texto=texto;
@@ -249,7 +251,7 @@ public class HiloCliente extends Thread{
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                ArrayList<String> listaApodos = new ArrayList<>();
+
                 ObjectInputStream ois2 = null;
 
                 try {
@@ -258,6 +260,36 @@ public class HiloCliente extends Thread{
                 } catch (IOException e) {
                     e.printStackTrace();
                 } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                }
+
+                break;
+
+            case 9:
+
+                try {
+                    dos.writeUTF(texto);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+
+                DataInputStream dataInputStream = null;
+                try {
+                    dataInputStream = new DataInputStream(s.getInputStream());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                try {
+
+                    User.setMatricula(dataInputStream.readUTF());
+                    User.setTipoVehiculo(dataInputStream.readUTF());
+                    User.setMarcaVehiculo(dataInputStream.readUTF());
+                    User.setModeloVehiculo(dataInputStream.readUTF());
+                    User.setTamanoVehiculo(dataInputStream.readUTF());
+
+                } catch (IOException e) {
                     e.printStackTrace();
                 }
 

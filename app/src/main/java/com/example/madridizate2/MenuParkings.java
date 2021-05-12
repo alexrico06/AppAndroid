@@ -22,6 +22,7 @@ public class MenuParkings extends AppCompatActivity {
         tabLayout = (TabLayout) findViewById(R.id.tablayout);
         tab1 = (TabItem) findViewById(R.id.listado_parkings);
         tab2 = (TabItem) findViewById(R.id.mapa_parkings);
+
         viewPager = findViewById(R.id.view_pager);
 
         pageAdapter = new PageAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
