@@ -11,10 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Madridizate2">
-        <activity
-            android:name=".ListadoParkings"
-            android:label="@string/title_activity_listado_parkings"
-            android:theme="@style/Theme.Madridizate2.NoActionBar"></activity>
+        <activity android:name=".MenuParkings"></activity>
         <activity android:name=".ReservaParking" />
         <activity android:name=".RegistrarVehiculoActivity" />
         <activity android:name=".RegistrarUserActivity" />
