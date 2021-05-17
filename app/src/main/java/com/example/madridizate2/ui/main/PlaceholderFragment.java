@@ -1,5 +1,6 @@
 package com.example.madridizate2.ui.main;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.madridizate2.Adaptador;
 import com.example.madridizate2.HiloCliente;
+import com.example.madridizate2.MenuParkings;
 import com.example.madridizate2.R;
 import com.example.madridizate2.ui.slideshow.SlideshowFragment;
 
@@ -47,6 +49,9 @@ public class PlaceholderFragment extends Fragment {
             index = getArguments().getInt(ARG_SECTION_NUMBER);
         }
         pageViewModel.setIndex(index);
+
+        Intent i = new Intent(getContext(), MenuParkings.class);
+        startActivity(i);
 
     }
 

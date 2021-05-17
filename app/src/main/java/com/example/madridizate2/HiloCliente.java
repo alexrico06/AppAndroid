@@ -289,7 +289,7 @@ public class HiloCliente extends Thread{
                     User.setModeloVehiculo(dataInputStream.readUTF());
                     User.setTamanoVehiculo(dataInputStream.readUTF());
 
-                    System.out.println( User.getTipoVehiculo());
+                    //System.out.println(User.getTipoVehiculo());
 
                 } catch (IOException e) {
                     e.printStackTrace();

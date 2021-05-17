@@ -12,11 +12,13 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 
+import com.example.madridizate2.ui.home.HomeFragment;
+
 import java.util.ArrayList;
 
 public class RegistrarVehiculoActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    String[] datosV = new String[5];
+    String[] datosV = new String[7];
     EditText matricula;
     EditText marca;
     EditText modelo;
@@ -31,6 +33,10 @@ public class RegistrarVehiculoActivity extends AppCompatActivity implements Adap
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrar_vehiculo);
+
+        moto = findViewById(R.id.radioButtonMoto);
+        coche = findViewById(R.id.radioButtonCoche);
+        furgoneta = findViewById(R.id.radioButtonFurgoneta);
 
         Intent intent = getIntent();
         String ruta = intent.getStringExtra("registro");
@@ -49,6 +55,10 @@ public class RegistrarVehiculoActivity extends AppCompatActivity implements Adap
             Spinner spinner = findViewById(R.id.alias_spinner);
             spinner.setVisibility(View.GONE);
 
+            moto.setEnabled(true);
+            coche.setEnabled(true);
+            furgoneta.setEnabled(true);
+
         }else{
             matricula = findViewById(R.id.textMatricula);
             matricula.setEnabled(false);
@@ -61,6 +71,10 @@ public class RegistrarVehiculoActivity extends AppCompatActivity implements Adap
 
             tamano = findViewById(R.id.textTamaño);
             tamano.setEnabled(false);
+
+            moto.setEnabled(false);
+            coche.setEnabled(false);
+            furgoneta.setEnabled(false);
 
             System.out.println(User.getEmail());
 
@@ -76,7 +90,6 @@ public class RegistrarVehiculoActivity extends AppCompatActivity implements Adap
 
             spinner_alias = (Spinner) findViewById(R.id.alias_spinner);
 
-
             ArrayList<String> listaAlias = hilo.listaApodos;
 
             spinner_alias.setAdapter(new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, listaAlias));
@@ -88,6 +101,9 @@ public class RegistrarVehiculoActivity extends AppCompatActivity implements Adap
 
     public void insertarVehiculo(View view) {
 
+        Button eliminar = findViewById(R.id.buttonElimarVehiculo);
+        eliminar.setVisibility(View.INVISIBLE);
+
         Button insertar = findViewById(R.id.buttonInsertarVehiculo);
         insertar.setVisibility(View.INVISIBLE);
 
@@ -95,33 +111,38 @@ public class RegistrarVehiculoActivity extends AppCompatActivity implements Adap
         guardar.setVisibility(View.VISIBLE);
 
         EditText matricula = findViewById(R.id.textMatricula);
+        matricula.setText("");
         matricula.setEnabled(true);
 
         EditText marca = findViewById(R.id.textMarca);
+        marca.setText("");
         marca.setEnabled(true);
 
         EditText modelo = findViewById(R.id.textModelo);
+        modelo.setText("");
         modelo.setEnabled(true);
 
         EditText tamano = findViewById(R.id.textTamaño);
+        tamano.setText("");
         tamano.setEnabled(true);
 
         EditText alias = findViewById(R.id.textAlias);
+        alias.setText("");
         alias.setVisibility(View.VISIBLE);
 
         Spinner spinner = findViewById(R.id.alias_spinner);
         spinner.setVisibility(View.GONE);
+
+        moto.setEnabled(true);
+        coche.setEnabled(true);
+        furgoneta.setEnabled(true);
+
     }
 
     public void guardarVehiculo(View view) {
 
-        datosV[4]= User.getEmail();
-        System.out.println(datosV[4]);
-
-
-        moto = findViewById(R.id.radioButtonMoto);
-        coche = findViewById(R.id.radioButtonCoche);
-        furgoneta = findViewById(R.id.radioButtonFurgoneta);
+        datosV[6]= User.getEmail();
+        System.out.println(datosV[6]);
 
         matricula = findViewById(R.id.textMatricula);
         datosV[0] = matricula.getText().toString();
@@ -132,6 +153,12 @@ public class RegistrarVehiculoActivity extends AppCompatActivity implements Adap
         EditText modelo = findViewById(R.id.textModelo);
         datosV[3] = modelo.getText().toString();
 
+        EditText tamano = findViewById(R.id.textTamaño);
+        datosV[4] = tamano.getText().toString();
+
+        EditText alias = findViewById(R.id.textAlias);
+        datosV[5] = alias.getText().toString();
+
         if(moto.isChecked()){
             datosV[1]="m";
         }else if(coche.isChecked()){
@@ -141,8 +168,6 @@ public class RegistrarVehiculoActivity extends AppCompatActivity implements Adap
         }else{
             datosV[1]="n";
         }
-
-        System.out.println(datosV[1]);
 
         HiloCliente hilo = new HiloCliente(3,datosV);
         hilo.start();
@@ -185,11 +210,13 @@ public class RegistrarVehiculoActivity extends AppCompatActivity implements Adap
             e.printStackTrace();
         }
 
-        if(User.getTipoVehiculo()=="m"){
-            coche.setChecked(true);
-        }else if(User.getTipoVehiculo()=="c"){
+        System.out.println(User.getTipoVehiculo());
+
+        if(User.getTipoVehiculo().equals("m")){
             moto.setChecked(true);
-        }else if(User.getTipoVehiculo()=="f"){
+        }else if(User.getTipoVehiculo().equals("c")){
+            coche.setChecked(true);
+        }else if(User.getTipoVehiculo().equals("f")){
             furgoneta.setChecked(true);
         }
 
