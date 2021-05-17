@@ -42,11 +42,12 @@ public class MainActivity extends AppCompatActivity {
     public void pulsarInicioSesion(View view) {
 
         EditText correo = findViewById(R.id.correo);
-        //String textCorreo = correo.getText().toString();
+        String textCorreo = correo.getText().toString();
         user.setEmail(correo.getText().toString());
 
 
         EditText contrasena = findViewById(R.id.contrasena);
+        String textContrasena = correo.getText().toString();
         user.setPassword(contrasena.getText().toString());
 
         //Intent i = new Intent(this, Principal.class);

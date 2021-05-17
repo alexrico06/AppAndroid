@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.madridizate2.Adaptador;
 import com.example.madridizate2.HiloCliente;
 import com.example.madridizate2.R;
+import com.example.madridizate2.ui.slideshow.SlideshowFragment;
 
 import java.util.ArrayList;
 

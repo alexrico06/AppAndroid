@@ -185,15 +185,13 @@ public class RegistrarVehiculoActivity extends AppCompatActivity implements Adap
             e.printStackTrace();
         }
 
-/*        if(User.getTipoVehiculo()=="m"){
-
-        }else if(coche.isChecked()){
-            datosV[1]="c";
-        }else if(furgoneta.isChecked()){
-            datosV[1]="f";
-        }else{
-            datosV[1]="n";
-        }*/
+        if(User.getTipoVehiculo()=="m"){
+            coche.setChecked(true);
+        }else if(User.getTipoVehiculo()=="c"){
+            moto.setChecked(true);
+        }else if(User.getTipoVehiculo()=="f"){
+            furgoneta.setChecked(true);
+        }
 
         matricula.setText(User.getMatricula());
         marca.setText(User.getMarcaVehiculo());

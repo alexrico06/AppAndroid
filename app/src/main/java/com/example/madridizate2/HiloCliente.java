@@ -111,7 +111,7 @@ public class HiloCliente extends Thread{
                     e.printStackTrace();
                 }
 
-                //DataInputStream dis = null;
+                DataInputStream dis = null;
                 try {
                     dis = new DataInputStream(s.getInputStream());
                     existe = dis.readBoolean();
@@ -288,6 +288,8 @@ public class HiloCliente extends Thread{
                     User.setMarcaVehiculo(dataInputStream.readUTF());
                     User.setModeloVehiculo(dataInputStream.readUTF());
                     User.setTamanoVehiculo(dataInputStream.readUTF());
+
+                    System.out.println( User.getTipoVehiculo());
 
                 } catch (IOException e) {
                     e.printStackTrace();
