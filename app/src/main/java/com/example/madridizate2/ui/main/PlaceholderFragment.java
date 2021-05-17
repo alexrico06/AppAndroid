@@ -54,14 +54,10 @@ public class PlaceholderFragment extends Fragment {
             @NonNull LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
 
-        View root = inflater.inflate(R.layout.activity_listado_parkings, container, false);
-
-
-
+        View root = inflater.inflate(R.layout.activity_menu_parkings, container, false);
 
 
 /*
-
 
         HiloCliente hilo = new HiloCliente(4);
         hilo.start();

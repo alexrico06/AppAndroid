@@ -40,4 +40,5 @@
     <string name="menu_payment">Opciones de pago</string>
     <string name="menu_parkings">Parkings</string>
     <string name="title_activity_listado_parkings">ListadoParkings</string>
+    <string name="title_activity_menu_parkings">MenuParkings</string>
 </resources>
