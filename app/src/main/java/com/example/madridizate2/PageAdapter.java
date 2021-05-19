@@ -27,7 +27,7 @@ public class PageAdapter extends FragmentPagerAdapter {
             case 1:
                 return new tab2();
             case 2:
-                return new tab3();
+                return new MapsFragment();
             default:
                 return null;
 
