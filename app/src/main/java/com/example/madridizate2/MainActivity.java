@@ -30,8 +30,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void prueba (View v)  {
-        //Intent i = new Intent(this, MenuParkings.class);
-        //startActivity(i);
+        Intent i = new Intent(this, MenuParkings.class);
+        startActivity(i);
     }
 
     public void pulsarRegistrar(View view) {
