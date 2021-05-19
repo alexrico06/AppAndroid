@@ -44,41 +44,4 @@ public class PlaceholderFragment extends Fragment {
 
     }
 
-    @Override
-    public View onCreateView(
-            @NonNull LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
-
-        View root = inflater.inflate(R.layout.fragment_parkings, container, false);
-
-/*
-
-        HiloCliente hilo = new HiloCliente(4);
-        hilo.start();
-
-        RecyclerView listaplazas = root.findViewById(R.id.parkings);
-        listaplazas.setHasFixedSize(true);
-
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
-        listaplazas.setLayoutManager(layoutManager);
-
-        try {
-            hilo.join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        for (String[] plaza: hilo.listaResultados) {
-            System.out.println(plaza[0] +"-"+plaza[1]);
-        }
-
-        RecyclerView.Adapter miAdaptador = new Adaptador(hilo.listaResultados);
-        listaplazas.setAdapter(miAdaptador);
-
-
-*/
-
-        return root;
-
-    }
 }

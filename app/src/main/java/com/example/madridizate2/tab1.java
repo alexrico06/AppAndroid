@@ -3,6 +3,8 @@ package com.example.madridizate2;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -59,6 +61,30 @@ public class tab1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tab1, container, false);
+        View root = inflater.inflate(R.layout.fragment_tab1, container, false);
+
+        HiloCliente hilo = new HiloCliente(4);
+        hilo.start();
+
+        RecyclerView listaplazas = root.findViewById(R.id.parkings);
+        listaplazas.setHasFixedSize(true);
+
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
+        listaplazas.setLayoutManager(layoutManager);
+
+        try {
+            hilo.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        for (String[] plaza: hilo.listaResultados) {
+            System.out.println(plaza[0] +"-"+plaza[1]);
+        }
+
+        RecyclerView.Adapter miAdaptador = new Adaptador(hilo.listaResultados);
+        listaplazas.setAdapter(miAdaptador);
+
+        return root;
     }
 }
