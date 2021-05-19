@@ -69,6 +69,7 @@ public class HiloCliente extends Thread{
     //INFORMACION TARJETA POR CORREO
     //INFORMACION ALIAS VEHICULOS POR CORREO
     //INFORMACION VEHICULOS POR ALIAS
+    //ELIMINAR VEHICULO POR MATRICULA
     public HiloCliente(int consulta, String texto) {
         this.consulta=consulta;
         this.texto=texto;
@@ -102,7 +103,7 @@ public class HiloCliente extends Thread{
         }
 
         switch (consulta){
-            case 1:
+            case 1: //VERIFICAR USUARIO
 
                 try {
                     dos.writeUTF(correo);
@@ -121,7 +122,7 @@ public class HiloCliente extends Thread{
 
                 break;
 
-            case 2:
+            case 2:  //INSERTAR DATOS USER Y SU DIRECCION
 
                 try {
                     oos = new ObjectOutputStream(s.getOutputStream());
@@ -133,7 +134,7 @@ public class HiloCliente extends Thread{
 
                 break;
 
-            case 3:
+            case 3:  //INSERTAR DATOS DEL VEHICULO
 
                 try {
                     oos = new ObjectOutputStream(s.getOutputStream());
@@ -145,7 +146,7 @@ public class HiloCliente extends Thread{
 
                 break;
 
-            case 4:
+            case 4: //CONSULTA PARKINGS
 
                 ObjectInputStream ois = null;
 
@@ -158,7 +159,7 @@ public class HiloCliente extends Thread{
 
                 break;
 
-            case 5:
+            case 5: //CONSULTA DATOS USER
 
                 try {
                     dos.writeUTF(texto);
@@ -183,7 +184,8 @@ public class HiloCliente extends Thread{
                 }
 
                 break;
-            case 6:
+            case 6:   //CONSULTA DATOS DE TARJETA
+
                 Boolean flag;
 
                 System.out.println(texto);
@@ -219,6 +221,9 @@ public class HiloCliente extends Thread{
                 break;
 
             case 7:
+                //MODIFICAR USER DATA (U)
+                //MODIFICAR TARJETA USER (T)
+
                 try {
 
                     if(letra == 'u'){
@@ -244,7 +249,7 @@ public class HiloCliente extends Thread{
 
                 break;
 
-            case 8:
+            case 8: //CONSULTAR APODOS VEHCIULOS
 
                 try {
                     dos.writeUTF(texto);
@@ -265,7 +270,7 @@ public class HiloCliente extends Thread{
 
                 break;
 
-            case 9:
+            case 9: //CONSULTAR VEHICULO SEGUN APODO
 
                 try {
                     dos.writeUTF(texto);
@@ -291,6 +296,16 @@ public class HiloCliente extends Thread{
 
                     //System.out.println(User.getTipoVehiculo());
 
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                break;
+
+            case 10: //ELIMINAR MATRICULA
+
+                try {
+                    dos.writeUTF(texto);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

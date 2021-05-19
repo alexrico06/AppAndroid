@@ -13,7 +13,6 @@
         android:theme="@style/Theme.Madridizate2">
         <activity android:name=".MenuParkings"></activity>
         <activity android:name=".ReservaParking" />
-
         <activity android:name=".RegistrarVehiculoActivity" />
         <activity android:name=".RegistrarUserActivity" />
         <activity android:name=".MainActivity">

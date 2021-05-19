@@ -28,4 +28,9 @@
         android:name="com.example.madridizate2.ui.main.PlaceholderFragment"
         android:label="@string/menu_parkings"
         tools:layout="@layout/fragment_parkings" />
+    <activity
+        android:id="@+id/nav_tabbed"
+        android:name="com.example.madridizate2.MenuParkings"
+        android:label="activity_menu_parkings"
+        tools:layout="@layout/activity_menu_parkings" />
 </navigation>
