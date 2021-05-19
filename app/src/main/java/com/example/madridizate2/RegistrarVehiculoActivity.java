@@ -178,8 +178,10 @@ public class RegistrarVehiculoActivity extends AppCompatActivity implements Adap
             e.printStackTrace();
         }
 
-        Intent i = new Intent(this, MainActivity.class);
-        startActivity(i);
+        Intent refresh = new Intent(this, RegistrarVehiculoActivity.class);
+        refresh.putExtra("registro", "B");
+        startActivity(refresh);
+        this.finish();
 
     }
 
@@ -188,9 +190,16 @@ public class RegistrarVehiculoActivity extends AppCompatActivity implements Adap
 
         matricula = findViewById(R.id.textMatricula);
 
+        System.out.println(matricula.getText().toString());
+
         //eliminar vehiculo según la matricula
         HiloCliente hilo = new HiloCliente(10,matricula.getText().toString());
         hilo.start();
+
+        Intent refresh = new Intent(this, RegistrarVehiculoActivity.class);
+        refresh.putExtra("registro", "B");
+        startActivity(refresh);
+        this.finish();
 
     }
 
