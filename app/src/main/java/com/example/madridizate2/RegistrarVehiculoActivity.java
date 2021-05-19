@@ -24,6 +24,7 @@ public class RegistrarVehiculoActivity extends AppCompatActivity implements Adap
     EditText modelo;
     EditText tamano;
     Spinner spinner_alias;
+    String ruta;
 
     RadioButton moto;
     RadioButton coche;
@@ -39,7 +40,7 @@ public class RegistrarVehiculoActivity extends AppCompatActivity implements Adap
         furgoneta = findViewById(R.id.radioButtonFurgoneta);
 
         Intent intent = getIntent();
-        String ruta = intent.getStringExtra("registro");
+        ruta = intent.getStringExtra("registro");
 
         if(ruta.equals("A")){
 
@@ -178,10 +179,19 @@ public class RegistrarVehiculoActivity extends AppCompatActivity implements Adap
             e.printStackTrace();
         }
 
-        Intent refresh = new Intent(this, RegistrarVehiculoActivity.class);
-        refresh.putExtra("registro", "B");
-        startActivity(refresh);
-        this.finish();
+        if(ruta.equals("A")) {
+
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        }
+        else{
+
+            Intent refresh = new Intent(this, RegistrarVehiculoActivity.class);
+            refresh.putExtra("registro", "B");
+            startActivity(refresh);
+            this.finish();
+
+        }
 
     }
 
