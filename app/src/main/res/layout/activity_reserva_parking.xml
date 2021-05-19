@@ -22,23 +22,36 @@
             android:textSize="24sp"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/textView20"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Datos del aparcamiento:" />
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="201dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Plaza:" />
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/textView21"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Dirección:" />
+                android:text="Aparcamiento:" />
 
             <EditText
                 android:id="@+id/direccionParking"
@@ -49,5 +62,50 @@
                 android:inputType="textPersonName" />
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+           <!-- <CalendarView
+                android:id="@+id/calendarView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            -->
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TimePicker
+                android:id="@+id/timePicker1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:timePickerMode="clock"
+                android:headerBackground="#565466"
+                android:amPmBackgroundColor="#500126"
+                android:numbersBackgroundColor="#57e326"
+                android:numbersTextColor="#995394"
+                android:numbersSelectorColor="#675543"
+                android:textColorSecondary="#897530"
+                android:textColorPrimary="#359875"
+                android:layout_below="@+id/layoutHourMinute"
+                android:layout_centerInParent="true" />
+
+        </LinearLayout>
+
     </LinearLayout>
+
+    <Button
+        android:id="@+id/reservarPlaza"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="RESERVAR"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
