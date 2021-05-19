@@ -29,11 +29,6 @@ public class MainActivity extends AppCompatActivity {
         contrasena.setText(User.getPassword());
     }
 
-    public void prueba (View v)  {
-        Intent i = new Intent(this, MenuParkings.class);
-        startActivity(i);
-    }
-
     public void pulsarRegistrar(View view) {
         Intent i = new Intent(this, RegistrarUserActivity.class);
         startActivity(i);
