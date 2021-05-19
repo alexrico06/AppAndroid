@@ -35,9 +35,17 @@ public class MapsFragment extends Fragment {
          */
         @Override
         public void onMapReady(GoogleMap googleMap) {
-            LatLng sydney = new LatLng(-34, 151);
-            googleMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-            googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+            LatLng madrid = new LatLng(40.41, -3.70);
+            googleMap.addMarker(new MarkerOptions().position(madrid).title("Marker in Madrid"));
+            googleMap.moveCamera(CameraUpdateFactory.newLatLng(madrid));
+            googleMap.getMinZoomLevel();
+
+            LatLng parking1 = new LatLng(40.41826897827488, -3.6984408001271163);
+            googleMap.addMarker(new MarkerOptions().position(parking1).title("Parking Alsepark- C/Alcalá, 27 "));
+
+
+            LatLng parking2 = new LatLng(40.442688490789976, -3.691395914534013);
+            googleMap.addMarker(new MarkerOptions().position(parking2).title("Parking Saba- Paseo de la Castellana, 100 "));
         }
     };
 
