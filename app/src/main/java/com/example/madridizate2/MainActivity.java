@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.madridizate2.ui.home.HomeFragment;
 
@@ -38,17 +39,16 @@ public class MainActivity extends AppCompatActivity {
 
         EditText correo = findViewById(R.id.correo);
         String textCorreo = correo.getText().toString();
-        user.setEmail(correo.getText().toString());
 
 
         EditText contrasena = findViewById(R.id.contrasena);
-        String textContrasena = correo.getText().toString();
-        user.setPassword(contrasena.getText().toString());
+        String textContrasena = contrasena.getText().toString();
+
 
         //Intent i = new Intent(this, Principal.class);
         //startActivity(i);
 
-        HiloCliente hilo = new HiloCliente(1, user.getEmail(), user.getPassword());
+        HiloCliente hilo = new HiloCliente(1, 1,textCorreo, textContrasena);
         hilo.start();
 
         try {
@@ -63,9 +63,13 @@ public class MainActivity extends AppCompatActivity {
 
             Intent i = new Intent(this, Principal.class);
             //i.putExtra("correo", user.getEmail());
+            user.setEmail(correo.getText().toString());
+            user.setPassword(contrasena.getText().toString());
             startActivity(i);
 
         }else{
+
+            Toast.makeText(this,"USUARIO NO ENCONRTADO",Toast.LENGTH_SHORT).show();
             System.out.println("no existe");
         }
 

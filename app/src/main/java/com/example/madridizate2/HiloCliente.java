@@ -25,26 +25,38 @@ public class HiloCliente extends Thread{
 
     public String dni;
     public String correo;
-
     String contrasena;
+    String direccion;
+    String vehiculo;
     String texto;
     char letra;
 
     public ArrayList<String[]> listaResultados;
     public ArrayList<String> listaApodos = new ArrayList<>();
+    public ArrayList<String> listaPlazasParkin;
     String[] datosP = new String[7];
     String[] datosD = new String[5];
     String[] datosV = new String[5];
     //String[] datosT = new String[4];
     String [] datos;
     int consulta;
+    int id;
     boolean existe;
 
+
     //VERIFICAR USUARIO
-    public HiloCliente(int consulta, String correo, String contrasena) {
-        this.correo = correo;
-        this.contrasena = contrasena;
+    //INFORMACION PLAZAS DE UN PARKING POR DIRECCION
+    public HiloCliente(int consulta, int id, String texto1, String texto2) {
         this.consulta = consulta;
+        this.id=id;
+        if(id==1){
+            this.correo = texto1;
+            this.contrasena = texto2;
+        }else{
+            this.direccion = texto1;
+            this.vehiculo = texto2;
+        }
+
     }
 
     //INSERTAR USUARIO Y DIRECCION
@@ -101,9 +113,12 @@ public class HiloCliente extends Thread{
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+        System.out.println(consulta);
 
         switch (consulta){
-            case 1: //VERIFICAR USUARIO
+            case 1:
+
+                //VERIFICAR USUARIO
 
                 try {
                     dos.writeUTF(correo);
@@ -199,9 +214,10 @@ public class HiloCliente extends Thread{
                     dis = new DataInputStream(s.getInputStream());
                     flag = dis.readBoolean();
                     System.out.println(flag);
-                    if(flag){
+                    String numT = dis.readUTF();
+                    if(flag && !numT.equals("null")){
 
-                        User.setNumTarjeta(dis.readUTF());
+                        User.setNumTarjeta(numT);
                         User.setCvv(dis.readUTF());
                         User.setFechaCaducidad(dis.readUTF());
                         User.setTipoTarjeta(dis.readUTF());
@@ -309,6 +325,27 @@ public class HiloCliente extends Thread{
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+
+            case 11: //CONSULTAR PLAZAS DE UN PARKING
+
+                try {
+                    dos.writeUTF(direccion);
+                    dos.writeUTF(vehiculo);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                ObjectInputStream oisPlazas = null;
+
+                try {
+                    oisPlazas =new ObjectInputStream(s.getInputStream());
+                    listaPlazasParkin = (ArrayList<String>) oisPlazas.readObject();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                }
+
 
                 break;
         }
