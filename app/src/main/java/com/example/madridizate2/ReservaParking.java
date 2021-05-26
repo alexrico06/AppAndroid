@@ -16,6 +16,9 @@ import android.widget.ImageButton;
 
 import android.widget.Spinner;
 import android.widget.TimePicker;
+import android.widget.Toast;
+
+import com.example.madridizate2.ui.home.HomeFragment;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -248,6 +251,11 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
+        Toast.makeText(this,"RESERVA REALIZADA",Toast.LENGTH_SHORT).show();
+
+        Intent intent = new Intent(this, HomeFragment.class);
+        startActivity(intent);
 
     }
 }
