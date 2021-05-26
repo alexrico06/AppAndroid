@@ -64,14 +64,14 @@
 
             <TextView
                 android:id="@+id/textViewAlias2"
-                android:layout_width="match_parent"
+                android:layout_width="224dp"
                 android:layout_height="48dp"
                 android:layout_weight="1"
                 android:text="Seleccione Vehciulo Por Alias" />
 
             <Spinner
                 android:id="@+id/alias_spinner2"
-                android:layout_width="match_parent"
+                android:layout_width="202dp"
                 android:layout_height="37dp"
                 android:layout_marginBottom="10dp"
                 android:layout_weight="1"
@@ -181,6 +181,7 @@
         android:id="@+id/reservarPlaza"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:onClick="buttonReservar"
         android:text="RESERVAR"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

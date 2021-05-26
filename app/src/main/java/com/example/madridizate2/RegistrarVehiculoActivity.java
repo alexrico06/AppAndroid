@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.example.madridizate2.ui.home.HomeFragment;
 
@@ -29,6 +30,8 @@ public class RegistrarVehiculoActivity extends AppCompatActivity implements Adap
     RadioButton moto;
     RadioButton coche;
     RadioButton furgoneta;
+
+    boolean bandera;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -155,7 +158,7 @@ public class RegistrarVehiculoActivity extends AppCompatActivity implements Adap
         datosV[3] = modelo.getText().toString();
 
         EditText tamano = findViewById(R.id.textTamaño);
-        datosV[4] = tamano.getText().toString();
+        datosV[4] = tamano.getText().toString().toUpperCase();
 
         EditText alias = findViewById(R.id.textAlias);
         datosV[5] = alias.getText().toString();
@@ -168,28 +171,44 @@ public class RegistrarVehiculoActivity extends AppCompatActivity implements Adap
             datosV[1]="f";
         }else{
             datosV[1]="n";
+            bandera = false;
         }
 
-        HiloCliente hilo = new HiloCliente(3,datosV);
-        hilo.start();
+        if(bandera) {
 
-        try {
-            hilo.join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+            if(datosV.equals("S")&& datosV.equals("M") && datosV.equals("L")){
 
-        if(ruta.equals("A")) {
+                //insertar vehiculo
+                HiloCliente hilo = new HiloCliente(3, 1, datosV);
+                hilo.start();
 
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
-        }
-        else{
+                try {
+                    hilo.join();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
 
-            Intent refresh = new Intent(this, RegistrarVehiculoActivity.class);
-            refresh.putExtra("registro", "B");
-            startActivity(refresh);
-            this.finish();
+                if (ruta.equals("A")) {
+
+                    Intent intent = new Intent(this, MainActivity.class);
+                    startActivity(intent);
+                } else {
+
+                    Intent refresh = new Intent(this, RegistrarVehiculoActivity.class);
+                    refresh.putExtra("registro", "B");
+                    startActivity(refresh);
+                    this.finish();
+
+                }
+
+            }else{
+
+                Toast.makeText(this,"ESCRIBA TAMANÑO: S,M,L",Toast.LENGTH_LONG).show();
+            }
+
+        }else{
+
+            Toast.makeText(this,"SELECCIONE TIPO VEHICULO",Toast.LENGTH_SHORT).show();
 
         }
 

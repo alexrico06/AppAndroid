@@ -26,6 +26,8 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
 
     String direccion;
     Spinner spinner_alias;
+    Spinner spinner_plazas;
+    EditText direccionText;
 
     private static final String CERO = "0";
     private static final String DOS_PUNTOS = ":";
@@ -65,7 +67,7 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
         ibObtenerFecha.setOnClickListener(this);
         ibObtenerHora.setOnClickListener(this);
 
-        EditText direccionText = findViewById(R.id.direccionParking);
+        direccionText = findViewById(R.id.direccionParking);
         direccionText.setEnabled(false);
         direccionText.setText(direccion);
 
@@ -116,7 +118,7 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
         }
 
         ArrayList<String> listaPlazasParkin = hilo.listaPlazasParkin;
-        Spinner spinner_plazas = findViewById(R.id.spinner_plazas);
+        spinner_plazas = findViewById(R.id.spinner_plazas);
 
         spinner_plazas.setAdapter(new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, listaPlazasParkin));
         //spinner_plazas.setOnItemSelectedListener(this);
@@ -154,7 +156,6 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
 
                 etFecha.setText(diaFormateado + BARRA + mesFormateado + BARRA + year);
 
-
             }
         },anio, mes, dia);
 
@@ -187,5 +188,23 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
         }, hora, minuto, false);
 
         recogerHora.show();
+    }
+
+
+    public void buttonReservar(View view){
+
+        System.out.println(spinner_alias.getSelectedItem().toString());
+        System.out.println(spinner_plazas.getSelectedItem().toString());
+        System.out.println(direccionText.getText());
+
+
+        String[] datosReserva = new String[6];
+
+        datosReserva[0] = spinner_alias.getSelectedItem().toString();
+        datosReserva[1] = (spinner_plazas.getSelectedItem().toString());
+        datosReserva[2] = direccionText.getText().toString();
+
+        HiloCliente hiloCliente = new HiloCliente(12,2,datosReserva);
+
     }
 }

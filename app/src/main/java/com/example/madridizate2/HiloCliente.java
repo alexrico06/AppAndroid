@@ -37,6 +37,7 @@ public class HiloCliente extends Thread{
     String[] datosP = new String[7];
     String[] datosD = new String[5];
     String[] datosV = new String[5];
+    String[] datosR = new String[6];
     //String[] datosT = new String[4];
     String [] datos;
     int consulta;
@@ -66,11 +67,22 @@ public class HiloCliente extends Thread{
         this.datosD=datosD;
     }
 
+
     //INSERTAR DATOS VEHICULO
-    public HiloCliente(int consulta,String[] datosV) {
+    //INSERTAR DATOS RESERVA
+    public HiloCliente(int consulta,int id, String[] datos) {
         this.consulta = consulta;
-        this.datosV = datosV;
+
+        if(id==1){
+            this.datosV = datos;
+        }else{
+            this.datosR = datos;
+        }
+
     }
+
+
+
 
     //LISTADO PLAZAS
     public HiloCliente(int consulta) {
@@ -346,8 +358,16 @@ public class HiloCliente extends Thread{
                     e.printStackTrace();
                 }
 
+            case 12:
 
-                break;
+                try {
+                    oos = new ObjectOutputStream(s.getOutputStream());
+                    oos.writeObject(datosR);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+               break;
         }
 
     }
