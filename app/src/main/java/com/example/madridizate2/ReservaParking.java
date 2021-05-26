@@ -46,8 +46,8 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
     final int minuto = c.get(Calendar.MINUTE);
 
     //Widgets
-    EditText etFecha, etHora;
-    ImageButton ibObtenerFecha, ibObtenerHora;
+    EditText etFecha, etHoraIni, etHoraFin;
+    ImageButton ibObtenerFecha, ibObtenerHoraIni, ibObtenerHoraFin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,13 +59,18 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
         direccion = intent.getStringExtra("direccion");
 
         etFecha = (EditText) findViewById(R.id.et_mostrar_fecha_picker);
-        etHora = (EditText) findViewById(R.id.et_mostrar_hora_picker);
+        etHoraIni = (EditText) findViewById(R.id.et_mostrar_hora_picker);
+        etHoraFin = (EditText) findViewById(R.id.et_mostrar_hora_fin_picker);
+
 
         ibObtenerFecha = (ImageButton) findViewById(R.id.ib_obtener_fecha);
-        ibObtenerHora = (ImageButton) findViewById(R.id.ib_obtener_hora);
+        ibObtenerHoraIni = (ImageButton) findViewById(R.id.ib_obtener_hora_inicio);
+        ibObtenerHoraFin = (ImageButton) findViewById(R.id.ib_obtener_hora_fin);
 
         ibObtenerFecha.setOnClickListener(this);
-        ibObtenerHora.setOnClickListener(this);
+        ibObtenerHoraIni.setOnClickListener(this);
+        ibObtenerHoraFin.setOnClickListener(this);
+
 
         direccionText = findViewById(R.id.direccionParking);
         direccionText.setEnabled(false);
@@ -137,8 +142,11 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
             case R.id.ib_obtener_fecha:
                 obtenerFecha();
                 break;
-            case R.id.ib_obtener_hora:
-                obtenerHora();
+            case R.id.ib_obtener_hora_inicio:
+                obtenerHoraIni();
+                break;
+            case R.id.ib_obtener_hora_fin:
+                obtenerHoraFin();
                 break;
         }
 
@@ -164,7 +172,7 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
     }
 
 
-    private void obtenerHora(){
+    private void obtenerHoraIni(){
         TimePickerDialog recogerHora = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
             @Override
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
@@ -180,7 +188,33 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
                     AM_PM = "p.m.";
                 }
                 //Muestro la hora con el formato deseado
-                etHora.setText(horaFormateada + DOS_PUNTOS + minutoFormateado + " " + AM_PM);
+                etHoraIni.setText(horaFormateada + DOS_PUNTOS + minutoFormateado + " " + AM_PM);
+            }
+            //Estos valores deben ir en ese orden
+            //Al colocar en false se muestra en formato 12 horas y true en formato 24 horas
+            //Pero el sistema devuelve la hora en formato 24 horas
+        }, hora, minuto, false);
+
+        recogerHora.show();
+    }
+
+    private void obtenerHoraFin(){
+        TimePickerDialog recogerHora = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                //Formateo el hora obtenido: antepone el 0 si son menores de 10
+                String horaFormateada =  (hourOfDay < 10)? String.valueOf(CERO + hourOfDay) : String.valueOf(hourOfDay);
+                //Formateo el minuto obtenido: antepone el 0 si son menores de 10
+                String minutoFormateado = (minute < 10)? String.valueOf(CERO + minute):String.valueOf(minute);
+                //Obtengo el valor a.m. o p.m., dependiendo de la selección del usuario
+                String AM_PM;
+                if(hourOfDay < 12) {
+                    AM_PM = "a.m.";
+                } else {
+                    AM_PM = "p.m.";
+                }
+                //Muestro la hora con el formato deseado
+                etHoraFin.setText(horaFormateada + DOS_PUNTOS + minutoFormateado + " " + AM_PM);
             }
             //Estos valores deben ir en ese orden
             //Al colocar en false se muestra en formato 12 horas y true en formato 24 horas

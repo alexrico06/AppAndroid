@@ -18,42 +18,24 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/textView21"
-                android:layout_width="0dp"
+            <Button
+                android:id="@+id/button"
+                android:layout_width="78dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Aparcamiento:" />
-
-            <EditText
-                android:id="@+id/direccionParking"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:editable="false"
-                android:ems="10"
-                android:inputType="textPersonName" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/contenedor_plazas"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:orientation="horizontal"
-            android:visibility="invisible">
+                android:background="@drawable/abc_vector_test"
+                android:onClick="botonAtras" />
 
             <TextView
-                android:id="@+id/textView18"
-                android:layout_width="201dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="Plaza:" />
+                android:id="@+id/textView19"
+                android:layout_width="326dp"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:text="RESERVA TU PLAZA"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
-            <Spinner
-                android:id="@+id/spinner_plazas"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
         </LinearLayout>
 
         <LinearLayout
@@ -80,28 +62,46 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/contenedor_plazas"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:visibility="invisible">
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="201dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Plaza:" />
+
+            <Spinner
+                android:id="@+id/spinner_plazas"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/button"
-                android:layout_width="78dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/abc_vector_test"
-                android:onClick="botonAtras" />
-
             <TextView
-                android:id="@+id/textView19"
-                android:layout_width="326dp"
+                android:id="@+id/textView21"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:enabled="false"
-                android:paddingTop="15dp"
-                android:paddingBottom="15dp"
-                android:text="RESERVA TU PLAZA"
-                android:textSize="24sp"
-                android:textStyle="bold" />
+                android:layout_weight="1"
+                android:text="Aparcamiento:" />
 
+            <EditText
+                android:id="@+id/direccionParking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:editable="false"
+                android:ems="10"
+                android:inputType="textPersonName" />
         </LinearLayout>
 
         <LinearLayout
@@ -136,7 +136,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="32dp"
                     android:ems="10"
-                    android:hint="Formato hora"
+                    android:hint="Formato fecha"
                     android:inputType="date"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -168,13 +168,44 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="32dp"
                     android:ems="10"
-                    android:hint="Formato hora"
+                    android:hint="Hora Inicio"
                     android:inputType="time"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/et_mostrar_fecha_picker" />
 
                 <ImageButton
-                    android:id="@+id/ib_obtener_hora"
+                    android:id="@+id/ib_obtener_hora_inicio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginRight="8dp"
+                    android:src="@android:drawable/ic_menu_recent_history"
+                    app:layout_constraintHorizontal_bias="0.504"
+                    app:layout_constraintLeft_toRightOf="@+id/et_mostrar_hora_picker"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/et_mostrar_fecha_picker"
+                    tools:ignore="ContentDescription" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/et_mostrar_hora_fin_picker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:ems="10"
+                    android:hint="Hora Fin"
+                    android:inputType="time"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/et_mostrar_fecha_picker" />
+
+                <ImageButton
+                    android:id="@+id/ib_obtener_hora_fin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
