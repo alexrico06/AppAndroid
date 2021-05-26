@@ -59,6 +59,7 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
         }
 
         spinner_alias = (Spinner) findViewById(R.id.alias_spinner2);
+        System.out.println("lol");
 
         ArrayList<String> listaAlias = hilo.listaApodos;
 
