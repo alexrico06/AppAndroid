@@ -48,7 +48,7 @@ public class HiloCliente extends Thread{
     //INFORMACION PLAZAS DE UN PARKING POR DIRECCION
     public HiloCliente(int consulta, int id, String texto1, String texto2) {
         this.consulta = consulta;
-        this.id=id;
+
         if(id==1){
             this.correo = texto1;
             this.contrasena = texto2;
@@ -134,7 +134,7 @@ public class HiloCliente extends Thread{
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-
+                System.out.println(existe);
                 break;
 
             case 2:  //INSERTAR DATOS USER Y SU DIRECCION
