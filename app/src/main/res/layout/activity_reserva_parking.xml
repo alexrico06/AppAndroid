@@ -18,53 +18,21 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/button"
-                android:layout_width="78dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/abc_vector_test"
-                android:onClick="botonAtras" />
-
             <TextView
-                android:id="@+id/textView19"
-                android:layout_width="326dp"
+                android:id="@+id/textView21"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:enabled="false"
-                android:paddingTop="15dp"
-                android:paddingBottom="15dp"
-                android:text="RESERVA TU PLAZA"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/contenedor_vehiculo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <!-- <CalendarView
-                android:id="@+id/calendarView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-            -->
-
-            <TextView
-                android:id="@+id/textViewAlias2"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
                 android:layout_weight="1"
-                android:text="Seleccione Vehciulo Por Alias" />
+                android:text="Aparcamiento:" />
 
-            <Spinner
-                android:id="@+id/alias_spinner2"
-                android:layout_width="match_parent"
-                android:layout_height="37dp"
-                android:layout_marginBottom="10dp"
+            <EditText
+                android:id="@+id/direccionParking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:editable="false"
                 android:ems="10"
-                android:visibility="visible" />
+                android:inputType="textPersonName" />
         </LinearLayout>
 
         <LinearLayout
@@ -89,25 +57,26 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/contenedor_vehiculo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textView21"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:id="@+id/textViewAlias2"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
                 android:layout_weight="1"
-                android:text="Aparcamiento:" />
+                android:text="Seleccione Vehciulo Por Alias" />
 
-            <EditText
-                android:id="@+id/direccionParking"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <Spinner
+                android:id="@+id/alias_spinner2"
+                android:layout_width="match_parent"
+                android:layout_height="37dp"
+                android:layout_marginBottom="10dp"
                 android:layout_weight="1"
-                android:editable="false"
                 android:ems="10"
-                android:inputType="textPersonName" />
+                android:visibility="visible" />
         </LinearLayout>
 
         <LinearLayout
@@ -115,20 +84,94 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <TimePicker
-                android:id="@+id/timePicker1"
+            <Button
+                android:id="@+id/button"
+                android:layout_width="78dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/abc_vector_test"
+                android:onClick="botonAtras" />
+
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="326dp"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:text="RESERVA TU PLAZA"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/pickers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/layoutHourMinute"
-                android:layout_centerInParent="true"
-                android:amPmBackgroundColor="#500126"
-                android:headerBackground="#565466"
-                android:numbersBackgroundColor="#57e326"
-                android:numbersSelectorColor="#675543"
-                android:numbersTextColor="#995394"
-                android:textColorPrimary="#359875"
-                android:textColorSecondary="#897530"
-                android:timePickerMode="clock" />
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="8dp"
+                android:text="Obtener fecha y hora"
+                android:textSize="24sp"
+                app:layout_constraintHorizontal_bias="0.025"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <EditText
+                android:id="@+id/et_mostrar_fecha_picker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:ems="10"
+                android:hint="Formato hora"
+                android:inputType="date"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            <EditText
+                android:id="@+id/et_mostrar_hora_picker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:ems="10"
+                android:hint="Formato hora"
+                android:inputType="time"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/et_mostrar_fecha_picker" />
+
+            <ImageButton
+                android:id="@+id/ib_obtener_fecha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginRight="8dp"
+                android:onClick="onClick"
+                app:layout_constraintHorizontal_bias="0.505"
+                app:layout_constraintLeft_toRightOf="@+id/et_mostrar_fecha_picker"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView"
+                tools:ignore="ContentDescription" />
+
+            <ImageButton
+                android:id="@+id/ib_obtener_hora"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                app:layout_constraintHorizontal_bias="0.504"
+                app:layout_constraintLeft_toRightOf="@+id/et_mostrar_hora_picker"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/et_mostrar_fecha_picker"
+                tools:ignore="ContentDescription" />
+
 
         </LinearLayout>
 
