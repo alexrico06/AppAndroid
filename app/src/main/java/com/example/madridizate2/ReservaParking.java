@@ -13,13 +13,12 @@ import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.NumberPicker;
+
 import android.widget.Spinner;
 import android.widget.TimePicker;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.List;
 
 public class ReservaParking extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener  {
 
@@ -231,14 +230,35 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
         System.out.println(spinner_plazas.getSelectedItem().toString());
         System.out.println(direccionText.getText());
 
+        EditText fecha = findViewById(R.id.et_mostrar_fecha_picker);
+        System.out.println(fecha.getText());
 
-        String[] datosReserva = new String[6];
+        EditText horaI = findViewById(R.id.et_mostrar_hora_picker);
+        System.out.println(horaI.getText());
 
-        datosReserva[0] = spinner_alias.getSelectedItem().toString();
-        datosReserva[1] = (spinner_plazas.getSelectedItem().toString());
-        datosReserva[2] = direccionText.getText().toString();
+        EditText horaF = findViewById(R.id.et_mostrar_hora_fin_picker);
+        System.out.println(horaF.getText());
+
+        System.out.println(User.getEmail());
+
+        String[] datosReserva = new String[7];
+
+        datosReserva[0] = fecha.getText().toString();
+        datosReserva[1] = horaI.getText().toString();
+        datosReserva[2] = horaF.getText().toString();
+        datosReserva[3] = User.getEmail();
+        datosReserva[4] = spinner_alias.getSelectedItem().toString();
+        datosReserva[5] = (spinner_plazas.getSelectedItem().toString());
+        datosReserva[6] = direccionText.getText().toString();
 
         HiloCliente hiloCliente = new HiloCliente(12,2,datosReserva);
+        hiloCliente.start();
+
+        try {
+            hiloCliente.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
     }
 }
