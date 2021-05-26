@@ -72,7 +72,6 @@ public class HiloCliente extends Thread{
     //INSERTAR DATOS RESERVA
     public HiloCliente(int consulta,int id, String[] datos) {
         this.consulta = consulta;
-
         if(id==1){
             this.datosV = datos;
         }else{
@@ -359,6 +358,8 @@ public class HiloCliente extends Thread{
                 }
 
             case 12:
+
+                System.out.println(consulta);
 
                 try {
                     oos = new ObjectOutputStream(s.getOutputStream());

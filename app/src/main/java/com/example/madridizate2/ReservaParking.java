@@ -214,10 +214,6 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
 
     public void buttonReservar(View view){
 
-        System.out.println(spinner_alias.getSelectedItem().toString());
-        System.out.println(spinner_plazas.getSelectedItem().toString());
-        System.out.println(direccionText.getText());
-
         EditText fecha = findViewById(R.id.et_mostrar_fecha_picker);
         System.out.println(fecha.getText());
 
@@ -228,6 +224,11 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
         System.out.println(horaF.getText());
 
         System.out.println(User.getEmail());
+
+        System.out.println(spinner_alias.getSelectedItem().toString());
+        System.out.println(spinner_plazas.getSelectedItem().toString());
+        System.out.println(direccionText.getText());
+
 
         String[] datosReserva = new String[7];
 
