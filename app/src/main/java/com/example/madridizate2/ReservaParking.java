@@ -1,10 +1,12 @@
 package com.example.madridizate2;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.Layout;
 import android.view.View;
@@ -20,8 +22,11 @@ import android.widget.Toast;
 
 import com.example.madridizate2.ui.home.HomeFragment;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 
 public class ReservaParking extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener  {
 
@@ -46,6 +51,8 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
     //Hora
     final int hora = c.get(Calendar.HOUR_OF_DAY);
     final int minuto = c.get(Calendar.MINUTE);
+
+    private Date horaInicial, horaFinal;
 
     //Widgets
     EditText etFecha, etHoraIni, etHoraFin;
@@ -184,6 +191,14 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
 
                 //Muestro la hora con el formato deseado
                 etHoraIni.setText(horaFormateada + DOS_PUNTOS + minutoFormateado);
+
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("hh:mm");
+                try {
+                    horaInicial = simpleDateFormat.parse(hourOfDay + ":" + minute);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+
             }
             //Estos valores deben ir en ese orden
             //Al colocar en false se muestra en formato 12 horas y true en formato 24 horas
@@ -194,7 +209,9 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
     }
 
     private void obtenerHoraFin(){
+
         TimePickerDialog recogerHora = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
+            @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                 //Formateo el hora obtenido: antepone el 0 si son menores de 10
@@ -204,6 +221,16 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
 
                 //Muestro la hora con el formato deseado
                 etHoraFin.setText(horaFormateada + DOS_PUNTOS + minutoFormateado);
+
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("hh:mm");
+                try {
+                    horaFinal = simpleDateFormat.parse(hourOfDay + ":" + minute);
+                    diferencia();
+
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+
             }
             //Estos valores deben ir en ese orden
             //Al colocar en false se muestra en formato 12 horas y true en formato 24 horas
@@ -212,23 +239,40 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
 
         recogerHora.show();
 
-        if(recogerHora.isShowing()) {
-            priceReservation();
-        }
+    }
 
+
+
+    private void diferencia() {
+
+        String diferencia = obtieneDiferencia(horaInicial, horaFinal);
+        Toast.makeText(this,"DIFERENCIA "+diferencia,Toast.LENGTH_SHORT).show();
 
     }
 
-    private void priceReservation() {
+    public String obtieneDiferencia(Date startDate, Date endDate) {
+        //Diferencia en millisegundos
+        long different = endDate.getTime() - startDate.getTime();
 
-        Toast.makeText(this,"PRECIO",Toast.LENGTH_SHORT).show();
+        long secondsInMilli = 1000;
+        long minutesInMilli = secondsInMilli * 60;
+        long hoursInMilli = minutesInMilli * 60;
+        long daysInMilli = hoursInMilli * 24;
 
+        different = different % daysInMilli;
+
+        long elapsedHours = different / hoursInMilli;
+        different = different % hoursInMilli;
+
+        long elapsedMinutes = different / minutesInMilli;
+        different = different % minutesInMilli;
+
+        long elapsedSeconds = different / secondsInMilli;
+
+        return "horas: " + elapsedHours + " minutos: " + elapsedMinutes + "segundos: " + elapsedSeconds;
     }
-
 
     public void buttonReservar(View view){
-
-
 
         EditText fecha = findViewById(R.id.et_mostrar_fecha_picker);
         System.out.println(fecha.getText());
