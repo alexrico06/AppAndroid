@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MapsFragment extends Fragment {
@@ -41,11 +43,42 @@ public class MapsFragment extends Fragment {
             googleMap.getMinZoomLevel();
 
             LatLng parking1 = new LatLng(40.41826897827488, -3.6984408001271163);
-            googleMap.addMarker(new MarkerOptions().position(parking1).title("Parking Alsepark- C/Alcalá, 27 "));
+            MarkerOptions p1 = new MarkerOptions();
+            googleMap.addMarker(new MarkerOptions().position(parking1).title("Parking Alsepark-Calle de Alcalá, 27, 28014 Madrid"));
 
 
             LatLng parking2 = new LatLng(40.442688490789976, -3.691395914534013);
-            googleMap.addMarker(new MarkerOptions().position(parking2).title("Parking Saba- Paseo de la Castellana, 100 "));
+            googleMap.addMarker(new MarkerOptions().position(parking2).title("Parking Saba-Paseo de la Castellana, 100, 28046 Madrid"));
+
+            /*
+            System.out.println(marker.getTitle());
+                    String[] direccion;
+                    direccion = marker.getTitle().split("-");
+
+                    Intent i = new Intent(getContext(),ReservaParking.class);
+                    i.putExtra("direccion",direccion[1]);
+                    getContext().startActivity(i);
+             */
+            googleMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
+                @Override
+                public void onInfoWindowClick(Marker marker) {
+
+
+                    System.out.println(marker.getTitle());
+                    String[] direccion;
+                    direccion = marker.getTitle().split("-");
+
+                    Intent i = new Intent(getContext(),ReservaParking.class);
+                    i.putExtra("direccion",direccion[1]);
+                    getContext().startActivity(i);
+
+
+                }
+
+
+            });
+
+
         }
     };
 

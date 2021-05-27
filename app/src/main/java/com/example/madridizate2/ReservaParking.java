@@ -90,7 +90,6 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
         }
 
         spinner_alias = (Spinner) findViewById(R.id.alias_spinner2);
-        System.out.println("lol");
 
         ArrayList<String> listaAlias = hilo.listaApodos;
 
@@ -217,6 +216,8 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
 
     public void buttonReservar(View view){
 
+
+
         EditText fecha = findViewById(R.id.et_mostrar_fecha_picker);
         System.out.println(fecha.getText());
 
@@ -243,6 +244,8 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
         datosReserva[5] = (spinner_plazas.getSelectedItem().toString());
         datosReserva[6] = direccionText.getText().toString();
 
+        HiloCliente hilo = new HiloCliente(13, 2 ,datosReserva);
+
         HiloCliente hiloCliente = new HiloCliente(12,2,datosReserva);
         hiloCliente.start();
 
@@ -254,7 +257,7 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
 
         Toast.makeText(this,"RESERVA REALIZADA",Toast.LENGTH_SHORT).show();
 
-        Intent intent = new Intent(this, HomeFragment.class);
+        Intent intent = new Intent(this, Principal.class);
         startActivity(intent);
 
     }

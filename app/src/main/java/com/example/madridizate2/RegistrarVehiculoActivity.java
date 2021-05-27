@@ -174,36 +174,51 @@ public class RegistrarVehiculoActivity extends AppCompatActivity implements Adap
             bandera = false;
         }
 
-        if(bandera) {
+        if(!bandera) {
+            if(!datosV[0].equals("")) {
 
-            if(datosV.equals("S")&& datosV.equals("M") && datosV.equals("L")){
+                if(!datosV[2].equals("") && !datosV[3].equals("")) {
 
-                //insertar vehiculo
-                HiloCliente hilo = new HiloCliente(3, 1, datosV);
-                hilo.start();
+                    if (datosV[4].equals("S") || datosV[4].equals("M") || datosV[4].equals("L") || datosV[4].equals("s") || datosV[4].equals("m") || datosV[4].equals("l")) {
 
-                try {
-                    hilo.join();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+                        if (!datosV[5].equals("")) {
+                            //insertar vehiculo
+                            HiloCliente hilo = new HiloCliente(3, 1, datosV);
+                            hilo.start();
 
-                if (ruta.equals("A")) {
+                            try {
+                                hilo.join();
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
 
-                    Intent intent = new Intent(this, MainActivity.class);
-                    startActivity(intent);
-                } else {
+                            if (ruta.equals("A")) {
 
-                    Intent refresh = new Intent(this, RegistrarVehiculoActivity.class);
-                    refresh.putExtra("registro", "B");
-                    startActivity(refresh);
-                    this.finish();
+                                Intent intent = new Intent(this, MainActivity.class);
+                                startActivity(intent);
+                            } else {
 
+                                Intent refresh = new Intent(this, RegistrarVehiculoActivity.class);
+                                refresh.putExtra("registro", "B");
+                                startActivity(refresh);
+                                this.finish();
+
+                            }
+                        } else {
+                            Toast.makeText(this, "ESCRIBA UN ALIAS PARA RECONOCER SU VEHICULO", Toast.LENGTH_LONG).show();
+                        }
+
+                    } else {
+
+                        Toast.makeText(this, "ESCRIBA TAMANÑO: S,M,L", Toast.LENGTH_LONG).show();
+                    }
+
+                }else{
+                    Toast.makeText(this, "ESCRIBA MARCA Y MODELO DEL VEHICULO", Toast.LENGTH_LONG).show();
                 }
 
             }else{
-
-                Toast.makeText(this,"ESCRIBA TAMANÑO: S,M,L",Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "ESCRIBA LA MATRICULA DEL VEHICULO", Toast.LENGTH_LONG).show();
             }
 
         }else{
