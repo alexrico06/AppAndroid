@@ -211,6 +211,18 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
         }, hora, minuto, false);
 
         recogerHora.show();
+
+        if(recogerHora.isShowing()) {
+            priceReservation();
+        }
+
+
+    }
+
+    private void priceReservation() {
+
+        Toast.makeText(this,"PRECIO",Toast.LENGTH_SHORT).show();
+
     }
 
 
