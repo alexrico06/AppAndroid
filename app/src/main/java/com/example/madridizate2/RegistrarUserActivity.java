@@ -42,6 +42,7 @@ public class RegistrarUserActivity extends AppCompatActivity {
 
     private void insertarUsuario(){
 
+
         EditText dni = findViewById(R.id.textDNI);
         datosP[0] = dni.getText().toString();
         User.setDni(datosP[0]);

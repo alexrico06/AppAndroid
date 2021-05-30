@@ -301,20 +301,37 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
         datosReserva[6] = direccionText.getText().toString();
 
         HiloCliente hilo = new HiloCliente(13, 2 ,datosReserva);
-
-        HiloCliente hiloCliente = new HiloCliente(12,2,datosReserva);
-        hiloCliente.start();
-
+        hilo.start();
         try {
-            hiloCliente.join();
+            hilo.join();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
-        Toast.makeText(this,"RESERVA REALIZADA",Toast.LENGTH_SHORT).show();
+        if(hilo.resultado){
 
-        Intent intent = new Intent(this, Principal.class);
-        startActivity(intent);
+            Toast.makeText(this,"RESERVA NO DISPONIBLE",Toast.LENGTH_SHORT).show();
+            System.out.println("no existe");
+
+        }else{
+
+            HiloCliente hiloCliente = new HiloCliente(12,2,datosReserva);
+            hiloCliente.start();
+
+            try {
+                hiloCliente.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            Toast.makeText(this,"RESERVA REALIZADA",Toast.LENGTH_SHORT).show();
+
+            Intent intent = new Intent(this, Principal.class);
+            startActivity(intent);
+
+        }
+
+
 
     }
 }

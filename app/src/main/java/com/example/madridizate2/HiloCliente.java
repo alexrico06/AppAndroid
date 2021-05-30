@@ -43,10 +43,11 @@ public class HiloCliente extends Thread{
     int consulta;
     int id;
     boolean existe;
+    boolean resultado = false;
 
 
-    //VERIFICAR USUARIO
-    //INFORMACION PLAZAS DE UN PARKING POR DIRECCION
+    //VERIFICAR USUARIO 1
+    //INFORMACION PLAZAS DE UN PARKING POR DIRECCION 11
     public HiloCliente(int consulta, int id, String texto1, String texto2) {
         this.consulta = consulta;
 
@@ -60,7 +61,7 @@ public class HiloCliente extends Thread{
 
     }
 
-    //INSERTAR USUARIO Y DIRECCION
+    //INSERTAR USUARIO Y DIRECCION 2
     public HiloCliente(int consulta, String[] datosP, String[] datosD){
         this.consulta=consulta;
         this.datosP=datosP;
@@ -68,8 +69,9 @@ public class HiloCliente extends Thread{
     }
 
 
-    //INSERTAR DATOS VEHICULO
-    //INSERTAR DATOS RESERVA
+    //INSERTAR DATOS VEHICULO 3
+    //INSERTAR DATOS RESERVA 12
+    //CONSULTAR RESERVA QUE SE VA A INTRODUCIR
     public HiloCliente(int consulta,int id, String[] datos) {
         this.consulta = consulta;
         if(id==1){
@@ -79,9 +81,6 @@ public class HiloCliente extends Thread{
         }
 
     }
-
-
-
 
     //LISTADO PLAZAS
     public HiloCliente(int consulta) {
@@ -337,7 +336,7 @@ public class HiloCliente extends Thread{
                     e.printStackTrace();
                 }
 
-            case 11: //CONSULTAR PLAZAS DE UN PARKING
+            case 11: //CONSULTAR PLAZAS DE UN PARKING POR TAMAÑO DE COCHE
 
                 try {
                     dos.writeUTF(direccion);
@@ -357,10 +356,7 @@ public class HiloCliente extends Thread{
                     e.printStackTrace();
                 }
 
-            case 12:
-
-                System.out.println(consulta);
-
+            case 12: //INISERCIÓN DE UNA RESERVA
                 try {
                     oos = new ObjectOutputStream(s.getOutputStream());
                     oos.writeObject(datosR);
@@ -369,6 +365,29 @@ public class HiloCliente extends Thread{
                 }
 
                break;
+
+            case 13:
+                //CONSULTAR SI EXISTE RESERVA QUE SE VA A INTRODUCIR
+
+                try {
+                    oos = new ObjectOutputStream(s.getOutputStream());
+                    oos.writeObject(datosR);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                try {
+                    dis = new DataInputStream(s.getInputStream());
+                    resultado = dis.readBoolean();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                System.out.println(resultado);
+
+
+
+                break;
+
         }
 
     }

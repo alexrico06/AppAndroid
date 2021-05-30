@@ -34,27 +34,22 @@
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="37dp"
-            android:orientation="vertical">
+            android:layout_height="37dp">
 
             <TextView
                 android:id="@+id/textViewPassword"
                 android:layout_width="match_parent"
                 android:layout_height="46dp"
                 android:text="@string/textViewPassword" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="18dp"
-            android:orientation="vertical">
 
             <EditText
                 android:id="@+id/editTextTextPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                android:paddingTop="5dp" />
+
         </LinearLayout>
 
     </LinearLayout>
@@ -76,107 +71,43 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <LinearLayout
-                android:layout_width="132dp"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/textViewDNI"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:text="@string/textViewDni" />
-
-                <TextView
-                    android:id="@+id/textViewNombre"
-                    android:layout_width="match_parent"
-                    android:layout_height="51dp"
-                    android:layout_marginBottom="10dp"
-                    android:text="@string/textViewNombre" />
-
-                <TextView
-                    android:id="@+id/textViewApellidos"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginBottom="10dp"
-                    android:text="@string/textViewApellido" />
-
-                <TextView
-                    android:id="@+id/textViewTelefono"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginBottom="10dp"
-                    android:text="@string/textViewTelefono" />
-
-                <TextView
-                    android:id="@+id/textViewCorreo"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginBottom="10dp"
-                    android:text="@string/textViewCorreo" />
-
-                <TextView
-                    android:id="@+id/textViewFecha"
-                    android:layout_width="match_parent"
-                    android:layout_height="51dp"
-                    android:layout_marginBottom="10dp"
-                    android:text="@string/textViewFecha" />
-
-                <TextView
-                    android:id="@+id/textViewCalle"
-                    android:layout_width="match_parent"
-                    android:layout_height="51dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:text="@string/textViewCalle" />
-
-                <TextView
-                    android:id="@+id/textViewNumero"
-                    android:layout_width="match_parent"
-                    android:layout_height="49dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:text="@string/textViewNumero" />
-
-                <TextView
-                    android:id="@+id/textViewPortal"
-                    android:layout_width="match_parent"
-                    android:layout_height="51dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:text="@string/textViewPortal" />
-
-                <TextView
-                    android:id="@+id/textViewPiso"
-                    android:layout_width="match_parent"
-                    android:layout_height="51dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:text="@string/textViewPiso" />
-
-                <TextView
-                    android:id="@+id/textViewCP"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginBottom="10dp"
-                    android:text="@string/textViewCP" />
-
-                <TextView
-                    android:id="@+id/textViewCiudad"
-                    android:layout_width="match_parent"
-                    android:layout_height="53dp"
-                    android:layout_marginBottom="10dp"
-                    android:text="@string/textViewCiudad" />
-            </LinearLayout>
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:text="DATOS PERSONALES" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/separador1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:background="#D61D1D" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textViewDNI"
+                    android:layout_width="140dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/textViewDni" />
 
                 <EditText
                     android:id="@+id/textDNI"
@@ -186,6 +117,19 @@
                     android:layout_marginBottom="10dp"
                     android:ems="10"
                     android:inputType="textPersonName" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textViewNombre"
+                    android:layout_width="140dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/textViewNombre" />
 
                 <EditText
                     android:id="@+id/textNombre"
@@ -194,6 +138,19 @@
                     android:layout_marginBottom="10dp"
                     android:ems="10"
                     android:inputType="textPersonName" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textViewApellidos"
+                    android:layout_width="140dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/textViewApellido" />
 
                 <EditText
                     android:id="@+id/textApellidos"
@@ -203,22 +160,19 @@
                     android:ems="10"
                     android:inputType="textPersonName"
                     android:text="Name" />
+            </LinearLayout>
 
-                <EditText
-                    android:id="@+id/textPhone"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:ems="10"
-                    android:inputType="phone" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-                <EditText
-                    android:id="@+id/textEmail"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                <TextView
+                    android:id="@+id/textViewFecha"
+                    android:layout_width="140dp"
+                    android:layout_height="match_parent"
                     android:layout_marginBottom="10dp"
-                    android:ems="10"
-                    android:inputType="textEmailAddress" />
+                    android:text="@string/textViewFecha" />
 
                 <EditText
                     android:id="@+id/textFechaNacimiento"
@@ -227,6 +181,122 @@
                     android:layout_marginBottom="10dp"
                     android:ems="10"
                     android:inputType="date" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/divider6"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:background="#D61D1D" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:text="CONTACTO" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/divider4"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:background="#D61D1D" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textViewTelefono"
+                    android:layout_width="110dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/textViewTelefono" />
+
+                <EditText
+                    android:id="@+id/textPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:ems="10"
+                    android:inputType="phone" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textViewCorreo"
+                    android:layout_width="110dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/textViewCorreo" />
+
+                <EditText
+                    android:id="@+id/textEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:ems="10"
+                    android:inputType="textEmailAddress" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/divider5"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:background="#D61D1D" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:text="DOMICILIO" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/divider3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:background="#D61D1D" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textViewCalle"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/textViewCalle" />
 
                 <EditText
                     android:id="@+id/textCalle"
@@ -236,6 +306,20 @@
                     android:layout_marginBottom="10dp"
                     android:ems="10"
                     android:inputType="textPersonName" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textViewNumero"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/textViewNumero" />
 
                 <EditText
                     android:id="@+id/textNumero"
@@ -245,6 +329,20 @@
                     android:layout_marginBottom="10dp"
                     android:ems="10"
                     android:inputType="textPersonName" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textViewPortal"
+                    android:layout_width="90dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/textViewPortal" />
 
                 <EditText
                     android:id="@+id/textPortal"
@@ -254,6 +352,20 @@
                     android:layout_marginBottom="10dp"
                     android:ems="10"
                     android:inputType="textPersonName" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textViewPiso"
+                    android:layout_width="90dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/textViewPiso" />
 
                 <EditText
                     android:id="@+id/textPiso"
@@ -263,6 +375,19 @@
                     android:layout_marginBottom="10dp"
                     android:ems="10"
                     android:inputType="textPersonName" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textViewCP"
+                    android:layout_width="90dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/textViewCP" />
 
                 <EditText
                     android:id="@+id/textCodPostal"
@@ -271,11 +396,24 @@
                     android:layout_marginBottom="10dp"
                     android:ems="10"
                     android:inputType="textPostalAddress" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/textViewCiudad"
+                    android:layout_width="90dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/textViewCiudad" />
 
                 <EditText
                     android:id="@+id/textCiudad"
                     android:layout_width="match_parent"
-                    android:layout_height="54dp"
+                    android:layout_height="match_parent"
                     android:layout_marginBottom="10dp"
                     android:ems="10"
                     android:inputType="textPersonName" />
