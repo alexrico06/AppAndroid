@@ -95,7 +95,6 @@ public class MapsFragment extends Fragment {
                 @Override
                 public void onInfoWindowClick(Marker marker) {
 
-
                     System.out.println(marker.getTitle());
                     String[] direccion;
                     direccion = marker.getTitle().split("-");
@@ -105,11 +104,7 @@ public class MapsFragment extends Fragment {
                     getContext().startActivity(i);
 
                 }
-
-
             });
-
-
         }
     };
 
