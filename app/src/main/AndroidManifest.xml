@@ -31,7 +31,8 @@
         <activity android:name=".MenuParkings" />
         <activity android:name=".ReservaParking" />
         <activity android:name=".RegistrarVehiculoActivity" />
-        <activity android:name=".RegistrarUserActivity" />
+        <activity android:name=".RegistrarUserActivity"
+            android:windowSoftInputMode="adjustResize"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
