@@ -51,15 +51,10 @@ public class RegistrarVehiculoActivity extends AppCompatActivity implements Adap
             insertar.setVisibility(View.INVISIBLE);
 
             Button eliminar = findViewById(R.id.buttonElimarVehiculo);
-            eliminar.setVisibility(View.INVISIBLE);
+            eliminar.setVisibility(View.GONE);
 
             Button cancelar = findViewById(R.id.buttonCancelar);
-            cancelar.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-
-                }
-            });
+            cancelar.setVisibility(View.VISIBLE);
 
             Button guardar = findViewById(R.id.buttonGuardarVehiculo);
             guardar.setVisibility(View.VISIBLE);
@@ -75,6 +70,12 @@ public class RegistrarVehiculoActivity extends AppCompatActivity implements Adap
             furgoneta.setEnabled(true);
 
         }else{
+            Button eliminar = findViewById(R.id.buttonElimarVehiculo);
+            eliminar.setVisibility(View.VISIBLE);
+
+            Button cancelar = findViewById(R.id.buttonCancelar);
+            cancelar.setVisibility(View.INVISIBLE);
+
             matricula = findViewById(R.id.textMatricula);
             matricula.setEnabled(false);
 
@@ -118,6 +119,9 @@ public class RegistrarVehiculoActivity extends AppCompatActivity implements Adap
 
         Button eliminar = findViewById(R.id.buttonElimarVehiculo);
         eliminar.setVisibility(View.INVISIBLE);
+
+        Button cancelar = findViewById(R.id.buttonCancelar);
+        cancelar.setVisibility(View.VISIBLE);
 
         Button insertar = findViewById(R.id.buttonInsertarVehiculo);
         insertar.setVisibility(View.INVISIBLE);
@@ -297,4 +301,19 @@ public class RegistrarVehiculoActivity extends AppCompatActivity implements Adap
     public void onNothingSelected(AdapterView parent) {
         // Do nothing.
     }
+
+    public void cancelarVehiculo(View view){
+
+        if(ruta.equals("A")) {
+            Intent i = new Intent(this, MainActivity.class);
+            startActivity(i);
+        }else{
+            Intent refresh = new Intent(this, RegistrarVehiculoActivity.class);
+            refresh.putExtra("registro", "B");
+            startActivity(refresh);
+            this.finish();
+        }
+
+    }
+
 }
