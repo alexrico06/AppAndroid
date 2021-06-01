@@ -14,6 +14,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -37,10 +38,18 @@ public class MapsFragment extends Fragment {
          */
         @Override
         public void onMapReady(GoogleMap googleMap) {
-            LatLng madrid = new LatLng(40.41, -3.70);
-            googleMap.addMarker(new MarkerOptions().position(madrid).title("Marker in Madrid"));
-            googleMap.moveCamera(CameraUpdateFactory.newLatLng(madrid));
-            googleMap.getMinZoomLevel();
+
+            UiSettings uiSettings = googleMap.getUiSettings();
+            uiSettings.setZoomControlsEnabled(true);
+            uiSettings.setCompassEnabled(true);
+
+            googleMap.setTrafficEnabled(true);
+            googleMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
+
+            LatLng madrid = new LatLng(40.44, -3.70);
+            //googleMap.addMarker(new MarkerOptions().position(madrid).title("Marker in Madrid"));
+            //googleMap.moveCamera(CameraUpdateFactory.newLatLng(madrid));
+            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(madrid, 12));
 
             LatLng parking1 = new LatLng(40.41826897827488, -3.6984408001271163);
             googleMap.addMarker(new MarkerOptions().position(parking1).title("Parking Alsepark-Calle de Alcalá, 27, 28014 Madrid"));
@@ -72,8 +81,6 @@ public class MapsFragment extends Fragment {
 
             LatLng parking10 = new LatLng(40.40695, -3.681271);
             googleMap.addMarker(new MarkerOptions().position(parking10).title("GARCA 2006 S.L. PARKING PÚBLICO-Paseo de la R. Cristina, 24, 28014 Madrid"));
-
-
 
             /*
             System.out.println(marker.getTitle());
