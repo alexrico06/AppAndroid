@@ -50,6 +50,17 @@ public class RegistrarVehiculoActivity extends AppCompatActivity implements Adap
             Button insertar = findViewById(R.id.buttonInsertarVehiculo);
             insertar.setVisibility(View.INVISIBLE);
 
+            Button eliminar = findViewById(R.id.buttonElimarVehiculo);
+            eliminar.setVisibility(View.INVISIBLE);
+
+            Button cancelar = findViewById(R.id.buttonCancelar);
+            cancelar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                }
+            });
+
             Button guardar = findViewById(R.id.buttonGuardarVehiculo);
             guardar.setVisibility(View.VISIBLE);
 
@@ -165,16 +176,19 @@ public class RegistrarVehiculoActivity extends AppCompatActivity implements Adap
 
         if(moto.isChecked()){
             datosV[1]="m";
+            bandera = true;
         }else if(coche.isChecked()){
             datosV[1]="c";
+            bandera = true;
         }else if(furgoneta.isChecked()){
             datosV[1]="f";
+            bandera = true;
         }else{
             datosV[1]="n";
             bandera = false;
         }
 
-        if(!bandera) {
+        if(bandera) {
             if(!datosV[0].equals("")) {
 
                 if(!datosV[2].equals("") && !datosV[3].equals("")) {

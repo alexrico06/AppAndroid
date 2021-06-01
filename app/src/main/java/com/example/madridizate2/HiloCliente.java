@@ -19,8 +19,10 @@ public class HiloCliente extends Thread{
 
     Socket s;
 
-    DataOutputStream dos=null;
     DataInputStream dis = null;
+
+    DataOutputStream dos=null;
+
     ObjectOutputStream oos = null;
 
     public String dni;
@@ -46,8 +48,8 @@ public class HiloCliente extends Thread{
     boolean resultado = false;
 
 
-    //VERIFICAR USUARIO 1
-    //INFORMACION PLAZAS DE UN PARKING POR DIRECCION 11
+    //VERIFICAR USUARIO 1.1
+    //INFORMACION PLAZAS DE UN PARKING POR DIRECCION 11.1
     public HiloCliente(int consulta, int id, String texto1, String texto2) {
         this.consulta = consulta;
 
@@ -131,13 +133,13 @@ public class HiloCliente extends Thread{
                 //VERIFICAR USUARIO
 
                 try {
+                    dos = new DataOutputStream(s.getOutputStream());
                     dos.writeUTF(correo);
                     dos.writeUTF(contrasena);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
 
-                DataInputStream dis = null;
                 try {
                     dis = new DataInputStream(s.getInputStream());
                     existe = dis.readBoolean();
@@ -383,8 +385,6 @@ public class HiloCliente extends Thread{
                     e.printStackTrace();
                 }
                 System.out.println(resultado);
-
-
 
                 break;
 

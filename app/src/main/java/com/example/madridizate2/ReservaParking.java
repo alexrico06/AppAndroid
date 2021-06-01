@@ -12,6 +12,7 @@ import android.text.Layout;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -99,6 +100,18 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
         spinner_alias = (Spinner) findViewById(R.id.alias_spinner2);
 
         ArrayList<String> listaAlias = hilo.listaApodos;
+        if(listaAlias.size()==0){
+
+            Toast.makeText(this,"No ha registrado ningún vehiculo",Toast.LENGTH_SHORT).show();
+            System.out.println("No hay coches insertados");
+
+            /*Intent i = new Intent(this,RegistrarVehiculoActivity.class);
+            i.putExtra("registro","A");
+            startActivity(i);*/
+
+            Button reserva = findViewById(R.id.reservarPlaza);
+            //reserva.setEnabled(false);
+        }
 
         spinner_alias.setAdapter(new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, listaAlias));
         spinner_alias.setOnItemSelectedListener(this);
@@ -275,19 +288,19 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
     public void buttonReservar(View view){
 
         EditText fecha = findViewById(R.id.et_mostrar_fecha_picker);
-        System.out.println(fecha.getText());
+        //System.out.println(fecha.getText());
 
         EditText horaI = findViewById(R.id.et_mostrar_hora_picker);
-        System.out.println(horaI.getText());
+       // System.out.println(horaI.getText());
 
         EditText horaF = findViewById(R.id.et_mostrar_hora_fin_picker);
-        System.out.println(horaF.getText());
+        //System.out.println(horaF.getText());
 
-        System.out.println(User.getEmail());
+        //System.out.println(User.getEmail());
 
-        System.out.println(spinner_alias.getSelectedItem().toString());
-        System.out.println(spinner_plazas.getSelectedItem().toString());
-        System.out.println(direccionText.getText());
+        //System.out.println(spinner_alias.getSelectedItem().toString());
+        //System.out.println(spinner_plazas.getSelectedItem().toString());
+        //System.out.println(direccionText.getText());
 
 
         String[] datosReserva = new String[7];
@@ -296,6 +309,7 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
         datosReserva[1] = horaI.getText().toString();
         datosReserva[2] = horaF.getText().toString();
         datosReserva[3] = User.getEmail();
+
         datosReserva[4] = spinner_alias.getSelectedItem().toString();
         datosReserva[5] = (spinner_plazas.getSelectedItem().toString());
         datosReserva[6] = direccionText.getText().toString();
@@ -314,6 +328,18 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
             System.out.println("no existe");
 
         }else{
+
+            HiloCliente hiloT = new HiloCliente(6, User.getEmail());
+            hiloT.start();
+
+            try {
+                hiloT.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            if(User.getNumTarjeta().equals("")){
+                System.out.println("inserte tarjeta");
+            }
 
             HiloCliente hiloCliente = new HiloCliente(12,2,datosReserva);
             hiloCliente.start();

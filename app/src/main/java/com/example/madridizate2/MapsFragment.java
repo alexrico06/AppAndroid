@@ -43,12 +43,37 @@ public class MapsFragment extends Fragment {
             googleMap.getMinZoomLevel();
 
             LatLng parking1 = new LatLng(40.41826897827488, -3.6984408001271163);
-            MarkerOptions p1 = new MarkerOptions();
             googleMap.addMarker(new MarkerOptions().position(parking1).title("Parking Alsepark-Calle de Alcalá, 27, 28014 Madrid"));
 
 
             LatLng parking2 = new LatLng(40.442688490789976, -3.691395914534013);
             googleMap.addMarker(new MarkerOptions().position(parking2).title("Parking Saba-Paseo de la Castellana, 100, 28046 Madrid"));
+
+            LatLng parking3 = new LatLng(40.421554 , -3.705557);
+            googleMap.addMarker(new MarkerOptions().position(parking3).title("Parking Tudescos-Plaza de Santa María Soledad Torres Acosta, 28004 Madrid"));
+
+            LatLng parking4 = new LatLng( 40.426602, -3.687992);
+            googleMap.addMarker(new MarkerOptions().position(parking4).title("SerranoPark-Calle de Hermosilla, 7, 28001 Madrid"));
+
+            LatLng parking5 = new LatLng(40.424231, -3.682763);
+            googleMap.addMarker(new MarkerOptions().position(parking5).title("Aparcamiento-Calle de Núñez de Balboa, 28001 Madrid"));
+
+            LatLng parking6 = new LatLng(40.42065 , -3.699332);
+            googleMap.addMarker(new MarkerOptions().position(parking6).title("Parking-Plaza de Pedro Zerolo, 28004 Madrid"));
+
+            LatLng parking7 = new LatLng(40.424343, -3.691352);
+            googleMap.addMarker(new MarkerOptions().position(parking7).title("Aparcamiento Público-Paseo de Recoletos, 37, 28004 Madrid"));
+
+            LatLng parking8 = new LatLng(40.424124 , -3.684137);
+            googleMap.addMarker(new MarkerOptions().position(parking8).title("Parking Público-Calle de Velázquez, 24, 28001 Madrid"));
+
+            LatLng parking9 = new LatLng(40.418076, -3.690512);
+            googleMap.addMarker(new MarkerOptions().position(parking9).title("Parking Montalbán-Calle Montalban, 4, 28014, Madrid"));
+
+            LatLng parking10 = new LatLng(40.40695, -3.681271);
+            googleMap.addMarker(new MarkerOptions().position(parking10).title("GARCA 2006 S.L. PARKING PÚBLICO-Paseo de la R. Cristina, 24, 28014 Madrid"));
+
+
 
             /*
             System.out.println(marker.getTitle());
@@ -71,7 +96,6 @@ public class MapsFragment extends Fragment {
                     Intent i = new Intent(getContext(),ReservaParking.class);
                     i.putExtra("direccion",direccion[1]);
                     getContext().startActivity(i);
-
 
                 }
 

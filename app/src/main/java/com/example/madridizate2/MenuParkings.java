@@ -57,8 +57,5 @@ public class MenuParkings extends AppCompatActivity {
 
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
 
-
-
-
     }
 }
