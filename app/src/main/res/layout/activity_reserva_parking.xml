@@ -223,10 +223,12 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/contenedor_precio"
             android:layout_width="218dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:layout_marginTop="50dp"
-            android:layout_gravity="center_horizontal">
+            android:visibility="invisible">
 
             <EditText
                 android:id="@+id/precioReserva"
@@ -234,7 +236,11 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="textPersonName" />
+                android:gravity="center"
+                android:hint="asd"
+                android:inputType="textPersonName"
+                android:textSize="50sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textView20"

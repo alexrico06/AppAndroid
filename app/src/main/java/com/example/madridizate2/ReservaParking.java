@@ -17,6 +17,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -68,6 +69,8 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
         Intent intent = getIntent();
         direccion = intent.getStringExtra("direccion");
 
+        Button reserva = findViewById(R.id.reservarPlaza);
+
         etFecha = (EditText) findViewById(R.id.et_mostrar_fecha_picker);
         etHoraIni = (EditText) findViewById(R.id.et_mostrar_hora_picker);
         etHoraFin = (EditText) findViewById(R.id.et_mostrar_hora_fin_picker);
@@ -109,9 +112,9 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
             i.putExtra("registro","A");
             startActivity(i);*/
 
-            Button reserva = findViewById(R.id.reservarPlaza);
-            //reserva.setEnabled(false);
         }
+
+        reserva.setEnabled(false);
 
         spinner_alias.setAdapter(new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, listaAlias));
         spinner_alias.setOnItemSelectedListener(this);
@@ -227,7 +230,7 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
             @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                //Formateo el hora obtenido: antepone el 0 si son menores de 10
+                //Formateo la hora obtenida: antepone el 0 si son menores de 10
                 String horaFormateada =  (hourOfDay < 10)? String.valueOf(CERO + hourOfDay) : String.valueOf(hourOfDay);
                 //Formateo el minuto obtenido: antepone el 0 si son menores de 10
                 String minutoFormateado = (minute < 10)? String.valueOf(CERO + minute):String.valueOf(minute);
@@ -254,12 +257,24 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
 
     }
 
-
-
     private void diferencia() {
 
+        Button reserva = findViewById(R.id.reservarPlaza);
+        EditText coste = (EditText) findViewById(R.id.precioReserva);
+        LinearLayout linearLayout = (LinearLayout) findViewById(R.id.contenedor_precio);
+
         String diferencia = obtieneDiferencia(horaInicial, horaFinal);
-        Toast.makeText(this,"DIFERENCIA "+diferencia,Toast.LENGTH_SHORT).show();
+        int tiempo = Integer.parseInt(diferencia);
+
+        if(tiempo < 0) {
+            Toast.makeText(this,"TIEMPO NEGATIVO",Toast.LENGTH_SHORT).show();
+            reserva.setEnabled(false);
+        } else {
+            double valor = tiempo*0.11;
+            coste.setText(""+valor);
+            reserva.setEnabled(true);
+            linearLayout.setVisibility(View.VISIBLE);
+        }
 
     }
 
@@ -282,7 +297,11 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
 
         long elapsedSeconds = different / secondsInMilli;
 
-        return "horas: " + elapsedHours + " minutos: " + elapsedMinutes + "segundos: " + elapsedSeconds;
+        long horasMinutos = elapsedHours*60;
+        long totalMinutos = horasMinutos + elapsedMinutes;
+
+        return ""+totalMinutos;
+
     }
 
     public void buttonReservar(View view){
