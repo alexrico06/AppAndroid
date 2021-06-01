@@ -225,26 +225,19 @@ public class RegistrarVehiculoActivity extends AppCompatActivity implements Adap
                         } else {
                             Toast.makeText(this, "ESCRIBA UN ALIAS PARA RECONOCER SU VEHICULO", Toast.LENGTH_LONG).show();
                         }
-
                     } else {
 
                         Toast.makeText(this, "ESCRIBA TAMANÑO: S,M,L", Toast.LENGTH_LONG).show();
                     }
-
                 }else{
                     Toast.makeText(this, "ESCRIBA MARCA Y MODELO DEL VEHICULO", Toast.LENGTH_LONG).show();
                 }
-
             }else{
                 Toast.makeText(this, "ESCRIBA LA MATRICULA DEL VEHICULO", Toast.LENGTH_LONG).show();
             }
-
         }else{
-
             Toast.makeText(this,"SELECCIONE TIPO VEHICULO",Toast.LENGTH_SHORT).show();
-
         }
-
     }
 
 
@@ -255,13 +248,18 @@ public class RegistrarVehiculoActivity extends AppCompatActivity implements Adap
         System.out.println(matricula.getText().toString());
 
         //eliminar vehiculo según la matricula
-        HiloCliente hilo = new HiloCliente(10,matricula.getText().toString());
-        hilo.start();
+        if(!matricula.getText().toString().equals("")) {
+            HiloCliente hilo = new HiloCliente(10, matricula.getText().toString());
+            hilo.start();
 
-        Intent refresh = new Intent(this, RegistrarVehiculoActivity.class);
-        refresh.putExtra("registro", "B");
-        startActivity(refresh);
-        this.finish();
+            Intent refresh = new Intent(this, RegistrarVehiculoActivity.class);
+            refresh.putExtra("registro", "B");
+            startActivity(refresh);
+            this.finish();
+
+        }else{
+            Toast.makeText(this,"NO HAY VEHICULOS PARA ELIMINAR",Toast.LENGTH_SHORT).show();
+        }
 
     }
 

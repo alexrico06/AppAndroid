@@ -37,6 +37,7 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
     Spinner spinner_alias;
     Spinner spinner_plazas;
     EditText direccionText, coste;
+    ArrayList<String> listaAlias;
 
     private static final String CERO = "0";
     private static final String DOS_PUNTOS = ":";
@@ -102,7 +103,7 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
 
         spinner_alias = (Spinner) findViewById(R.id.alias_spinner2);
 
-        ArrayList<String> listaAlias = hilo.listaApodos;
+        listaAlias = hilo.listaApodos;
         if(listaAlias.size()==0){
 
             Toast.makeText(this,"No ha registrado ningún vehiculo",Toast.LENGTH_SHORT).show();
@@ -272,7 +273,12 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
             double valor = tiempo*0.11;
             coste = (EditText) findViewById(R.id.precioReserva);
             coste.setText(""+valor);
-            reserva.setEnabled(true);
+
+            if(listaAlias.size()==0){
+                reserva.setEnabled(false);
+            }else{
+                reserva.setEnabled(true);
+            }
             linearLayout.setVisibility(View.VISIBLE);
         }
 
@@ -357,22 +363,23 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
                 e.printStackTrace();
             }
             if(User.getNumTarjeta().equals("")){
-                System.out.println("inserte tarjeta");
+                Toast.makeText(this, "DEBE TENER REGISTRADA UNA TARJETA PARA PODER RESERVAR", Toast.LENGTH_SHORT).show();
+            }else {
+
+                HiloCliente hiloCliente = new HiloCliente(12, 2, datosReserva);
+                hiloCliente.start();
+
+                try {
+                    hiloCliente.join();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+                Toast.makeText(this, "RESERVA REALIZADA", Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(this, Principal.class);
+                startActivity(intent);
             }
-
-            HiloCliente hiloCliente = new HiloCliente(12,2,datosReserva);
-            hiloCliente.start();
-
-            try {
-                hiloCliente.join();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-
-            Toast.makeText(this,"RESERVA REALIZADA",Toast.LENGTH_SHORT).show();
-
-            Intent intent = new Intent(this, Principal.class);
-            startActivity(intent);
 
         }
 

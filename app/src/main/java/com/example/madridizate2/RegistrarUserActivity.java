@@ -133,6 +133,7 @@ public class RegistrarUserActivity extends AppCompatActivity {
 
                                                         builder.setPositiveButton("CONTINUAR", new DialogInterface.OnClickListener() {
                                                             public void onClick(DialogInterface dialog, int id) {
+                                                                datosP[6] = "";
                                                                 completo=true;
                                                             }
                                                         });
