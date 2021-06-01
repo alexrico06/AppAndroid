@@ -102,9 +102,6 @@ public class RegistrarUserActivity extends AppCompatActivity {
         EditText ciudad =  findViewById(R.id.textCiudad);
         datosD[5] = ciudad.getText().toString();
 
-        Pattern pattern = Pattern.compile ("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"+"[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
-
-        Matcher mather = pattern.matcher(datosP[4]);
 
         if(datosP[0].length()==9){
             if(!datosP[1].equals("")){
@@ -112,28 +109,39 @@ public class RegistrarUserActivity extends AppCompatActivity {
                     if(!datosP[5].equals("")){
                         if(!datosP[3].equals("")){
                             if(!datosP[4].equals("")){
-                                if(!datosP[6].equals("")){
+
+                                Pattern pattern = Pattern.compile ("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"+"[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
+                                Matcher mather = pattern.matcher(datosP[4]);
+
+                                if (mather.find() == true) {
+                                    System.out.println("El email ingresado es válido.");
+                                    if(!datosP[6].equals("")){
 
 
-                                }else{
-                                    //Toast.makeText(this,"INTRODUZCA UNA CONTRASEÑA",Toast.LENGTH_SHORT).show();
-                                    AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                                    builder.setMessage("CONTRASEÑA VACÍA, DESEA CONTINUAR?");
+                                    }else{
+                                        //Toast.makeText(this,"INTRODUZCA UNA CONTRASEÑA",Toast.LENGTH_SHORT).show();
+                                        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                                        builder.setMessage("CONTRASEÑA VACÍA, DESEA CONTINUAR?");
 
-                                    builder.setPositiveButton("CONTINUAR", new DialogInterface.OnClickListener() {
-                                        public void onClick(DialogInterface dialog, int id) {
-                                            vacios=false;
-                                        }
-                                    });
-                                    builder.setNegativeButton("CANCELAR", new DialogInterface.OnClickListener() {
-                                        public void onClick(DialogInterface dialog, int id) {
-                                           dialog.cancel();
-                                        }
-                                    });
+                                        builder.setPositiveButton("CONTINUAR", new DialogInterface.OnClickListener() {
+                                            public void onClick(DialogInterface dialog, int id) {
+                                                vacios=false;
+                                            }
+                                        });
+                                        builder.setNegativeButton("CANCELAR", new DialogInterface.OnClickListener() {
+                                            public void onClick(DialogInterface dialog, int id) {
+                                                dialog.cancel();
+                                            }
+                                        });
 
-                                    AlertDialog dialog = builder.create();
-                                    dialog.show();
+                                        AlertDialog dialog = builder.create();
+                                        dialog.show();
+                                    }
+
+                                } else {
+                                    Toast.makeText(this,"INTRODUZCA UN CORREO CORRECTO",Toast.LENGTH_SHORT).show();
                                 }
+
                             }else{
                                 Toast.makeText(this,"INTRODUZCA UN CORREO",Toast.LENGTH_SHORT).show();
                             }

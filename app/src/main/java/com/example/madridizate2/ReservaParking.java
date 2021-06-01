@@ -36,7 +36,7 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
     String direccion;
     Spinner spinner_alias;
     Spinner spinner_plazas;
-    EditText direccionText;
+    EditText direccionText, coste;
 
     private static final String CERO = "0";
     private static final String DOS_PUNTOS = ":";
@@ -260,7 +260,6 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
     private void diferencia() {
 
         Button reserva = findViewById(R.id.reservarPlaza);
-        EditText coste = (EditText) findViewById(R.id.precioReserva);
         LinearLayout linearLayout = (LinearLayout) findViewById(R.id.contenedor_precio);
 
         String diferencia = obtieneDiferencia(horaInicial, horaFinal);
@@ -271,6 +270,7 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
             reserva.setEnabled(false);
         } else {
             double valor = tiempo*0.11;
+            coste = (EditText) findViewById(R.id.precioReserva);
             coste.setText(""+valor);
             reserva.setEnabled(true);
             linearLayout.setVisibility(View.VISIBLE);
@@ -322,7 +322,7 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
         //System.out.println(direccionText.getText());
 
 
-        String[] datosReserva = new String[7];
+        String[] datosReserva = new String[8];
 
         datosReserva[0] = fecha.getText().toString();
         datosReserva[1] = horaI.getText().toString();
