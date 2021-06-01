@@ -20,7 +20,7 @@ public class RegistrarUserActivity extends AppCompatActivity {
 
     static String[] datosP = new String[7];
     String[] datosD = new String[6];
-    boolean vacios=false;
+    boolean completo=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,9 +31,9 @@ public class RegistrarUserActivity extends AppCompatActivity {
 
     public void registrarCoches(View view) {
 
-        vacios = insertarUsuario();
+        completo = insertarUsuario();
 
-        if(!vacios){
+        if(completo){
             Intent i = new Intent(this, RegistrarVehiculoActivity.class);
             i.putExtra("registro","A");
             startActivity(i);
@@ -45,9 +45,9 @@ public class RegistrarUserActivity extends AppCompatActivity {
 
     public void pulsarMasTarde(View view) {
 
-        vacios = insertarUsuario();
+        completo = insertarUsuario();
 
-        if(!vacios){
+        if(completo){
             Intent i = new Intent(this, MainActivity.class);
             startActivity(i);
         }/*else{
@@ -114,30 +114,50 @@ public class RegistrarUserActivity extends AppCompatActivity {
                                 Matcher mather = pattern.matcher(datosP[4]);
 
                                 if (mather.find() == true) {
-                                    System.out.println("El email ingresado es válido.");
-                                    if(!datosP[6].equals("")){
 
+                                    //DATOS DIRECCION
+                                    if(!datosD[0].equals("")){
+                                        if(!datosD[1].equals("")){
+                                            if(!datosD[4].equals("")){
+                                                if(!datosD[5].equals("")){
 
-                                    }else{
-                                        //Toast.makeText(this,"INTRODUZCA UNA CONTRASEÑA",Toast.LENGTH_SHORT).show();
-                                        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                                        builder.setMessage("CONTRASEÑA VACÍA, DESEA CONTINUAR?");
+                                                    //DATO CONTRASEÑA
+                                                    if(!datosP[6].equals("")){
 
-                                        builder.setPositiveButton("CONTINUAR", new DialogInterface.OnClickListener() {
-                                            public void onClick(DialogInterface dialog, int id) {
-                                                vacios=false;
+                                                        completo=true;
+
+                                                    }else{
+
+                                                        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                                                        builder.setMessage("CONTRASEÑA VACÍA, DESEA CONTINUAR?");
+
+                                                        builder.setPositiveButton("CONTINUAR", new DialogInterface.OnClickListener() {
+                                                            public void onClick(DialogInterface dialog, int id) {
+                                                                completo=true;
+                                                            }
+                                                        });
+                                                        builder.setNegativeButton("CANCELAR", new DialogInterface.OnClickListener() {
+                                                            public void onClick(DialogInterface dialog, int id) {
+                                                                dialog.cancel();
+                                                            }
+                                                        });
+
+                                                        AlertDialog dialog = builder.create();
+                                                        dialog.show();
+                                                    }
+
+                                                } else {
+                                                    Toast.makeText(this,"INTRODUZCA LA CIUDAD",Toast.LENGTH_SHORT).show();
+                                                }
+                                            } else {
+                                                Toast.makeText(this,"INTRODUZCA EL CODIGO POSTAL",Toast.LENGTH_SHORT).show();
                                             }
-                                        });
-                                        builder.setNegativeButton("CANCELAR", new DialogInterface.OnClickListener() {
-                                            public void onClick(DialogInterface dialog, int id) {
-                                                dialog.cancel();
-                                            }
-                                        });
-
-                                        AlertDialog dialog = builder.create();
-                                        dialog.show();
+                                        } else {
+                                            Toast.makeText(this,"INTRODUZCA EL NUMERO DE VIVIENDA",Toast.LENGTH_SHORT).show();
+                                        }
+                                    } else {
+                                        Toast.makeText(this,"INTRODUZCA UNA CALLE",Toast.LENGTH_SHORT).show();
                                     }
-
                                 } else {
                                     Toast.makeText(this,"INTRODUZCA UN CORREO CORRECTO",Toast.LENGTH_SHORT).show();
                                 }
@@ -160,19 +180,10 @@ public class RegistrarUserActivity extends AppCompatActivity {
         }else{
             Toast.makeText(this,"MAL FORMATO DEL DNI",Toast.LENGTH_SHORT).show();
         }
-        /*
-        for (int i=0; datosD.length >= i;i++){
-            System.out.println("datosP[i]");
-            if(datosD[i].equals("")){
-                Toast.makeText(this,"INTRODUZCA TODOS LOS DATOS DE DIRECCION",Toast.LENGTH_SHORT).show();
-                vacios=true;
-                break;
-            }
-        }*/
 
-        System.out.println(vacios);
+        System.out.println(completo);
 
-        if(!vacios){
+        if(completo){
             HiloCliente hilo = new HiloCliente(2, datosP,datosD);
             hilo.start();
 
@@ -183,7 +194,7 @@ public class RegistrarUserActivity extends AppCompatActivity {
             }
         }
 
-        return vacios;
+        return completo;
     }
 
 }
