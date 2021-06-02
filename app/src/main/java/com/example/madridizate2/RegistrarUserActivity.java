@@ -104,82 +104,88 @@ public class RegistrarUserActivity extends AppCompatActivity {
 
 
         if(datosP[0].length()==9){
-            if(!datosP[1].equals("")){
-                if(!datosP[2].equals("")){
-                    if(!datosP[5].equals("")){
-                        if(!datosP[3].equals("")){
-                            if(!datosP[4].equals("")){
+            Pattern pat = Pattern.compile("[0-9]{7,8}[A-Z a-z]");
+            Matcher match = pat.matcher(datosP[0]);
+            if(match.find()) {
+                if (!datosP[1].equals("")) {
+                    if (!datosP[2].equals("")) {
+                        if (!datosP[5].equals("")) {
+                            if (!datosP[3].equals("")) {
+                                if (!datosP[4].equals("")) {
 
-                                Pattern pattern = Pattern.compile ("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"+"[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
-                                Matcher mather = pattern.matcher(datosP[4]);
+                                    Pattern pattern = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
+                                    Matcher mather = pattern.matcher(datosP[4]);
 
-                                if (mather.find() == true) {
+                                    if (mather.find()) {
 
-                                    //DATOS DIRECCION
-                                    if(!datosD[0].equals("")){
-                                        if(!datosD[1].equals("")){
-                                            if(!datosD[4].equals("")){
-                                                if(!datosD[5].equals("")){
+                                        //DATOS DIRECCION
+                                        if (!datosD[0].equals("")) {
+                                            if (!datosD[1].equals("")) {
+                                                if (!datosD[4].equals("")) {
+                                                    if (!datosD[5].equals("")) {
 
-                                                    //DATO CONTRASEÑA
-                                                    if(!datosP[6].equals("")){
+                                                        //DATO CONTRASEÑA
+                                                        if (!datosP[6].equals("")) {
 
-                                                        completo=true;
+                                                            completo = true;
 
-                                                    }else{
+                                                        } else {
 
-                                                        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                                                        builder.setMessage("CONTRASEÑA VACÍA, DESEA CONTINUAR?");
+                                                            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                                                            builder.setMessage("SI NO ESCRIBE UNA CONTRASEÑA, SE ESTABLECERÁ COMO 'VACIA' ");
 
-                                                        builder.setPositiveButton("CONTINUAR", new DialogInterface.OnClickListener() {
-                                                            public void onClick(DialogInterface dialog, int id) {
-                                                                datosP[6] = "";
-                                                                completo=true;
-                                                            }
-                                                        });
-                                                        builder.setNegativeButton("CANCELAR", new DialogInterface.OnClickListener() {
-                                                            public void onClick(DialogInterface dialog, int id) {
-                                                                dialog.cancel();
-                                                            }
-                                                        });
+                                                            builder.setPositiveButton("CONTINUAR", new DialogInterface.OnClickListener() {
+                                                                public void onClick(DialogInterface dialog, int id) {
+                                                                    datosP[6] = "VACIA";
+                                                                    completo = true;
+                                                                }
+                                                            });
+                                                            builder.setNegativeButton("CANCELAR", new DialogInterface.OnClickListener() {
+                                                                public void onClick(DialogInterface dialog, int id) {
+                                                                    dialog.cancel();
+                                                                }
+                                                            });
 
-                                                        AlertDialog dialog = builder.create();
-                                                        dialog.show();
+                                                            AlertDialog dialog = builder.create();
+                                                            dialog.show();
+                                                        }
+
+                                                    } else {
+                                                        Toast.makeText(this, "INTRODUZCA LA CIUDAD", Toast.LENGTH_SHORT).show();
                                                     }
-
                                                 } else {
-                                                    Toast.makeText(this,"INTRODUZCA LA CIUDAD",Toast.LENGTH_SHORT).show();
+                                                    Toast.makeText(this, "INTRODUZCA EL CODIGO POSTAL", Toast.LENGTH_SHORT).show();
                                                 }
                                             } else {
-                                                Toast.makeText(this,"INTRODUZCA EL CODIGO POSTAL",Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(this, "INTRODUZCA EL NUMERO DE VIVIENDA", Toast.LENGTH_SHORT).show();
                                             }
                                         } else {
-                                            Toast.makeText(this,"INTRODUZCA EL NUMERO DE VIVIENDA",Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(this, "INTRODUZCA UNA CALLE", Toast.LENGTH_SHORT).show();
                                         }
                                     } else {
-                                        Toast.makeText(this,"INTRODUZCA UNA CALLE",Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(this, "INTRODUZCA UN CORREO CORRECTO", Toast.LENGTH_SHORT).show();
                                     }
-                                } else {
-                                    Toast.makeText(this,"INTRODUZCA UN CORREO CORRECTO",Toast.LENGTH_SHORT).show();
-                                }
 
-                            }else{
-                                Toast.makeText(this,"INTRODUZCA UN CORREO",Toast.LENGTH_SHORT).show();
+                                } else {
+                                    Toast.makeText(this, "INTRODUZCA UN CORREO", Toast.LENGTH_SHORT).show();
+                                }
+                            } else {
+                                Toast.makeText(this, "INTRODUZCA UN TELEFONO", Toast.LENGTH_SHORT).show();
                             }
-                        }else{
-                            Toast.makeText(this,"INTRODUZCA UN TELEFONO",Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(this, "INTRODUZCA SU FEHCA DE NACIMIENTO", Toast.LENGTH_SHORT).show();
                         }
-                    }else{
-                        Toast.makeText(this,"INTRODUZCA SU FEHCA DE NACIMIENTO",Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(this, "INTRODUZCA SUS APELLIDOS", Toast.LENGTH_SHORT).show();
                     }
-                }else{
-                    Toast.makeText(this,"INTRODUZCA SUS APELLIDOS",Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(this, "INTRODUZCA SU NOMBRE", Toast.LENGTH_SHORT).show();
                 }
             }else{
-                Toast.makeText(this,"INTRODUZCA SU NOMBRE",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this,"MAL FORMATO DEL DNI",Toast.LENGTH_SHORT).show();
             }
         }else{
-            Toast.makeText(this,"MAL FORMATO DEL DNI",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"LONGITUD DEL DNI DEBE SER 9",Toast.LENGTH_SHORT).show();
         }
 
         System.out.println(completo);

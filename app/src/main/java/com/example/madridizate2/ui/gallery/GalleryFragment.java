@@ -93,6 +93,7 @@ public class GalleryFragment extends Fragment {
                 datosT[2] = cvv.getText().toString();
                 datosT[3] = tipoTarjeta.getText().toString();
 
+
                 HiloCliente hilo = new HiloCliente(7, datosT, User.getEmail(),'t');
                 hilo.start();
 

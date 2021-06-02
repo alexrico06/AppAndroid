@@ -16,6 +16,8 @@ import android.widget.Toast;
 import com.example.madridizate2.ui.home.HomeFragment;
 
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class RegistrarVehiculoActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
@@ -164,7 +166,7 @@ public class RegistrarVehiculoActivity extends AppCompatActivity implements Adap
         System.out.println(datosV[6]);
 
         matricula = findViewById(R.id.textMatricula);
-        datosV[0] = matricula.getText().toString();
+        datosV[0] = matricula.getText().toString().toUpperCase();
 
         EditText marca = findViewById(R.id.textMarca);
         datosV[2] = marca.getText().toString();
@@ -194,43 +196,49 @@ public class RegistrarVehiculoActivity extends AppCompatActivity implements Adap
 
         if(bandera) {
             if(!datosV[0].equals("")) {
+                Pattern pat = Pattern.compile("^\\d{4}[A-Z]{3}");
+                Matcher mat = pat.matcher(datosV[0]);
+                if(mat.find()) {
 
-                if(!datosV[2].equals("") && !datosV[3].equals("")) {
+                    if (!datosV[2].equals("") && !datosV[3].equals("")) {
 
-                    if (datosV[4].equals("S") || datosV[4].equals("M") || datosV[4].equals("L") || datosV[4].equals("s") || datosV[4].equals("m") || datosV[4].equals("l")) {
+                        if (datosV[4].equals("S") || datosV[4].equals("M") || datosV[4].equals("L") || datosV[4].equals("s") || datosV[4].equals("m") || datosV[4].equals("l")) {
 
-                        if (!datosV[5].equals("")) {
-                            //insertar vehiculo
-                            HiloCliente hilo = new HiloCliente(3, 1, datosV);
-                            hilo.start();
+                            if (!datosV[5].equals("")) {
+                                //insertar vehiculo
+                                HiloCliente hilo = new HiloCliente(3, 1, datosV);
+                                hilo.start();
 
-                            try {
-                                hilo.join();
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
+                                try {
+                                    hilo.join();
+                                } catch (InterruptedException e) {
+                                    e.printStackTrace();
+                                }
 
-                            if (ruta.equals("A")) {
+                                if (ruta.equals("A")) {
 
-                                Intent intent = new Intent(this, MainActivity.class);
-                                startActivity(intent);
+                                    Intent intent = new Intent(this, MainActivity.class);
+                                    startActivity(intent);
+                                } else {
+
+                                    Intent refresh = new Intent(this, RegistrarVehiculoActivity.class);
+                                    refresh.putExtra("registro", "B");
+                                    startActivity(refresh);
+                                    this.finish();
+
+                                }
                             } else {
-
-                                Intent refresh = new Intent(this, RegistrarVehiculoActivity.class);
-                                refresh.putExtra("registro", "B");
-                                startActivity(refresh);
-                                this.finish();
-
+                                Toast.makeText(this, "ESCRIBA UN ALIAS PARA RECONOCER SU VEHICULO", Toast.LENGTH_LONG).show();
                             }
                         } else {
-                            Toast.makeText(this, "ESCRIBA UN ALIAS PARA RECONOCER SU VEHICULO", Toast.LENGTH_LONG).show();
+
+                            Toast.makeText(this, "ESCRIBA TAMANÑO: S,M,L", Toast.LENGTH_LONG).show();
                         }
                     } else {
-
-                        Toast.makeText(this, "ESCRIBA TAMANÑO: S,M,L", Toast.LENGTH_LONG).show();
+                        Toast.makeText(this, "ESCRIBA MARCA Y MODELO DEL VEHICULO", Toast.LENGTH_LONG).show();
                     }
                 }else{
-                    Toast.makeText(this, "ESCRIBA MARCA Y MODELO DEL VEHICULO", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "MAL FORMATO DE LA MATRICULA", Toast.LENGTH_LONG).show();
                 }
             }else{
                 Toast.makeText(this, "ESCRIBA LA MATRICULA DEL VEHICULO", Toast.LENGTH_LONG).show();
@@ -260,9 +268,7 @@ public class RegistrarVehiculoActivity extends AppCompatActivity implements Adap
         }else{
             Toast.makeText(this,"NO HAY VEHICULOS PARA ELIMINAR",Toast.LENGTH_SHORT).show();
         }
-
     }
-
 
     public void onItemSelected(AdapterView<?> parent,
                                View view, int pos, long id) {
