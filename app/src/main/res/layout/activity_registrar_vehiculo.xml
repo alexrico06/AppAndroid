@@ -173,60 +173,59 @@
 
     <Button
         android:id="@+id/buttonInsertarVehiculo"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="15dp"
         android:drawableLeft="@android:drawable/ic_menu_add"
         android:onClick="insertarVehiculo"
         android:text="Insertar Vehiculo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.433"
+        app:layout_constraintHorizontal_bias="0.555555"
         android:background="#860BABD3"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/buttonElimarVehiculo"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="56dp"
-        android:drawableLeft="@android:drawable/ic_menu_delete"
-        android:onClick="eliminarVehiculo"
-        android:text="Eliminar Vehiculo"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:background="#860BABD3"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/buttonCancelar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="56dp"
-        android:drawableLeft="@android:drawable/ic_input_delete"
-        android:onClick="cancelarVehiculo"
-        android:text="Cancelar Vehiculo"
-        android:background="#860BABD3"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <Button
         android:id="@+id/buttonGuardarVehiculo"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="15dp"
+        android:background="#860BABD3"
         android:drawableLeft="@android:drawable/ic_menu_save"
         android:onClick="guardarVehiculo"
         android:text="Guardar Vehiculo"
         android:visibility="invisible"
-        android:background="#860BABD3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.433"
-        app:layout_constraintStart_toStartOf="parent" /><![CDATA[
-=======
-    >>>>>>> origin/master
+        app:layout_constraintHorizontal_bias="0.555555"
+        app:layout_constraintStart_toStartOf="parent" />
 
-]]>
+    <Button
+        android:id="@+id/buttonElimarVehiculo"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="15dp"
+        android:background="#860BABD3"
+        android:drawableLeft="@android:drawable/ic_menu_delete"
+        android:onClick="eliminarVehiculo"
+        android:text="Eliminar Vehiculo"
+        app:layout_constraintBottom_toTopOf="@+id/buttonInsertarVehiculo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.555555"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/buttonCancelar"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="15dp"
+        android:background="#860BABD3"
+        android:drawableLeft="@android:drawable/ic_input_delete"
+        android:onClick="cancelarVehiculo"
+        android:text="Cancelar Vehiculo"
+        app:layout_constraintBottom_toTopOf="@+id/buttonInsertarVehiculo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.555555"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

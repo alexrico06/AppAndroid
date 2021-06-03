@@ -16,8 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/textView2"
@@ -93,8 +92,8 @@
                 android:layout_width="51dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textColor="@color/black"
-                android:text="Calle:" />
+                android:text="Calle:"
+                android:textColor="@color/black" />
 
             <EditText
                 android:id="@+id/calle"
@@ -109,8 +108,8 @@
                 android:layout_width="31dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textColor="@color/black"
-                android:text="Nº:" />
+                android:text="Nº:"
+                android:textColor="@color/black" />
 
             <EditText
                 android:id="@+id/numero_calle"
@@ -132,8 +131,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="right"
-                android:textColor="@color/black"
-                android:text="Portal:" />
+                android:text="Portal:"
+                android:textColor="@color/black" />
 
             <EditText
                 android:id="@+id/portal"
@@ -148,8 +147,8 @@
                 android:layout_width="98dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textColor="@color/black"
-                android:text="Piso:" />
+                android:text="Piso:"
+                android:textColor="@color/black" />
 
             <EditText
                 android:id="@+id/piso"
@@ -171,8 +170,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="right"
-                android:textColor="@color/black"
-                android:text="Ciudad:" />
+                android:text="Ciudad:"
+                android:textColor="@color/black" />
 
             <EditText
                 android:id="@+id/ciudad"
@@ -187,7 +186,8 @@
                 android:layout_width="83dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="CP:" />
+                android:text="CP:"
+                android:textColor="@color/black" />
 
             <EditText
                 android:id="@+id/codigo_postal"
@@ -221,64 +221,54 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="256dp"
-            android:layout_height="58dp"
-            android:layout_marginStart="80dp"
-            android:layout_marginLeft="80dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginRight="30dp"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/admin_vehiculos"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-
-                android:layout_weight="1"
-                android:drawableLeft="@android:drawable/arrow_down_float"
-                android:text="Administrar vehículos"
-                app:backgroundTint="#322C2C"
-                app:icon="@drawable/ic_menu_manage" />
-        </LinearLayout>
-
 
     </LinearLayout>
 
     <Button
         android:id="@+id/save_profile"
-        android:layout_width="390dp"
-        android:layout_height="75dp"
-        android:layout_gravity="bottom"
-
+        android:layout_width="300dp"
+        android:layout_height="70dp"
         android:drawableLeft="@android:drawable/ic_menu_save"
-        android:drawableRight="@android:drawable/ic_menu_save"
-        android:padding="20dp"
+        android:layout_marginBottom="15dp"
         android:text="Guardar perfil"
         android:textStyle="bold"
         android:visibility="invisible"
         app:backgroundTint="@color/cardview_shadow_end_color"
         app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.555555"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/edit_profile"
-        android:layout_width="390dp"
-        android:layout_height="75dp"
-        android:layout_gravity="bottom"
-
+        android:layout_width="300dp"
+        android:layout_height="70dp"
         android:drawableLeft="@android:drawable/ic_menu_edit"
-        android:drawableRight="@android:drawable/ic_menu_edit"
-        android:padding="20dp"
+        android:layout_marginBottom="15dp"
         android:text="Editar perfil"
         android:textStyle="bold"
         app:backgroundTint="@color/cardview_shadow_end_color"
         app:iconTint="#9E29C8"
-        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.555555"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/admin_vehiculos"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:drawableLeft="@android:drawable/arrow_down_float"
+        android:text="Administrar vehículos"
+        android:textStyle="bold"
+        app:backgroundTint="#322C2C"
+        app:icon="@drawable/ic_menu_manage"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.558"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.746" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
