@@ -73,7 +73,7 @@ public class HiloCliente extends Thread{
 
     //INSERTAR DATOS VEHICULO 3
     //INSERTAR DATOS RESERVA 12
-    //CONSULTAR RESERVA QUE SE VA A INTRODUCIR
+    //CONSULTAR RESERVA QUE SE VA A INTRODUCIR 13
     public HiloCliente(int consulta,int id, String[] datos) {
         this.consulta = consulta;
         if(id==1){
@@ -84,23 +84,24 @@ public class HiloCliente extends Thread{
 
     }
 
-    //LISTADO PLAZAS
+    //LISTADO PARKING 4
     public HiloCliente(int consulta) {
         this.consulta=consulta;
     }
 
-    //INFORMACION USUARIO POR CORREO
-    //INFORMACION TARJETA POR CORREO
-    //INFORMACION ALIAS VEHICULOS POR CORREO
-    //INFORMACION VEHICULOS POR ALIAS
-    //ELIMINAR VEHICULO POR MATRICULA
+    //INFORMACION USUARIO POR CORREO 5
+    //INFORMACION TARJETA POR CORREO 6
+    //INFORMACION ALIAS VEHICULOS POR CORREO 8
+    //INFORMACION VEHICULOS POR ALIAS 9
+    //ELIMINAR VEHICULO POR MATRICULA 10
+    //CONSULTAR SI UNA MATRICULA TIENE RESERVAS ANTES DE ELIMINAR 14
     public HiloCliente(int consulta, String texto) {
         this.consulta=consulta;
         this.texto=texto;
     }
 
-    //MODIFICAR TARJETA
-    //MODIFICAR DATOS USUARIO
+    //MODIFICAR TARJETA 7
+    //MODIFICAR DATOS USUARIO 7
     public HiloCliente(int consulta,String[] datos,String correo,char letra) {
         this.consulta = consulta;
         this.datos = datos;
@@ -387,6 +388,14 @@ public class HiloCliente extends Thread{
 
                 break;
 
+            case 14:
+
+                try {
+                    dos.writeUTF(texto);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                break;
         }
 
     }
