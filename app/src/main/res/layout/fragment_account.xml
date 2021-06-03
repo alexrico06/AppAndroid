@@ -22,7 +22,7 @@
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#607D8B"
+            android:background="@drawable/gredient2"
             android:paddingLeft="35dp"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
@@ -240,7 +240,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.555555"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/admin_vehiculos" />
 
     <Button
         android:id="@+id/edit_profile"
