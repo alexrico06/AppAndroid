@@ -337,6 +337,7 @@ public class HiloCliente extends Thread{
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+                break;
 
             case 11: //CONSULTAR PLAZAS DE UN PARKING POR TAMAÑO DE COCHE
 
@@ -357,7 +358,7 @@ public class HiloCliente extends Thread{
                 } catch (ClassNotFoundException e) {
                     e.printStackTrace();
                 }
-
+                break;
             case 12: //INISERCIÓN DE UNA RESERVA
                 try {
                     oos = new ObjectOutputStream(s.getOutputStream());
@@ -392,6 +393,13 @@ public class HiloCliente extends Thread{
 
                 try {
                     dos.writeUTF(texto);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                try {
+                    dis = new DataInputStream(s.getInputStream());
+                    resultado = dis.readBoolean();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

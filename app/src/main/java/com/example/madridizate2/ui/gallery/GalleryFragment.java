@@ -1,20 +1,25 @@
 package com.example.madridizate2.ui.gallery;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.madridizate2.HiloCliente;
 import com.example.madridizate2.MainActivity;
 import com.example.madridizate2.R;
 import com.example.madridizate2.RegistrarUserActivity;
+import com.example.madridizate2.RegistrarVehiculoActivity;
 import com.example.madridizate2.User;
 
 public class GalleryFragment extends Fragment {
@@ -80,25 +85,43 @@ public class GalleryFragment extends Fragment {
         pressSaveCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                cardNum.setEnabled(false);
-                fechaCaducidad.setEnabled(false);
-                cvv.setEnabled(false);
-                tipoTarjeta.setEnabled(false);
-
                 String[] datosT = new String[4];
 
                 datosT[0] = cardNum.getText().toString();
                 datosT[1] = fechaCaducidad.getText().toString();
                 datosT[2] = cvv.getText().toString();
-                datosT[3] = tipoTarjeta.getText().toString();
+                datosT[3] = tipoTarjeta.getText().toString().toUpperCase();
 
+                if(datosT[0].length() == 16){
+                    if(!datosT[1].equals("")) {
+                        if (datosT[2].length() == 3) {
+                            if(datosT[3].equals("VISA") || datosT[3].equals("MASTERCARD")) {
+                                HiloCliente hilo = new HiloCliente(7, datosT, User.getEmail(), 't');
+                                hilo.start();
+                                try {
+                                    hilo.join();
+                                } catch (InterruptedException e) {
+                                    e.printStackTrace();
+                                }
+                                pressSaveCard.setVisibility(View.INVISIBLE);
+                                pressEditCard.setVisibility(View.VISIBLE);
+                                cardNum.setEnabled(false);
+                                fechaCaducidad.setEnabled(false);
+                                cvv.setEnabled(false);
+                                tipoTarjeta.setEnabled(false);
+                            }else{
+                                Toast.makeText(getContext(), "TIPO DE TARJETA: VISA o MASTERCARD", Toast.LENGTH_SHORT).show();
+                            }
+                        } else {
+                            Toast.makeText(getContext(), "EL CVV DEBE SER DE 3 DIGITOS", Toast.LENGTH_SHORT).show();
+                        }
+                    }else{
+                        Toast.makeText(getContext(), "RELLENE LA FECHA DE CADUCIDAD DE LA TARJETA INTRODUCIDA", Toast.LENGTH_SHORT).show();
+                    }
+                }else {
+                    Toast.makeText(getContext(), "EL NUMERO DE TARJETA TIENE QUE SER DE 16 DIGITOS" , Toast.LENGTH_SHORT).show();
+                }
 
-                HiloCliente hilo = new HiloCliente(7, datosT, User.getEmail(),'t');
-                hilo.start();
-
-                pressSaveCard.setVisibility(View.INVISIBLE);
-                pressEditCard.setVisibility(View.VISIBLE);
 
 /*
                 User.setNumTarjeta(cardNum.toString());

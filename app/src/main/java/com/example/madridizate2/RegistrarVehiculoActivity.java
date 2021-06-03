@@ -1,7 +1,9 @@
 package com.example.madridizate2;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -253,27 +255,46 @@ public class RegistrarVehiculoActivity extends AppCompatActivity implements Adap
 
         matricula = findViewById(R.id.textMatricula);
 
-        System.out.println(matricula.getText().toString());
 
         //eliminar vehiculo según la matricula
         if(!matricula.getText().toString().equals("")) {
 
-            HiloCliente consulta = new HiloCliente(10, matricula.getText().toString());
+            HiloCliente consulta = new HiloCliente(14, matricula.getText().toString());
             consulta.start();
-
             try {
                 consulta.join();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
 
-            HiloCliente hilo = new HiloCliente(10, matricula.getText().toString());
-            hilo.start();
+            if(consulta.resultado){
+                System.out.println(consulta.resultado);
 
-            Intent refresh = new Intent(this, RegistrarVehiculoActivity.class);
-            refresh.putExtra("registro", "B");
-            startActivity(refresh);
-            this.finish();
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setTitle("EXISTEN RESERVAS ASOCIADAS CON ESTA MATRICULA ");
+                builder.setMessage("DESEA ELIMINAR EL VEHICULO Y LAS RESERVAS? ");
+
+                builder.setPositiveButton("ELIMINAR", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        System.out.println(matricula.getText().toString());
+                        eliminarVechiulo();
+                    }
+                });
+                builder.setNegativeButton("CANCELAR", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+
+                AlertDialog dialog = builder.create();
+                dialog.show();
+
+            }else{
+
+                    eliminarVechiulo();
+            }
+
+
 
         }else{
             Toast.makeText(this,"NO HAY VEHICULOS PARA ELIMINAR",Toast.LENGTH_SHORT).show();
@@ -328,6 +349,17 @@ public class RegistrarVehiculoActivity extends AppCompatActivity implements Adap
             this.finish();
         }
 
+    }
+
+    public void eliminarVechiulo(){
+
+        HiloCliente hilo = new HiloCliente(10, matricula.getText().toString());
+        hilo.start();
+
+        Intent refresh = new Intent(this, RegistrarVehiculoActivity.class);
+        refresh.putExtra("registro", "B");
+        startActivity(refresh);
+        this.finish();
     }
 
 }

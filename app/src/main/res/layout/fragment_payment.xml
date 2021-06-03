@@ -55,7 +55,7 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:hint="Número de tarjeta"
-                android:inputType="textPersonName" />
+                android:inputType="number" />
 
         </LinearLayout>
 
@@ -71,8 +71,8 @@
                 android:layout_width="111dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textColor="@color/black"
-                android:text="Fecha de caducixdad" />
+                android:text="Fecha de caducidad"
+                android:textColor="@color/black" />
 
             <EditText
                 android:id="@+id/fechaCaducidad"
@@ -81,7 +81,7 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:hint="Fecha caducidad"
-                android:inputType="textPersonName" />
+                android:inputType="date" />
 
         </LinearLayout>
 
