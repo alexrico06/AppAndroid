@@ -10,7 +10,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#860BABD3"
+        android:background="@drawable/gredient"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,12 +22,14 @@
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#20A9E6"
+            android:background="#607D8B"
             android:paddingLeft="35dp"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             android:text="DATOS PERSONALES"
-            android:textSize="24sp" />
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -228,9 +230,10 @@
         android:id="@+id/save_profile"
         android:layout_width="300dp"
         android:layout_height="70dp"
-        android:drawableLeft="@android:drawable/ic_menu_save"
         android:layout_marginBottom="15dp"
+        android:drawableLeft="@android:drawable/ic_menu_save"
         android:text="Guardar perfil"
+        android:textColor="#607D8B"
         android:textStyle="bold"
         android:visibility="invisible"
         app:backgroundTint="@color/cardview_shadow_end_color"
@@ -243,16 +246,18 @@
         android:id="@+id/edit_profile"
         android:layout_width="300dp"
         android:layout_height="70dp"
-        android:drawableLeft="@android:drawable/ic_menu_edit"
         android:layout_marginBottom="15dp"
+        android:drawableLeft="@android:drawable/ic_menu_edit"
         android:text="Editar perfil"
+        android:textColor="#607D8B"
         android:textStyle="bold"
         app:backgroundTint="@color/cardview_shadow_end_color"
-        app:iconTint="#9E29C8"
+        app:iconTint="#607D8B"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.555555"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/admin_vehiculos" />
 
     <Button
         android:id="@+id/admin_vehiculos"
@@ -261,7 +266,7 @@
         android:drawableLeft="@android:drawable/arrow_down_float"
         android:text="Administrar vehículos"
         android:textStyle="bold"
-        app:backgroundTint="#322C2C"
+        app:backgroundTint="#607D8B"
         app:icon="@drawable/ic_menu_manage"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
