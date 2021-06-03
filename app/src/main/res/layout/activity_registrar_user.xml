@@ -501,6 +501,7 @@
                 android:layout_height="60dp"
                 android:layout_margin="10dp"
                 android:background="@drawable/gredient3"
+                android:drawableLeft="@drawable/sdasdsad"
                 android:onClick="registrarCoches"
                 android:text="@string/buttonCoche"
                 android:textStyle="bold" />
