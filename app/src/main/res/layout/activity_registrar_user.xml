@@ -13,7 +13,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="200dp">
+        android:layout_marginBottom="220dp">
 
         <LinearLayout
             android:id="@+id/linearLayout5"
@@ -60,7 +60,8 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:paddingRight="10dp">
 
                         <TextView
                             android:id="@+id/textViewDNI"
@@ -90,7 +91,8 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:paddingRight="10dp">
 
                         <TextView
                             android:id="@+id/textViewNombre"
@@ -118,7 +120,8 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:paddingRight="10dp">
 
                         <TextView
                             android:id="@+id/textViewApellidos"
@@ -147,7 +150,8 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:paddingRight="10dp">
 
                         <TextView
                             android:id="@+id/textViewFecha"
@@ -177,7 +181,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
                         android:background="@drawable/gredient2"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:paddingRight="10dp">
 
                         <TextView
                             android:id="@+id/textView252"
@@ -196,7 +201,8 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:paddingRight="10dp">
 
                         <TextView
                             android:id="@+id/textViewTelefono"
@@ -224,7 +230,8 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:paddingRight="10dp">
 
                         <TextView
                             android:id="@+id/textViewCorreo"
@@ -251,7 +258,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@drawable/gredient2"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:paddingRight="10dp">
 
                         <TextView
                             android:id="@+id/textView25"
@@ -270,7 +278,8 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:paddingRight="10dp">
 
                         <TextView
                             android:id="@+id/textViewCalle"
@@ -298,7 +307,8 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:paddingRight="10dp">
 
                         <TextView
                             android:id="@+id/textViewNumero"
@@ -325,7 +335,8 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:paddingRight="10dp">
 
                         <TextView
                             android:id="@+id/textViewPortal"
@@ -353,7 +364,8 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:paddingRight="10dp">
 
                         <TextView
                             android:id="@+id/textViewPiso"
@@ -381,7 +393,8 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:paddingRight="10dp">
 
                         <TextView
                             android:id="@+id/textViewCP"
@@ -407,6 +420,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:paddingRight="10dp"
                         android:visibility="visible">
 
                         <TextView
@@ -446,8 +460,9 @@
         <LinearLayout
             android:id="@+id/linearLayout2"
             android:layout_width="363dp"
-            android:layout_height="167dp"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:paddingBottom="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -461,7 +476,7 @@
 
                 <TextView
                     android:id="@+id/textViewPassword"
-                    android:layout_width="130dp"
+                    android:layout_width="117dp"
                     android:layout_height="wrap_content"
                     android:paddingTop="10dp"
                     android:paddingBottom="10dp"
@@ -483,17 +498,22 @@
             <Button
                 android:id="@+id/botonVehiculo"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/gredient3"
                 android:onClick="registrarCoches"
-                android:text="@string/buttonCoche" />
+                android:text="@string/buttonCoche"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/botonSiguiente"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:onClick="pulsarMasTarde"
                 android:text="@string/buttonDespues"
-                app:backgroundTint="@android:color/darker_gray" />
+                android:textColor="#4DB6AC"
+                android:textStyle="bold"
+                app:backgroundTint="@color/cardview_shadow_end_color" />
 
         </LinearLayout>
 
