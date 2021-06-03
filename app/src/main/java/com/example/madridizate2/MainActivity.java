@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -15,6 +17,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     boolean bandera = false;
+    EditText contrasena;
 
     User user = new User();
 
@@ -28,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
         EditText contrasena = findViewById(R.id.contrasena);
         contrasena.setText(User.getPassword());
+
     }
 
     public void pulsarRegistrar(View view) {
@@ -68,7 +72,6 @@ public class MainActivity extends AppCompatActivity {
             startActivity(i);
 
         }else{
-
             Toast.makeText(this,"USUARIO NO ENCONRTADO",Toast.LENGTH_SHORT).show();
             System.out.println("no existe");
         }

@@ -124,9 +124,9 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
 
     public void botonAtras(View view){
 
-        Intent i = new Intent(this,ReservaParking.class);
+        //Intent refresh = new Intent(this, RegistrarVehiculoActivity.class);
 
-        startActivity(i);
+        this.finish();
     }
 
     @Override

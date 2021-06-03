@@ -62,8 +62,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.553">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
 
         <LinearLayout
             android:layout_width="126dp"
@@ -176,12 +175,13 @@
         android:id="@+id/buttonInsertarVehiculo"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#FFF"
+        android:drawableLeft="@android:drawable/ic_menu_add"
         android:onClick="insertarVehiculo"
         android:text="Insertar Vehiculo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.433"
+        android:background="#860BABD3"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -189,11 +189,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="56dp"
-        android:background="#FFF"
+        android:drawableLeft="@android:drawable/ic_menu_delete"
         android:onClick="eliminarVehiculo"
         android:text="Eliminar Vehiculo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:background="#860BABD3"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -202,9 +203,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="56dp"
-        android:background="#FFF"
+        android:drawableLeft="@android:drawable/ic_input_delete"
         android:onClick="cancelarVehiculo"
         android:text="Cancelar Vehiculo"
+        android:background="#860BABD3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -214,10 +216,11 @@
         android:id="@+id/buttonGuardarVehiculo"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#FFF"
+        android:drawableLeft="@android:drawable/ic_menu_save"
         android:onClick="guardarVehiculo"
         android:text="Guardar Vehiculo"
         android:visibility="invisible"
+        android:background="#860BABD3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.433"

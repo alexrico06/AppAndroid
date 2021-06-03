@@ -9,21 +9,28 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#860BABD3"
         android:orientation="vertical"
-        android:visibility="visible">
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#20A9E6"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/button"
-                android:layout_width="78dp"
+                android:layout_width="54dp"
                 android:layout_height="wrap_content"
-                android:background="@drawable/abc_vector_test"
-                android:onClick="botonAtras" />
+                android:background="@android:drawable/btn_dialog"
+                android:onClick="botonAtras"
+                android:shadowColor="#070707" />
 
             <TextView
                 android:id="@+id/textView19"
@@ -33,6 +40,8 @@
                 android:paddingTop="15dp"
                 android:paddingBottom="15dp"
                 android:text="RESERVA TU PLAZA"
+                android:textAlignment="center"
+                android:textColor="#0B0A0A"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
@@ -258,6 +267,7 @@
         android:id="@+id/reservarPlaza"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:drawablePadding="0dp"
         android:onClick="buttonReservar"
         android:text="RESERVAR"
         app:layout_constraintBottom_toBottomOf="parent"

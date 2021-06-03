@@ -225,7 +225,6 @@ public class HiloCliente extends Thread{
 
                     dis = new DataInputStream(s.getInputStream());
                     flag = dis.readBoolean();
-                    System.out.println(flag);
                     String numT = dis.readUTF();
                     if(flag && !numT.equals("null")){
 

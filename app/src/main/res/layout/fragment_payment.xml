@@ -10,7 +10,7 @@
         android:id="@+id/linearLayout3"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#860091B5"
+        android:background="#860BABD3"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,10 +23,11 @@
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#610031AC"
+            android:background="#20A9E6"
             android:paddingTop="15dp"
             android:paddingBottom="15dp"
-            android:text="Métodos de pago"
+            android:textColor="@color/black"
+            android:text="DATOS DE TARJETA"
             android:textSize="18sp" />
 
         <LinearLayout
@@ -43,6 +44,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:textColor="@color/black"
                 android:text="Número de tarjeta"
                 android:textSize="16sp" />
 
@@ -69,6 +71,7 @@
                 android:layout_width="111dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:textColor="@color/black"
                 android:text="Fecha de caducixdad" />
 
             <EditText
@@ -94,6 +97,7 @@
                 android:layout_width="109dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:textColor="@color/black"
                 android:text="CVV" />
 
             <EditText
@@ -118,6 +122,7 @@
                 android:layout_width="109dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:textColor="@color/black"
                 android:text="Tipo" />
 
             <EditText
@@ -134,9 +139,10 @@
             android:id="@+id/textView7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#610031AC"
+            android:background="#20A9E6"
             android:paddingTop="15dp"
             android:paddingBottom="15dp"
+            android:textColor="@color/black"
             android:text="CRÉDITO"
             android:textSize="18sp" />
 
@@ -154,6 +160,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:textColor="@color/black"
                 android:text="SALDO:" />
 
             <TextView
@@ -161,6 +168,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:textColor="@color/black"
                 android:text="110€" />
         </LinearLayout>
 
@@ -178,6 +186,7 @@
                 android:layout_width="273dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:textColor="@color/black"
                 android:hint="CÓDIGO PROMOCIONAL"
                 android:inputType="textPersonName" />
 
@@ -188,6 +197,7 @@
                 android:layout_weight="1"
                 android:enabled="false"
                 android:onClick="canjear"
+                android:textColor="@color/black"
                 android:text="+"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -196,22 +206,33 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/edit_card"
-        android:layout_width="409dp"
-        android:layout_height="58dp"
+        android:id="@+id/save_card"
+        android:layout_width="390dp"
+        android:layout_height="75dp"
         android:height="60dp"
-        android:text="EDITAR TARJETA"
+        android:textStyle="bold"
+        android:drawableLeft="@android:drawable/ic_menu_save"
+        android:text="GUARDAR INFORMACION"
+        android:visibility="invisible"
+        app:backgroundTint="@color/cardview_shadow_end_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/save_card"
-        android:layout_width="409dp"
-        android:layout_height="58dp"
-        android:height="60dp"
-        android:text="GUARDAR INFORMACION"
-        android:visibility="invisible"
+        android:id="@+id/edit_card"
+        android:layout_width="390dp"
+        android:layout_height="75dp"
+        android:layout_gravity="bottom"
+
+        android:drawableLeft="@android:drawable/ic_menu_edit"
+        android:drawableRight="@android:drawable/ic_menu_edit"
+        android:padding="20dp"
+        android:text="Editar perfil"
+        android:textStyle="bold"
+        app:iconTint="#9E29C8"
+        app:backgroundTint="@color/cardview_shadow_end_color"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
