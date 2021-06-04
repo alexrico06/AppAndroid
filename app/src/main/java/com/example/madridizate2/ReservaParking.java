@@ -76,7 +76,6 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
         etHoraIni = (EditText) findViewById(R.id.et_mostrar_hora_picker);
         etHoraFin = (EditText) findViewById(R.id.et_mostrar_hora_fin_picker);
 
-
         ibObtenerFecha = (ImageButton) findViewById(R.id.ib_obtener_fecha);
         ibObtenerHoraIni = (ImageButton) findViewById(R.id.ib_obtener_hora_inicio);
         ibObtenerHoraFin = (ImageButton) findViewById(R.id.ib_obtener_hora_fin);
@@ -90,6 +89,9 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
         direccionText.setEnabled(false);
         direccionText.setText(direccion);
 
+        etFecha.setEnabled(false);
+        etHoraIni.setEnabled(false);
+        etHoraFin.setEnabled(false);
 
         //consultar todos los vehiculos del usuario
         HiloCliente hilo = new HiloCliente(8,User.getEmail());
@@ -273,6 +275,7 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
             double valor = tiempo*0.11;
             coste = (EditText) findViewById(R.id.precioReserva);
             coste.setText(""+valor);
+            coste.setEnabled(false);
 
             if(listaAlias.size()==0){
                 reserva.setEnabled(false);
