@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(i);
 
         }else{
-            Toast.makeText(this,"USUARIO NO ENCONRTADO",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"CORREO O CONTRASEÑA INCORRECTO",Toast.LENGTH_SHORT).show();
             System.out.println("no existe");
         }
 
