@@ -7,30 +7,30 @@
 
     <fragment
         android:id="@+id/nav_account"
-        android:name="com.example.Madridizate.ui.home.HomeFragment"
+        android:name="com.example.madridizate2.ui.home.HomeFragment"
         android:label="@string/menu_account"
         tools:layout="@layout/fragment_account" />
 
     <fragment
         android:id="@+id/nav_payment"
-        android:name="com.example.Madridizate.ui.gallery.GalleryFragment"
+        android:name="com.example.madridizate2.ui.gallery.GalleryFragment"
         android:label="@string/menu_payment"
         tools:layout="@layout/fragment_payment" />
 
     <fragment
         android:id="@+id/nav_settings"
-        android:name="com.example.Madridizate.ui.slideshow.SlideshowFragment"
+        android:name="com.example.madridizate2.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_settings"
         tools:layout="@layout/fragment_settings" />
 
     <fragment
         android:id="@+id/nav_parkings"
-        android:name="com.example.Madridizate.ui.main.PlaceholderFragment"
+        android:name="com.example.madridizate2.ui.main.PlaceholderFragment"
         android:label="@string/menu_parkings"
         tools:layout="@layout/fragment_parkings" />
     <activity
         android:id="@+id/nav_tabbed"
-        android:name="com.example.Madridizate.MenuParkings"
+        android:name="com.example.madridizate2.MenuParkings"
         android:label="activity_menu_parkings"
         tools:layout="@layout/activity_menu_parkings" />
 </navigation>
