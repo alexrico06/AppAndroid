@@ -60,7 +60,7 @@
                 android:layout_weight="1"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
-                android:text="Seleccione Vehciulo Por Alias"
+                android:text="Seleccione Vehiculo Por Alias"
                 android:textStyle="bold" />
 
             <Spinner
