@@ -26,18 +26,25 @@
                 android:id="@+id/imageView2"
                 android:layout_width="50dp"
                 android:layout_height="38dp"
-                app:srcCompat="@android:drawable/ic_dialog_email" />
+                app:srcCompat="@android:drawable/ic_dialog_email"
+                android:layout_marginRight="15dp"/>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/correoInputLayout"
-                android:layout_width="211dp"
+                android:layout_width="237dp"
                 android:layout_height="55dp"
-                app:errorIconDrawable="@android:drawable/presence_offline">
+                app:errorIconDrawable="@android:drawable/presence_offline"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.765"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.374">
 
                 <EditText
                     android:id="@+id/correo"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:ems="10"
                     android:fontFamily="sans-serif-black"
                     android:hint="Correo"
@@ -46,6 +53,7 @@
                     tools:layout_editor_absoluteY="288dp" />
 
             </com.google.android.material.textfield.TextInputLayout>
+
         </LinearLayout>
 
         <LinearLayout
@@ -59,22 +67,28 @@
                 android:id="@+id/imageView4"
                 android:layout_width="50dp"
                 android:layout_height="38dp"
-                app:srcCompat="@android:drawable/ic_partial_secure" />
-
-            <EditText
-                android:id="@+id/contrasena"
-                android:layout_width="188dp"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-black"
-                android:hint="Contraseña"
-                android:inputType="textPassword" />
+                app:srcCompat="@android:drawable/ic_partial_secure"
+                android:layout_marginRight="15dp"/>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/contrasenaInputLayout"
-                android:layout_width="25dp"
-                android:layout_height="wrap_content"
+                android:layout_width="237dp"
+                android:layout_height="55dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.733"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.547"
                 app:passwordToggleEnabled="true">
 
+                <EditText
+                    android:id="@+id/contrasena"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="sans-serif-black"
+                    android:hint="Contraseña"
+                    android:inputType="textPassword" />
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
 
@@ -84,6 +98,7 @@
         android:id="@+id/BotonNuevoUsuario"
         android:layout_width="272dp"
         android:layout_height="60dp"
+        android:layout_marginTop="7dp"
         android:onClick="pulsarRegistrar"
         android:text="@string/buttonRegistrarUser"
         android:textColor="#4DB6AC"
@@ -91,10 +106,10 @@
         app:backgroundTint="@color/cardview_shadow_end_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.932" />
+        app:layout_constraintTop_toBottomOf="@+id/BotonInicioSesion"
+        app:layout_constraintVertical_bias="0.151" />
 
     <Button
         android:id="@+id/BotonInicioSesion"
@@ -109,6 +124,6 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.842" />
+        app:layout_constraintVertical_bias="0.85" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

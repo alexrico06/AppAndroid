@@ -132,15 +132,9 @@ public class RegistrarUserActivity extends AppCompatActivity {
                                                         } else {
 
                                                             AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                                                            builder.setMessage("SI NO ESCRIBE UNA CONTRASEÑA, SE ESTABLECERÁ COMO 'VACIA' ");
+                                                            builder.setMessage("NO PUEDE DEJAR LA CONTRASEÑA VACIA ");
 
-                                                            builder.setPositiveButton("CONTINUAR", new DialogInterface.OnClickListener() {
-                                                                public void onClick(DialogInterface dialog, int id) {
-                                                                    datosP[6] = "VACIA";
-                                                                    completo = true;
-                                                                }
-                                                            });
-                                                            builder.setNegativeButton("CANCELAR", new DialogInterface.OnClickListener() {
+                                                            builder.setNegativeButton("ACEPTAR", new DialogInterface.OnClickListener() {
                                                                 public void onClick(DialogInterface dialog, int id) {
                                                                     dialog.cancel();
                                                                 }

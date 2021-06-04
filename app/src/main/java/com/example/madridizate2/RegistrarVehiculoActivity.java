@@ -362,4 +362,7 @@ public class RegistrarVehiculoActivity extends AppCompatActivity implements Adap
         this.finish();
     }
 
+    public void pulsarAtras(View v){
+        this.finish();
+    }
 }
