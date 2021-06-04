@@ -1,6 +1,5 @@
-package com.example.madridizate2.ui.gallery;
+package com.example.Madridizate.ui.gallery;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,16 +10,11 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.madridizate2.HiloCliente;
-import com.example.madridizate2.MainActivity;
-import com.example.madridizate2.R;
-import com.example.madridizate2.RegistrarUserActivity;
-import com.example.madridizate2.RegistrarVehiculoActivity;
-import com.example.madridizate2.User;
+import com.example.Madridizate.HiloCliente;
+import com.example.Madridizate.R;
+import com.example.Madridizate.User;
 
 public class GalleryFragment extends Fragment {
 

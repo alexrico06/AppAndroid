@@ -1,4 +1,4 @@
-package com.example.madridizate2;
+package com.example.Madridizate;
 
 import android.content.Intent;
 import android.view.LayoutInflater;

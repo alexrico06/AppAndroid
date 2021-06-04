@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.madridizate2">
+    package="com.example.Madridizate">
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -28,12 +28,12 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name=".MenuParkings" />
-        <activity android:name=".ReservaParking" />
-        <activity android:name=".RegistrarVehiculoActivity" />
-        <activity android:name=".RegistrarUserActivity"
+        <activity android:name="com.example.Madridizate.MenuParkings" />
+        <activity android:name="com.example.Madridizate.ReservaParking" />
+        <activity android:name="com.example.Madridizate.RegistrarVehiculoActivity" />
+        <activity android:name="com.example.Madridizate.RegistrarUserActivity"
             android:windowSoftInputMode="adjustResize"/>
-        <activity android:name=".MainActivity">
+        <activity android:name="com.example.Madridizate.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -41,7 +41,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Principal"
+            android:name="com.example.Madridizate.Principal"
             android:label="@string/title_activity_main3"
             android:theme="@style/Theme.Madridizate2.NoActionBar" />
     </application>

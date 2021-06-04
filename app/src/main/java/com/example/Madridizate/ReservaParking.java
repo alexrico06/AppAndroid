@@ -1,4 +1,4 @@
-package com.example.madridizate2;
+package com.example.Madridizate;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,7 +8,6 @@ import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.text.Layout;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -21,8 +20,6 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TimePicker;
 import android.widget.Toast;
-
-import com.example.madridizate2.ui.home.HomeFragment;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

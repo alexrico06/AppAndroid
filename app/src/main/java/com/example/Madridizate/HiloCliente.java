@@ -1,18 +1,11 @@
-package com.example.madridizate2;
-
-import android.content.Intent;
-import android.os.Build;
-import android.util.Log;
+package com.example.Madridizate;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import java.io.ObjectOutput;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class HiloCliente extends Thread{

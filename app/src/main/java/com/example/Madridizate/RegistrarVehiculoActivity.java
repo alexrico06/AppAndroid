@@ -1,4 +1,4 @@
-package com.example.madridizate2;
+package com.example.Madridizate;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,8 +14,6 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.Toast;
-
-import com.example.madridizate2.ui.home.HomeFragment;
 
 import java.util.ArrayList;
 import java.util.regex.Matcher;

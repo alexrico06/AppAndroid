@@ -1,4 +1,4 @@
-package com.example.madridizate2;
+package com.example.Madridizate;
 
 public class User {
 

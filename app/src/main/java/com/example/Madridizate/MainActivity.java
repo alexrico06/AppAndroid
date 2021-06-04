@@ -1,19 +1,12 @@
-package com.example.madridizate2;
+package com.example.Madridizate;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.InputType;
-import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import com.example.madridizate2.ui.home.HomeFragment;
-import com.example.madridizate2.ui.slideshow.SlideshowFragment;
-
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 

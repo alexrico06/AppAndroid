@@ -1,25 +1,15 @@
-package com.example.madridizate2.ui.slideshow;
+package com.example.Madridizate.ui.slideshow;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.madridizate2.Adaptador;
-import com.example.madridizate2.HiloCliente;
-import com.example.madridizate2.R;
-
-import java.util.ArrayList;
+import com.example.Madridizate.R;
 
 public class SlideshowFragment extends Fragment {
 

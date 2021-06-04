@@ -1,4 +1,4 @@
-package com.example.madridizate2;
+package com.example.Madridizate;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;

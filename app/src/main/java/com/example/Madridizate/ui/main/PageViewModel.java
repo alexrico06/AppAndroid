@@ -1,4 +1,4 @@
-package com.example.madridizate2.ui.main;
+package com.example.Madridizate.ui.main;
 
 import androidx.arch.core.util.Function;
 import androidx.lifecycle.LiveData;
