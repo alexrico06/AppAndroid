@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -51,9 +52,20 @@ public class GalleryFragment extends Fragment {
         cvv.setEnabled(false);
         cvv.setText(User.getCvv());
 
-        EditText tipoTarjeta = root.findViewById(R.id.tipoTarjeta);
+        Spinner tipoTarjeta = root.findViewById(R.id.spinnerTipo);
         tipoTarjeta.setEnabled(false);
-        tipoTarjeta.setText(User.getTipoTarjeta());
+        if(User.getTipoTarjeta().equals("VISA")){
+            //tipoTarjeta.set
+            System.out.println("lol");
+            tipoTarjeta.setSelection(0);
+        }else if(User.getTipoTarjeta().equals("MASTERCARD")){
+            System.out.println("master");
+            tipoTarjeta.setSelection(1);
+        }else{
+            System.out.println("vacio");
+        }
+        //tipoTarjeta.setEnabled(false);
+
 
         EditText codigo = root.findViewById(R.id.codigo_promocional);
         cod = codigo.getText().toString();
@@ -84,12 +96,12 @@ public class GalleryFragment extends Fragment {
                 datosT[0] = cardNum.getText().toString();
                 datosT[1] = fechaCaducidad.getText().toString();
                 datosT[2] = cvv.getText().toString();
-                datosT[3] = tipoTarjeta.getText().toString().toUpperCase();
+                datosT[3] = tipoTarjeta.getSelectedItem().toString();
 
                 if(datosT[0].length() == 16){
                     if(!datosT[1].equals("")) {
                         if (datosT[2].length() == 3) {
-                            if(datosT[3].equals("VISA") || datosT[3].equals("MASTERCARD")) {
+
                                 HiloCliente hilo = new HiloCliente(7, datosT, User.getEmail(), 't');
                                 hilo.start();
                                 try {
@@ -103,9 +115,7 @@ public class GalleryFragment extends Fragment {
                                 fechaCaducidad.setEnabled(false);
                                 cvv.setEnabled(false);
                                 tipoTarjeta.setEnabled(false);
-                            }else{
-                                Toast.makeText(getContext(), "TIPO DE TARJETA: VISA o MASTERCARD", Toast.LENGTH_SHORT).show();
-                            }
+
                         } else {
                             Toast.makeText(getContext(), "EL CVV DEBE SER DE 3 DIGITOS", Toast.LENGTH_SHORT).show();
                         }

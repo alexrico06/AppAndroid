@@ -43,7 +43,7 @@
 
             <TextView
                 android:id="@+id/textView5"
-                android:layout_width="wrap_content"
+                android:layout_width="109dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Número de tarjeta"
@@ -70,7 +70,7 @@
 
             <TextView
                 android:id="@+id/textView4"
-                android:layout_width="111dp"
+                android:layout_width="109dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Fecha de caducidad"
@@ -128,14 +128,16 @@
                 android:text="Tipo"
                 android:textColor="@color/black" />
 
-            <EditText
-                android:id="@+id/tipoTarjeta"
+            <Spinner
+                android:id="@+id/spinnerTipo"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_height="34dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="2"
+                android:entries="@array/tipos"
                 android:ems="10"
-                android:hint="Tipo"
-                android:inputType="textPersonName" />
+                android:visibility="visible" />
+
         </LinearLayout>
 
         <TextView

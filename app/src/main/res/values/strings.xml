@@ -27,6 +27,12 @@
     <string name="textViewCP">Código Postal:</string>
     <string name="textViewPassword">Contrasena:</string>
 
+
+    <string-array name="tipos">
+        <item>VISA</item>
+        <item>MASTERCARD</item>
+    </string-array>
+
     <string name="textViewMatricula">Matricula:</string>
     <string name="textViewMarca">Marca:</string>
     <string name="textViewModelo">Modelo:</string>
