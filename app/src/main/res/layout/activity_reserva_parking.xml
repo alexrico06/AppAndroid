@@ -137,7 +137,7 @@
                     android:layout_marginTop="16dp"
                     android:layout_marginRight="8dp"
                     android:text="Obtener fecha y hora"
-                    android:textSize="24sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintHorizontal_bias="0.025"
                     app:layout_constraintLeft_toLeftOf="parent"
@@ -147,7 +147,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="68dp"
                 android:orientation="horizontal">
 
                 <EditText
@@ -158,13 +158,14 @@
                     android:ems="10"
                     android:hint="Fecha"
                     android:inputType="date"
+                    android:textSize="14sp"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView" />
 
                 <ImageButton
                     android:id="@+id/ib_obtener_fecha"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="32dp"
                     android:layout_marginRight="8dp"
@@ -179,7 +180,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="68dp"
                 android:orientation="horizontal">
 
                 <EditText
@@ -190,13 +191,14 @@
                     android:ems="10"
                     android:hint="Hora Inicio"
                     android:inputType="time"
+                    android:textSize="14sp"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/et_mostrar_fecha_picker" />
 
                 <ImageButton
                     android:id="@+id/ib_obtener_hora_inicio"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="32dp"
                     android:layout_marginRight="8dp"
@@ -210,7 +212,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="68dp"
                 android:orientation="horizontal">
 
                 <EditText
@@ -221,13 +223,14 @@
                     android:ems="10"
                     android:hint="Hora Fin"
                     android:inputType="time"
+                    android:textSize="14sp"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/et_mostrar_fecha_picker" />
 
                 <ImageButton
                     android:id="@+id/ib_obtener_hora_fin"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="32dp"
                     android:layout_marginRight="8dp"
@@ -239,6 +242,30 @@
                     tools:ignore="ContentDescription" />
             </LinearLayout>
 
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/textView22"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Disponibilidad"
+                android:textStyle="bold" />
+
+            <SeekBar
+                android:id="@+id/seekBar"
+                style="@style/Widget.AppCompat.SeekBar.Discrete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="24"
+                android:progress="3" />
 
         </LinearLayout>
 
@@ -272,7 +299,10 @@
                 android:textStyle="bold" />
         </LinearLayout>
 
+
     </LinearLayout>
+
+
 
     <Button
         android:id="@+id/reservarPlaza"

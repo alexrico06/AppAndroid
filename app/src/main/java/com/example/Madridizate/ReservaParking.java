@@ -17,6 +17,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 
 import android.widget.LinearLayout;
+import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -58,6 +59,8 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
     EditText etFecha, etHoraIni, etHoraFin;
     ImageButton ibObtenerFecha, ibObtenerHoraIni, ibObtenerHoraFin;
 
+    SeekBar seekBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -89,6 +92,8 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
         etFecha.setEnabled(false);
         etHoraIni.setEnabled(false);
         etHoraFin.setEnabled(false);
+
+        seekBar = findViewById(R.id.seekBar);
 
         //consultar todos los vehiculos del usuario
         HiloCliente hilo = new HiloCliente(8,User.getEmail());
