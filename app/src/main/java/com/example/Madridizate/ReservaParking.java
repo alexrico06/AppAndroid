@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -19,6 +20,7 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -59,7 +61,7 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
     EditText etFecha, etHoraIni, etHoraFin;
     ImageButton ibObtenerFecha, ibObtenerHoraIni, ibObtenerHoraFin;
 
-    SeekBar seekBar;
+    TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,7 +95,9 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
         etHoraIni.setEnabled(false);
         etHoraFin.setEnabled(false);
 
-        seekBar = findViewById(R.id.seekBar);
+        textView = findViewById(R.id.hora4);
+        textView.setBackgroundColor(Color.RED);
+
 
         //consultar todos los vehiculos del usuario
         HiloCliente hilo = new HiloCliente(8,User.getEmail());
