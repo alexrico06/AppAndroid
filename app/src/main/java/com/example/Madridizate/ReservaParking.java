@@ -212,7 +212,7 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
 
         spinner_plazas = findViewById(R.id.spinner_plazas);
         HiloCliente hilo = new HiloCliente(15,3, fecha, spinner_plazas.getSelectedItem().toString());
-
+        System.out.println("lol");
 
     }
 
@@ -387,19 +387,31 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
                 Toast.makeText(this, "DEBE TENER REGISTRADA UNA TARJETA PARA PODER RESERVAR", Toast.LENGTH_SHORT).show();
             }else {
 
-                HiloCliente hiloCliente = new HiloCliente(12, 2, datosReserva);
-                hiloCliente.start();
+                HiloCliente hiloR = new HiloCliente(17, User.getEmail());
+                hiloR.start();
 
                 try {
-                    hiloCliente.join();
+                    hiloR.join();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
+                if(hilo.reserva){
+                    Toast.makeText(this, "YA TIENE UNA RESERVA REALIZA", Toast.LENGTH_SHORT).show();
+                }else {
+                    HiloCliente hiloCliente = new HiloCliente(12, 2, datosReserva);
+                    hiloCliente.start();
 
-                Toast.makeText(this, "RESERVA REALIZADA", Toast.LENGTH_SHORT).show();
+                    try {
+                        hiloCliente.join();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
 
-                Intent intent = new Intent(this, Principal.class);
-                startActivity(intent);
+                    Toast.makeText(this, "RESERVA REALIZADA", Toast.LENGTH_SHORT).show();
+
+                    Intent intent = new Intent(this, Principal.class);
+                    startActivity(intent);
+                }
             }
 
         }

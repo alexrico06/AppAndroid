@@ -40,6 +40,7 @@ public class HiloCliente extends Thread{
     int id;
     boolean existe;
     boolean resultado = false;
+    boolean reserva = false;
 
     //VERIFICAR USUARIO 1.1
     //INFORMACION PLAZAS DE UN PARKING POR DIRECCION 11.2
@@ -93,6 +94,7 @@ public class HiloCliente extends Thread{
     //ELIMINAR VEHICULO POR MATRICULA 10
     //CONSULTAR SI UNA MATRICULA TIENE RESERVAS ANTES DE ELIMINAR 14
     //INFORMACION RESERVAS DE USUARIO POR SU CORREO 16
+    //RESERVAS DE USUARIO POR SU CORREO 17
     public HiloCliente(int consulta, String texto) {
         this.consulta=consulta;
         this.texto=texto;
@@ -436,6 +438,20 @@ public class HiloCliente extends Thread{
                     e.printStackTrace();
                 }
 
+                break;
+            case 17:
+                try {
+                    dos.writeUTF(User.getEmail());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                try {
+                    dis = new DataInputStream(s.getInputStream());
+                    reserva = dis.readBoolean();
+                    System.out.println(reserva);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
                 break;
         }
 
