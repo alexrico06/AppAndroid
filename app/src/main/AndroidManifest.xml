@@ -16,7 +16,8 @@
         android:roundIcon="@drawable/madridizate"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
-        <activity android:name=".ReservasActivity"></activity>
+        <activity android:name=".GestionReservas"></activity>
+
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").

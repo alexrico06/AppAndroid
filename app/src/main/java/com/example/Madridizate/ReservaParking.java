@@ -416,7 +416,5 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
 
         }
 
-
-
     }
 }

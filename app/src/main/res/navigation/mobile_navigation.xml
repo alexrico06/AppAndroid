@@ -30,7 +30,7 @@
         tools:layout="@layout/activity_menu_parkings" />
     <activity
         android:id="@+id/nav_reservas"
-        android:name="com.example.Madridizate.ReservasActivity"
+        android:name="com.example.Madridizate.GestionReservas"
         android:label="activity_reservas"
-        tools:layout="@layout/activity_reservas" />
+        tools:layout="@layout/activity_gestion_reservas" />
 </navigation>
