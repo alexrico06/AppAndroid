@@ -56,13 +56,9 @@ public class GalleryFragment extends Fragment {
         tipoTarjeta.setEnabled(false);
         if(User.getTipoTarjeta().equals("VISA")){
             //tipoTarjeta.set
-            System.out.println("lol");
             tipoTarjeta.setSelection(0);
         }else if(User.getTipoTarjeta().equals("MASTERCARD")){
-            System.out.println("master");
             tipoTarjeta.setSelection(1);
-        }else{
-            System.out.println("vacio");
         }
         //tipoTarjeta.setEnabled(false);
 

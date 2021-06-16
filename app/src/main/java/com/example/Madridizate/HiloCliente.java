@@ -13,22 +13,23 @@ public class HiloCliente extends Thread{
     Socket s;
 
     DataInputStream dis = null;
-
     DataOutputStream dos=null;
-
     ObjectOutputStream oos = null;
 
-    public String dni;
     public String correo;
     String contrasena;
     String direccion;
     String vehiculo;
     String texto;
+    String fecha,plaza;
     char letra;
 
     public ArrayList<String[]> listaResultados;
     public ArrayList<String> listaApodos = new ArrayList<>();
     public ArrayList<String> listaPlazasParkin;
+    public ArrayList<String[]> listaHorasReservadas;
+    public ArrayList<String[]> listaReservas;
+
     String[] datosP = new String[7];
     String[] datosD = new String[5];
     String[] datosV = new String[5];
@@ -40,18 +41,21 @@ public class HiloCliente extends Thread{
     boolean existe;
     boolean resultado = false;
 
-
     //VERIFICAR USUARIO 1.1
-    //INFORMACION PLAZAS DE UN PARKING POR DIRECCION 11.1
+    //INFORMACION PLAZAS DE UN PARKING POR DIRECCION 11.2
+    //CONSULTAR HORAS RESERVAS POR FECHA Y PLAZA 15.3
     public HiloCliente(int consulta, int id, String texto1, String texto2) {
         this.consulta = consulta;
 
         if(id==1){
             this.correo = texto1;
             this.contrasena = texto2;
-        }else{
+        }else if(id==2){
             this.direccion = texto1;
             this.vehiculo = texto2;
+        }else if(id==3){
+            this.fecha = texto1;
+            this.plaza=texto2;
         }
 
     }
@@ -88,6 +92,7 @@ public class HiloCliente extends Thread{
     //INFORMACION VEHICULOS POR ALIAS 9
     //ELIMINAR VEHICULO POR MATRICULA 10
     //CONSULTAR SI UNA MATRICULA TIENE RESERVAS ANTES DE ELIMINAR 14
+    //INFORMACION RESERVAS DE USUARIO POR SU CORREO 16
     public HiloCliente(int consulta, String texto) {
         this.consulta=consulta;
         this.texto=texto;
@@ -396,6 +401,41 @@ public class HiloCliente extends Thread{
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+                break;
+
+            case 15:
+
+                try {
+                    dos.writeUTF(fecha);
+                    dos.writeUTF(plaza);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                try {
+                    ois=new ObjectInputStream(s.getInputStream());
+                    listaHorasReservadas = (ArrayList<String[]>) ois.readObject();
+                } catch (IOException | ClassNotFoundException e) {
+                    e.printStackTrace();
+                }
+
+                break;
+
+            case 16:
+
+                try {
+                    dos.writeUTF(User.getEmail());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                try {
+                    ois=new ObjectInputStream(s.getInputStream());
+                    listaReservas = (ArrayList<String[]>) ois.readObject();
+                } catch (IOException | ClassNotFoundException e) {
+                    e.printStackTrace();
+                }
+
                 break;
         }
 

@@ -16,6 +16,7 @@
         android:roundIcon="@drawable/madridizate"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+        <activity android:name=".ReservasActivity"></activity>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -28,12 +29,13 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name="com.example.Madridizate.MenuParkings" />
-        <activity android:name="com.example.Madridizate.ReservaParking" />
-        <activity android:name="com.example.Madridizate.RegistrarVehiculoActivity" />
-        <activity android:name="com.example.Madridizate.RegistrarUserActivity"
-            android:windowSoftInputMode="adjustResize"/>
-        <activity android:name="com.example.Madridizate.MainActivity">
+        <activity android:name=".MenuParkings" />
+        <activity android:name=".ReservaParking" />
+        <activity android:name=".RegistrarVehiculoActivity" />
+        <activity
+            android:name=".RegistrarUserActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -41,7 +43,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.Madridizate.Principal"
+            android:name=".Principal"
             android:label="@string/title_activity_main3"
             android:theme="@style/Theme.Madridizate2.NoActionBar" />
     </application>

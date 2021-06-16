@@ -55,7 +55,7 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
     final int hora = c.get(Calendar.HOUR_OF_DAY);
     final int minuto = c.get(Calendar.MINUTE);
 
-    private Date horaInicial, horaFinal;
+    private Date horaInicial, horaFinal,datefecha;
 
     //Widgets
     EditText etFecha, etHoraIni, etHoraFin;
@@ -161,6 +161,7 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
         spinner_plazas.setAdapter(new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, listaPlazasParkin));
         //spinner_plazas.setOnItemSelectedListener(this);
 
+
     }
 
     @Override
@@ -197,10 +198,21 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
 
                 etFecha.setText(diaFormateado + BARRA + mesFormateado + BARRA + year);
 
+                //System.out.println("lol" + etFecha.getText().toString());
+
+                hilo(etFecha.getText().toString());
             }
         },anio, mes, dia);
-
         recogerFecha.show();
+
+
+    }
+
+    public void hilo(String fecha){
+
+        spinner_plazas = findViewById(R.id.spinner_plazas);
+        HiloCliente hilo = new HiloCliente(15,3, fecha, spinner_plazas.getSelectedItem().toString());
+
 
     }
 
