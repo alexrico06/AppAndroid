@@ -32,16 +32,6 @@ public class GestionReservas extends AppCompatActivity {
         HiloCliente hilo = new HiloCliente(16,User.getEmail());
         hilo.start();
 
-        for (int i = 0; i < listaReservas.size(); i++) {
-            String[] plazas = listaReservas.get(i);
-            direccion.setText(plazas[6]);
-            fechaReserva.setText(plazas[1].substring(0,10));
-            horas.setText(plazas[2]+"-"+plazas[3]);
-            plaza.setText(plazas[5]);
-            matricula.setText(plazas[4]);
-        }
-
-
         try {
             hilo.join();
         } catch (InterruptedException e) {
@@ -49,7 +39,12 @@ public class GestionReservas extends AppCompatActivity {
         }
 
         for (String[] plazas: hilo.listaReservas) {
-            System.out.println("id"+ plazas[0] +"dia"+plazas[1]);
+            System.out.println("id: "+ plazas[0] +" dia: "+plazas[1]);
+            direccion.setText(plazas[6]);
+            fechaReserva.setText(plazas[1].substring(0,10));
+            horas.setText(plazas[2]+"-"+plazas[3]);
+            plaza.setText(plazas[5]);
+            matricula.setText(plazas[4]);
         }
 
     }

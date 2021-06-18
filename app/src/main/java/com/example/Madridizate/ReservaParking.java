@@ -159,7 +159,17 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
         spinner_plazas = findViewById(R.id.spinner_plazas);
 
         spinner_plazas.setAdapter(new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, listaPlazasParkin));
-        //spinner_plazas.setOnItemSelectedListener(this);
+        spinner_plazas.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                hilo(etFecha.getText().toString());
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
 
     }
@@ -212,7 +222,22 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
 
         spinner_plazas = findViewById(R.id.spinner_plazas);
         HiloCliente hilo = new HiloCliente(15,3, fecha, spinner_plazas.getSelectedItem().toString());
-        System.out.println("lol");
+        hilo.start();
+        try {
+            hilo.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        TextView horarios = findViewById(R.id.hora_0);
+
+        for (int i =0; i < hilo.listaHorasReservadas.size();i++){
+            String[] horario = hilo.listaHorasReservadas.get(i);
+
+            horarios.setText(horario[0] + "-"+ horario[1]);
+            System.out.println(horario[0] + "-"+ horario[1]);
+
+        }
 
     }
 
@@ -333,6 +358,8 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
 
     public void buttonReservar(View view){
 
+        diferencia();
+
         EditText fecha = findViewById(R.id.et_mostrar_fecha_picker);
         //System.out.println(fecha.getText());
 
@@ -371,7 +398,6 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
         if(hilo.resultado){
 
             Toast.makeText(this,"RESERVA NO DISPONIBLE",Toast.LENGTH_SHORT).show();
-            System.out.println("no existe");
 
         }else{
 
@@ -395,8 +421,10 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                if(hilo.reserva){
-                    Toast.makeText(this, "YA TIENE UNA RESERVA REALIZA", Toast.LENGTH_SHORT).show();
+
+                if(hiloR.reserva){
+                    Toast.makeText(this, "YA TIENE UNA RESERVA REALIZADA", Toast.LENGTH_SHORT).show();
+
                 }else {
                     HiloCliente hiloCliente = new HiloCliente(12, 2, datosReserva);
                     hiloCliente.start();
