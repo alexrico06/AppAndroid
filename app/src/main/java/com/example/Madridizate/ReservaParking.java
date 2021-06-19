@@ -251,16 +251,15 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
         }
 
         for (int i = 0; i < hilo.listaHorasReservadas.size(); i++) {
-            System.out.println("Tamaño: "+ hilo.listaHorasReservadas.size() );
+
             String[] horario = hilo.listaHorasReservadas.get(i);
             horasReservadas.get(i).setText(horario[0] + "-"+ horario[1]);
             horasReservadas.get(i).setBackgroundColor(Color.RED);
             horasReservadas.get(i).setVisibility(View.VISIBLE);
         }
 
-        System.out.println("Tamaño2: " + horasReservadas.size());
         for (int i = hilo.listaHorasReservadas.size(); i < horasReservadas.size() ; i++) {
-            System.out.println("lol"+ i);
+
             horasReservadas.get(i).setVisibility(View.GONE);
         }
 

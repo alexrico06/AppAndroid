@@ -46,12 +46,20 @@ public class GestionReservas extends AppCompatActivity {
 
             plazas = hilo.datosReserva;
 
-            System.out.println("id: "+ plazas[0] +" dia: "+plazas[1]);
+        if(plazas.length==0) {
+            System.out.println("id: " + plazas[0] + " dia: " + plazas[1]);
             direccion.setText(plazas[6]);
-            fechaReserva.setText(plazas[1].substring(0,10));
-            horas.setText(plazas[2]+"-"+plazas[3]);
+            fechaReserva.setText(plazas[1].substring(0, 10));
+            horas.setText(plazas[2] + "-" + plazas[3]);
             plaza.setText(plazas[5]);
             matricula.setText(plazas[4]);
+        }else{
+            direccion.setText("");
+            fechaReserva.setText("");
+            horas.setText("");
+            plaza.setText("");
+            matricula.setText("");
+        }
     }
 
     public void cancelarReserva(View v) {
