@@ -37,7 +37,7 @@ public class HiloCliente extends Thread{
     //String[] datosT = new String[4];
     String [] datos;
     int consulta;
-    int id;
+
     boolean existe;
     boolean resultado = false;
     boolean reserva = false;
@@ -59,6 +59,18 @@ public class HiloCliente extends Thread{
             this.plaza=texto2;
         }
 
+    }
+
+    //ELIMINAR VEHICULO POR MATRICULA 10 V
+    //ELIMINAR RESERVA DE USUARIO 10 R
+    public HiloCliente(int consulta, String id, String texto){
+        this.consulta = consulta;
+        this.texto=texto;
+        if(id.equals("V")){
+            letra = 'V';
+        }else{
+            letra = 'R';
+        }
     }
 
     //INSERTAR USUARIO Y DIRECCION 2
@@ -91,10 +103,10 @@ public class HiloCliente extends Thread{
     //INFORMACION TARJETA POR CORREO 6
     //INFORMACION ALIAS VEHICULOS POR CORREO 8
     //INFORMACION VEHICULOS POR ALIAS 9
-    //ELIMINAR VEHICULO POR MATRICULA 10
     //CONSULTAR SI UNA MATRICULA TIENE RESERVAS ANTES DE ELIMINAR 14
     //INFORMACION RESERVAS DE USUARIO POR SU CORREO 16
     //RESERVAS DE USUARIO POR SU CORREO 17
+
     public HiloCliente(int consulta, String texto) {
         this.consulta=consulta;
         this.texto=texto;
@@ -330,8 +342,18 @@ public class HiloCliente extends Thread{
 
                 break;
 
-            case 10: //ELIMINAR MATRICULA
-
+            case 10:
+                //ELIMINAR VEHICULO POR MATRICULA V
+                //ELIMINAR RESERVA R
+                try {
+                    if(letra == 'V'){
+                        dos.writeChar('v');
+                    }else{
+                        dos.writeChar('r');
+                    }
+                } catch (IOException e) {
+                e.printStackTrace();
+                }
                 try {
                     dos.writeUTF(texto);
                 } catch (IOException e) {
@@ -453,6 +475,7 @@ public class HiloCliente extends Thread{
                     e.printStackTrace();
                 }
                 break;
+
         }
 
     }
