@@ -28,7 +28,7 @@ public class HiloCliente extends Thread{
     public ArrayList<String> listaApodos = new ArrayList<>();
     public ArrayList<String> listaPlazasParkin;
     public ArrayList<String[]> listaHorasReservadas;
-    public ArrayList<String[]> listaReservas;
+    public String[] datosReserva;
 
     String[] datosP = new String[7];
     String[] datosD = new String[5];
@@ -433,7 +433,7 @@ public class HiloCliente extends Thread{
 
                 try {
                     ois=new ObjectInputStream(s.getInputStream());
-                    listaReservas = (ArrayList<String[]>) ois.readObject();
+                    datosReserva = (String[]) ois.readObject();
                 } catch (IOException | ClassNotFoundException e) {
                     e.printStackTrace();
                 }
