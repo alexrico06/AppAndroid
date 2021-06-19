@@ -71,6 +71,7 @@ public class GestionReservas extends AppCompatActivity {
         }
 
 
+
         Toast.makeText(this,"RESERVA ELIMINADA",Toast.LENGTH_SHORT).show();
         button.setEnabled(false);
 

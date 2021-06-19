@@ -42,7 +42,7 @@
     <string name="buttonGuardarcontrasena">Establecer</string>
 
     <string name="menu_account">Mi cuenta</string>
-    <string name="menu_settings">Ajustes</string>
+    <string name="menu_settings">Ayuda</string>
     <string name="menu_payment">Opciones de pago</string>
     <string name="menu_parkings">Parkings</string>
     <string name="title_activity_listado_parkings">ListadoParkings</string>
