@@ -69,7 +69,7 @@ public class GestionReservas extends AppCompatActivity {
         plaza.setText("");
         matricula.setText("");
 
-        HiloCliente hilo = new HiloCliente(10,"R", plazas[0]);
+        HiloCliente hilo = new HiloCliente(18, plazas[0]);
         hilo.start();
 
         try {
