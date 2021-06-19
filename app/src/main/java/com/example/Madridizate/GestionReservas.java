@@ -44,7 +44,7 @@ public class GestionReservas extends AppCompatActivity {
             e.printStackTrace();
         }
 
-            plazas = hilo.datosReserva;
+            plazas= hilo.datosReserva;
 
         if(plazas.length !=0) {
             System.out.println("id: " + plazas[0] + " dia: " + plazas[1]);
@@ -69,7 +69,7 @@ public class GestionReservas extends AppCompatActivity {
         plaza.setText("");
         matricula.setText("");
 
-        HiloCliente hilo = new HiloCliente(10,"R", plazas[0]);
+        HiloCliente hilo = new HiloCliente(18, plazas[0]);
         hilo.start();
 
         try {
@@ -77,6 +77,8 @@ public class GestionReservas extends AppCompatActivity {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
+
 
         Toast.makeText(this,"RESERVA ELIMINADA",Toast.LENGTH_SHORT).show();
         button.setEnabled(false);

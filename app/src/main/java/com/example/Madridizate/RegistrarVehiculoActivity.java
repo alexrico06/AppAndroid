@@ -351,7 +351,7 @@ public class RegistrarVehiculoActivity extends AppCompatActivity implements Adap
 
     public void eliminarVechiulo(){
 
-        HiloCliente hilo = new HiloCliente(10, matricula.getText().toString());
+        HiloCliente hilo = new HiloCliente(10, "V", matricula.getText().toString());
         hilo.start();
 
         Intent refresh = new Intent(this, RegistrarVehiculoActivity.class);
