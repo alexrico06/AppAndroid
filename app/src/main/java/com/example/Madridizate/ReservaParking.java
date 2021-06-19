@@ -449,6 +449,7 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
 
                 if(hiloR.reserva){
                     Toast.makeText(this, "SOLO PUEDE TENER UNA RESERVA ACTIVA", Toast.LENGTH_SHORT).show();
+
                 }else {
                     HiloCliente hiloCliente = new HiloCliente(12, 2, datosReserva);
                     hiloCliente.start();
