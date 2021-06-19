@@ -44,7 +44,7 @@ public class GestionReservas extends AppCompatActivity {
             e.printStackTrace();
         }
 
-            plazas= hilo.listaReservas;
+            plazas= hilo.datosReserva;
 
             System.out.println("id: "+ plazas[0] +" dia: "+plazas[1]);
             direccion.setText(plazas[6]);
