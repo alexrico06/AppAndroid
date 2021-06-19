@@ -32,7 +32,6 @@ import java.util.Date;
 
 public class ReservaParking extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener  {
 
-
     String direccion;
     Spinner spinner_alias;
     Spinner spinner_plazas;
@@ -61,7 +60,7 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
     EditText etFecha, etHoraIni, etHoraFin;
     ImageButton ibObtenerFecha, ibObtenerHoraIni, ibObtenerHoraFin;
 
-    TextView textView;
+    ArrayList<TextView> horasReservadas = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,6 +81,31 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
         ibObtenerHoraIni = (ImageButton) findViewById(R.id.ib_obtener_hora_inicio);
         ibObtenerHoraFin = (ImageButton) findViewById(R.id.ib_obtener_hora_fin);
 
+        horasReservadas.add(findViewById(R.id.hora1));
+        horasReservadas.add(findViewById(R.id.hora2));
+        horasReservadas.add(findViewById(R.id.hora3));
+        horasReservadas.add(findViewById(R.id.hora4));
+        horasReservadas.add(findViewById(R.id.hora5));
+        horasReservadas.add(findViewById(R.id.hora6));
+        horasReservadas.add(findViewById(R.id.hora7));
+        horasReservadas.add(findViewById(R.id.hora8));
+        horasReservadas.add(findViewById(R.id.hora9));
+        horasReservadas.add(findViewById(R.id.hora10));
+        horasReservadas.add(findViewById(R.id.hora11));
+        horasReservadas.add(findViewById(R.id.hora12));
+        horasReservadas.add(findViewById(R.id.hora13));
+        horasReservadas.add(findViewById(R.id.hora14));
+        horasReservadas.add(findViewById(R.id.hora15));
+        horasReservadas.add(findViewById(R.id.hora16));
+        horasReservadas.add(findViewById(R.id.hora17));
+        horasReservadas.add(findViewById(R.id.hora18));
+        horasReservadas.add(findViewById(R.id.hora19));
+        horasReservadas.add(findViewById(R.id.hora20));
+        horasReservadas.add(findViewById(R.id.hora21));
+        horasReservadas.add(findViewById(R.id.hora22));
+        horasReservadas.add(findViewById(R.id.hora23));
+        horasReservadas.add(findViewById(R.id.hora24));
+
         ibObtenerFecha.setOnClickListener(this);
         ibObtenerHoraIni.setOnClickListener(this);
         ibObtenerHoraFin.setOnClickListener(this);
@@ -94,9 +118,6 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
         etFecha.setEnabled(false);
         etHoraIni.setEnabled(false);
         etHoraFin.setEnabled(false);
-
-        textView = findViewById(R.id.hora4);
-        textView.setBackgroundColor(Color.RED);
 
 
         //consultar todos los vehiculos del usuario
@@ -229,14 +250,18 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
             e.printStackTrace();
         }
 
-        TextView horarios = findViewById(R.id.hora_0);
-
-        for (int i =0; i < hilo.listaHorasReservadas.size();i++){
+        for (int i = 0; i < hilo.listaHorasReservadas.size(); i++) {
+            System.out.println("Tamaño: "+ hilo.listaHorasReservadas.size() );
             String[] horario = hilo.listaHorasReservadas.get(i);
+            horasReservadas.get(i).setText(horario[0] + "-"+ horario[1]);
+            horasReservadas.get(i).setBackgroundColor(Color.RED);
+            horasReservadas.get(i).setVisibility(View.VISIBLE);
+        }
 
-            horarios.setText(horario[0] + "-"+ horario[1]);
-            System.out.println(horario[0] + "-"+ horario[1]);
-
+        System.out.println("Tamaño2: " + horasReservadas.size());
+        for (int i = hilo.listaHorasReservadas.size(); i < horasReservadas.size() ; i++) {
+            System.out.println("lol"+ i);
+            horasReservadas.get(i).setVisibility(View.GONE);
         }
 
     }
@@ -423,8 +448,7 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
                 }
 
                 if(hiloR.reserva){
-                    Toast.makeText(this, "YA TIENE UNA RESERVA REALIZADA", Toast.LENGTH_SHORT).show();
-
+                    Toast.makeText(this, "SOLO PUEDE TENER UNA RESERVA ACTIVA", Toast.LENGTH_SHORT).show();
                 }else {
                     HiloCliente hiloCliente = new HiloCliente(12, 2, datosReserva);
                     hiloCliente.start();
