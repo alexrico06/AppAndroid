@@ -46,7 +46,7 @@ public class GestionReservas extends AppCompatActivity {
 
             plazas = hilo.datosReserva;
 
-        if(plazas.length==0) {
+        if(plazas.length !=0) {
             System.out.println("id: " + plazas[0] + " dia: " + plazas[1]);
             direccion.setText(plazas[6]);
             fechaReserva.setText(plazas[1].substring(0, 10));
