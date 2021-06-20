@@ -259,7 +259,6 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
         }
 
         for (int i = hilo.listaHorasReservadas.size(); i < horasReservadas.size() ; i++) {
-
             horasReservadas.get(i).setVisibility(View.GONE);
         }
 
