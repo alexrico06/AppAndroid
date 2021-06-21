@@ -40,6 +40,8 @@
                     android:id="@+id/textViewDireccionPalza"
                     android:layout_width="215dp"
                     android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
                     android:layout_weight="1"
                     android:text="Direccion y nº de plaza:"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
@@ -52,6 +54,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:paddingLeft="5dp"
+                android:paddingTop="10dp"
                 android:paddingRight="5dp">
 
                 <TextView
@@ -79,7 +82,7 @@
 
                 <TextView
                     android:id="@+id/textViewFechaReserva"
-                    android:layout_width="137dp"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:layout_weight="1"
@@ -106,7 +109,7 @@
 
                 <TextView
                     android:id="@+id/textViewHorasReserva"
-                    android:layout_width="135dp"
+                    android:layout_width="100dp"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="10dp"
                     android:layout_weight="1"
@@ -132,7 +135,7 @@
 
                 <TextView
                     android:id="@+id/textviewMatricula"
-                    android:layout_width="137dp"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:layout_weight="1"
