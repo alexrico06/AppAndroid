@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gredient"
     tools:context=".ui.gallery.GalleryFragment">
 
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/gredient"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -134,13 +134,22 @@
                 android:layout_height="34dp"
                 android:layout_marginBottom="10dp"
                 android:layout_weight="2"
-                android:entries="@array/tipos"
                 android:ems="10"
+                android:entries="@array/tipos"
                 android:visibility="visible" />
 
         </LinearLayout>
 
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:alpha="0.25"
+        android:background="@drawable/mano_home_pass_v4"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"></LinearLayout>
 
     <Button
         android:id="@+id/save_card"
@@ -176,9 +185,11 @@
         android:id="@+id/imageView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/mano_home_pass_v4"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:alpha="0.25"
+        android:paddingBottom="-100dp"
+        android:src="@drawable/mano_home_pass_v4"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
