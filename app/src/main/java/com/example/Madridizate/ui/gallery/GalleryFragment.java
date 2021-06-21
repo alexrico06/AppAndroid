@@ -62,11 +62,6 @@ public class GalleryFragment extends Fragment {
         }
         //tipoTarjeta.setEnabled(false);
 
-
-        EditText codigo = root.findViewById(R.id.codigo_promocional);
-        cod = codigo.getText().toString();
-
-
         Button pressEditCard = (Button) root.findViewById(R.id.edit_card);
         pressEditCard.setOnClickListener(new View.OnClickListener() {
             @Override
