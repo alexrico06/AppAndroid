@@ -65,6 +65,7 @@ public class GestionReservas extends AppCompatActivity {
     }
 
     public void cancelarReserva(View v) {
+
         direccion.setText("");
         fechaReserva.setText("");
         horas.setText("");

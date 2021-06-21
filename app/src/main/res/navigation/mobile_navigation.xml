@@ -21,7 +21,7 @@
         android:id="@+id/nav_settings"
         android:name="com.example.Madridizate.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_settings"
-        tools:layout="@layout/fragment_settings" />
+        tools:layout="@layout/fragment_help" />
 
     <activity
         android:id="@+id/nav_tabbed"

@@ -342,312 +342,288 @@
 
                 <TextView
                     android:id="@+id/hora1"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:layout_marginStart="2dp"
                     android:layout_marginLeft="2dp"
                     android:layout_marginEnd="2dp"
                     android:layout_marginRight="2dp"
-                    android:layout_weight="1"
                     android:text="00:00-00:00"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:visibility="invisible" />
 
                 <TextView
                     android:id="@+id/hora2"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:layout_marginStart="2dp"
                     android:layout_marginLeft="2dp"
                     android:layout_marginEnd="2dp"
                     android:layout_marginRight="2dp"
-                    android:layout_weight="1"
                     android:text="0:30"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:visibility="invisible" />
 
                 <TextView
                     android:id="@+id/hora3"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:layout_marginStart="2dp"
                     android:layout_marginLeft="2dp"
                     android:layout_marginEnd="2dp"
                     android:layout_marginRight="2dp"
-                    android:layout_weight="1"
                     android:text="1:00"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:visibility="invisible" />
 
                 <TextView
                     android:id="@+id/hora4"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:layout_marginStart="2dp"
                     android:layout_marginLeft="2dp"
                     android:layout_marginEnd="2dp"
                     android:layout_marginRight="2dp"
-                    android:layout_weight="1"
                     android:text="1:30"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:visibility="invisible" />
 
                 <TextView
                     android:id="@+id/hora5"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:layout_marginStart="2dp"
                     android:layout_marginLeft="2dp"
                     android:layout_marginEnd="2dp"
                     android:layout_marginRight="2dp"
-                    android:layout_weight="1"
                     android:text="2:00"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:visibility="invisible" />
 
                 <TextView
                     android:id="@+id/hora6"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:layout_marginStart="2dp"
                     android:layout_marginLeft="2dp"
                     android:layout_marginEnd="2dp"
                     android:layout_marginRight="2dp"
-                    android:layout_weight="1"
                     android:text="0:30"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:visibility="invisible" />
 
                 <TextView
                     android:id="@+id/hora7"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:layout_marginStart="2dp"
                     android:layout_marginLeft="2dp"
                     android:layout_marginEnd="2dp"
                     android:layout_marginRight="2dp"
-                    android:layout_weight="1"
                     android:text="0:30"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:visibility="invisible" />
 
                 <TextView
                     android:id="@+id/hora8"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:layout_marginStart="2dp"
                     android:layout_marginLeft="2dp"
                     android:layout_marginEnd="2dp"
                     android:layout_marginRight="2dp"
-                    android:layout_weight="1"
                     android:text="0:30"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:visibility="invisible" />
 
                 <TextView
                     android:id="@+id/hora9"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:layout_marginStart="2dp"
                     android:layout_marginLeft="2dp"
                     android:layout_marginEnd="2dp"
                     android:layout_marginRight="2dp"
-                    android:layout_weight="1"
                     android:text="0:30"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:visibility="invisible" />
 
                 <TextView
                     android:id="@+id/hora10"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:layout_marginStart="2dp"
                     android:layout_marginLeft="2dp"
                     android:layout_marginEnd="2dp"
                     android:layout_marginRight="2dp"
-                    android:layout_weight="1"
                     android:text="0:30"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:visibility="invisible" />
 
                 <TextView
                     android:id="@+id/hora11"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:layout_marginStart="2dp"
                     android:layout_marginLeft="2dp"
                     android:layout_marginEnd="2dp"
                     android:layout_marginRight="2dp"
-                    android:layout_weight="1"
                     android:text="0:30"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:visibility="invisible" />
 
                 <TextView
                     android:id="@+id/hora12"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:layout_marginStart="2dp"
                     android:layout_marginLeft="2dp"
                     android:layout_marginEnd="2dp"
                     android:layout_marginRight="2dp"
-                    android:layout_weight="1"
                     android:text="0:30"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:visibility="invisible" />
 
                 <TextView
                     android:id="@+id/hora13"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:layout_marginStart="2dp"
                     android:layout_marginLeft="2dp"
                     android:layout_marginEnd="2dp"
                     android:layout_marginRight="2dp"
-                    android:layout_weight="1"
                     android:text="0:30"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:visibility="invisible" />
 
                 <TextView
                     android:id="@+id/hora14"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:layout_marginStart="2dp"
                     android:layout_marginLeft="2dp"
                     android:layout_marginEnd="2dp"
                     android:layout_marginRight="2dp"
-                    android:layout_weight="1"
                     android:text="0:30"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:visibility="invisible" />
 
                 <TextView
                     android:id="@+id/hora15"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:layout_marginStart="2dp"
                     android:layout_marginLeft="2dp"
                     android:layout_marginEnd="2dp"
                     android:layout_marginRight="2dp"
-                    android:layout_weight="1"
                     android:text="0:30"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:visibility="invisible" />
 
                 <TextView
                     android:id="@+id/hora16"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:layout_marginStart="2dp"
                     android:layout_marginLeft="2dp"
                     android:layout_marginEnd="2dp"
                     android:layout_marginRight="2dp"
-                    android:layout_weight="1"
                     android:text="0:30"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:visibility="invisible" />
 
                 <TextView
                     android:id="@+id/hora17"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:layout_marginStart="2dp"
                     android:layout_marginLeft="2dp"
                     android:layout_marginEnd="2dp"
                     android:layout_marginRight="2dp"
-                    android:layout_weight="1"
                     android:text="0:30"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:visibility="invisible" />
 
                 <TextView
                     android:id="@+id/hora18"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:layout_marginStart="2dp"
                     android:layout_marginLeft="2dp"
                     android:layout_marginEnd="2dp"
                     android:layout_marginRight="2dp"
-                    android:layout_weight="1"
                     android:text="0:30"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:visibility="invisible" />
 
                 <TextView
                     android:id="@+id/hora19"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:layout_marginStart="2dp"
                     android:layout_marginLeft="2dp"
                     android:layout_marginEnd="2dp"
                     android:layout_marginRight="2dp"
-                    android:layout_weight="1"
                     android:text="0:30"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:visibility="invisible" />
 
                 <TextView
                     android:id="@+id/hora20"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:layout_marginStart="2dp"
                     android:layout_marginLeft="2dp"
                     android:layout_marginEnd="2dp"
                     android:layout_marginRight="2dp"
-                    android:layout_weight="1"
                     android:text="0:30"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:visibility="invisible" />
 
                 <TextView
                     android:id="@+id/hora21"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:layout_marginStart="2dp"
                     android:layout_marginLeft="2dp"
                     android:layout_marginEnd="2dp"
                     android:layout_marginRight="2dp"
-                    android:layout_weight="1"
                     android:text="0:00"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:visibility="invisible" />
 
                 <TextView
                     android:id="@+id/hora22"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:layout_marginStart="2dp"
                     android:layout_marginLeft="2dp"
                     android:layout_marginEnd="2dp"
                     android:layout_marginRight="2dp"
-                    android:layout_weight="1"
                     android:text="0:30"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:visibility="invisible" />
 
                 <TextView
                     android:id="@+id/hora23"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:layout_marginStart="2dp"
                     android:layout_marginLeft="2dp"
                     android:layout_marginEnd="2dp"
                     android:layout_marginRight="2dp"
-                    android:layout_weight="1"
                     android:text="1:00"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:visibility="invisible" />
 
                 <TextView
                     android:id="@+id/hora24"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:layout_marginStart="2dp"
                     android:layout_marginLeft="2dp"
                     android:layout_marginEnd="2dp"
                     android:layout_marginRight="2dp"
-                    android:layout_weight="1"
                     android:text="1:30"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:visibility="invisible" />
