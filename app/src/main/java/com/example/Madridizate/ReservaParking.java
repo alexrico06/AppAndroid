@@ -254,7 +254,7 @@ public class ReservaParking extends AppCompatActivity implements AdapterView.OnI
 
             String[] horario = hilo.listaHorasReservadas.get(i);
             horasReservadas.get(i).setText(horario[0] + "-"+ horario[1]);
-            horasReservadas.get(i).setBackgroundColor(Color.RED);
+            //horasReservadas.get(i).setBackgroundColor(Color.RED);
             horasReservadas.get(i).setVisibility(View.VISIBLE);
         }
 

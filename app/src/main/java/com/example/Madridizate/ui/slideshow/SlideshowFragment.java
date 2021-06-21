@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,7 +22,15 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.Madridizate.AdaptadorExpandableList;
 import com.example.Madridizate.R;
 
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -53,19 +62,8 @@ public class SlideshowFragment extends Fragment {
         openPdf.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String nombPdf = "manual_de_usuario_madridizate.pdf";
 
-                // Así va correctamente la dirección
-                String dir = Environment.getExternalStorageDirectory()+ "C:/Users/leopc/AndroidStudioProjects/AppAndroid/app/" + nombPdf;
-
-                File arch = new File(dir);
-
-                Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setDataAndType(Uri.fromFile(arch), "application/pdf");
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-
-                startActivity(intent);
+                Toast.makeText(getContext(), "Abriendo la Web...", Toast.LENGTH_SHORT).show();
 
             }
         });
