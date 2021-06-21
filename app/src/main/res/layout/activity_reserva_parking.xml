@@ -348,8 +348,10 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginEnd="2dp"
                     android:layout_marginRight="2dp"
+                    android:background="#FDEF4A4A"
                     android:text="00:00-00:00"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textStyle="bold"
                     android:visibility="invisible" />
 
                 <TextView
@@ -360,8 +362,10 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginEnd="2dp"
                     android:layout_marginRight="2dp"
+                    android:background="#FDEF4A4A"
                     android:text="0:30"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textStyle="bold"
                     android:visibility="invisible" />
 
                 <TextView
@@ -372,8 +376,10 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginEnd="2dp"
                     android:layout_marginRight="2dp"
+                    android:background="#FDEF4A4A"
                     android:text="1:00"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textStyle="bold"
                     android:visibility="invisible" />
 
                 <TextView
@@ -384,8 +390,10 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginEnd="2dp"
                     android:layout_marginRight="2dp"
+                    android:background="#FDEF4A4A"
                     android:text="1:30"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textStyle="bold"
                     android:visibility="invisible" />
 
                 <TextView
@@ -396,8 +404,10 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginEnd="2dp"
                     android:layout_marginRight="2dp"
+                    android:background="#FDEF4A4A"
                     android:text="2:00"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textStyle="bold"
                     android:visibility="invisible" />
 
                 <TextView
@@ -408,8 +418,10 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginEnd="2dp"
                     android:layout_marginRight="2dp"
+                    android:background="#FDEF4A4A"
                     android:text="0:30"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textStyle="bold"
                     android:visibility="invisible" />
 
                 <TextView
@@ -420,8 +432,10 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginEnd="2dp"
                     android:layout_marginRight="2dp"
+                    android:background="#FDEF4A4A"
                     android:text="0:30"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textStyle="bold"
                     android:visibility="invisible" />
 
                 <TextView
@@ -432,8 +446,10 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginEnd="2dp"
                     android:layout_marginRight="2dp"
+                    android:background="#FDEF4A4A"
                     android:text="0:30"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textStyle="bold"
                     android:visibility="invisible" />
 
                 <TextView
@@ -444,8 +460,10 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginEnd="2dp"
                     android:layout_marginRight="2dp"
+                    android:background="#FDEF4A4A"
                     android:text="0:30"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textStyle="bold"
                     android:visibility="invisible" />
 
                 <TextView
@@ -456,8 +474,10 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginEnd="2dp"
                     android:layout_marginRight="2dp"
+                    android:background="#FDEF4A4A"
                     android:text="0:30"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textStyle="bold"
                     android:visibility="invisible" />
 
                 <TextView
@@ -468,8 +488,10 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginEnd="2dp"
                     android:layout_marginRight="2dp"
+                    android:background="#FDEF4A4A"
                     android:text="0:30"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textStyle="bold"
                     android:visibility="invisible" />
 
                 <TextView
@@ -480,8 +502,10 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginEnd="2dp"
                     android:layout_marginRight="2dp"
+                    android:background="#FDEF4A4A"
                     android:text="0:30"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textStyle="bold"
                     android:visibility="invisible" />
 
                 <TextView
@@ -492,8 +516,10 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginEnd="2dp"
                     android:layout_marginRight="2dp"
+                    android:background="#FDEF4A4A"
                     android:text="0:30"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textStyle="bold"
                     android:visibility="invisible" />
 
                 <TextView
@@ -504,8 +530,10 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginEnd="2dp"
                     android:layout_marginRight="2dp"
+                    android:background="#FDEF4A4A"
                     android:text="0:30"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textStyle="bold"
                     android:visibility="invisible" />
 
                 <TextView
@@ -516,8 +544,10 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginEnd="2dp"
                     android:layout_marginRight="2dp"
+                    android:background="#FDEF4A4A"
                     android:text="0:30"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textStyle="bold"
                     android:visibility="invisible" />
 
                 <TextView
@@ -528,8 +558,10 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginEnd="2dp"
                     android:layout_marginRight="2dp"
+                    android:background="#FDEF4A4A"
                     android:text="0:30"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textStyle="bold"
                     android:visibility="invisible" />
 
                 <TextView
@@ -540,8 +572,10 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginEnd="2dp"
                     android:layout_marginRight="2dp"
+                    android:background="#FDEF4A4A"
                     android:text="0:30"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textStyle="bold"
                     android:visibility="invisible" />
 
                 <TextView
@@ -552,8 +586,10 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginEnd="2dp"
                     android:layout_marginRight="2dp"
+                    android:background="#FDEF4A4A"
                     android:text="0:30"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textStyle="bold"
                     android:visibility="invisible" />
 
                 <TextView
@@ -564,8 +600,10 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginEnd="2dp"
                     android:layout_marginRight="2dp"
+                    android:background="#FDEF4A4A"
                     android:text="0:30"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textStyle="bold"
                     android:visibility="invisible" />
 
                 <TextView
@@ -576,8 +614,10 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginEnd="2dp"
                     android:layout_marginRight="2dp"
+                    android:background="#FDEF4A4A"
                     android:text="0:30"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textStyle="bold"
                     android:visibility="invisible" />
 
                 <TextView
@@ -588,8 +628,10 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginEnd="2dp"
                     android:layout_marginRight="2dp"
+                    android:background="#FDEF4A4A"
                     android:text="0:00"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textStyle="bold"
                     android:visibility="invisible" />
 
                 <TextView
@@ -600,8 +642,10 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginEnd="2dp"
                     android:layout_marginRight="2dp"
+                    android:background="#FDEF4A4A"
                     android:text="0:30"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textStyle="bold"
                     android:visibility="invisible" />
 
                 <TextView
@@ -612,8 +656,10 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginEnd="2dp"
                     android:layout_marginRight="2dp"
+                    android:background="#FDEF4A4A"
                     android:text="1:00"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textStyle="bold"
                     android:visibility="invisible" />
 
                 <TextView
@@ -624,8 +670,10 @@
                     android:layout_marginLeft="2dp"
                     android:layout_marginEnd="2dp"
                     android:layout_marginRight="2dp"
+                    android:background="#FDEF4A4A"
                     android:text="1:30"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textStyle="bold"
                     android:visibility="invisible" />
 
             </LinearLayout>
