@@ -62,26 +62,8 @@ public class SlideshowFragment extends Fragment {
         openPdf.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try {
 
-                    URL u = new URL("/download/");
-                    URLConnection conn = u.openConnection();
-                    int contentLength = conn.getContentLength();
-
-                    DataInputStream stream = new DataInputStream(u.openStream());
-
-                    byte[] buffer = new byte[contentLength];
-                    stream.readFully(buffer);
-                    stream.close();
-
-                    DataOutputStream fos = new DataOutputStream(new FileOutputStream("manual_de_usuario_madridizate.pdf"));
-                    fos.write(buffer);
-                    fos.flush();
-                    fos.close();
-
-                } catch (IOException e) {
-                    Log.d("PdfManager", "Error: " + e);
-                }
+                Toast.makeText(getContext(), "Abriendo la Web...", Toast.LENGTH_SHORT).show();
 
             }
         });
