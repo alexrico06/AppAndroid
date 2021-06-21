@@ -43,7 +43,7 @@
 
             <TextView
                 android:id="@+id/textView5"
-                android:layout_width="109dp"
+                android:layout_width="178dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Número de tarjeta"
@@ -52,7 +52,7 @@
 
             <EditText
                 android:id="@+id/cardNum"
-                android:layout_width="wrap_content"
+                android:layout_width="262dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
@@ -140,76 +140,6 @@
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/textView7"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:background="@drawable/gredient"
-            android:gravity="center_vertical"
-            android:paddingTop="15dp"
-            android:paddingBottom="15dp"
-            android:text="CRÉDITO"
-            android:textColor="@color/black"
-            android:textSize="24sp"
-            android:textStyle="bold" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginLeft="5dp"
-            android:orientation="horizontal"
-            android:paddingTop="15dp"
-            android:paddingBottom="15dp">
-
-            <TextView
-                android:id="@+id/textView8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="SALDO:"
-                android:textColor="@color/black" />
-
-            <TextView
-                android:id="@+id/textView9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="110€"
-                android:textColor="@color/black" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginEnd="2dp"
-            android:layout_marginRight="2dp"
-            android:orientation="horizontal">
-
-            <EditText
-                android:id="@+id/codigo_promocional"
-                android:layout_width="273dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="CÓDIGO PROMOCIONAL"
-                android:inputType="textPersonName"
-                android:textColor="@color/black" />
-
-            <Button
-                android:id="@+id/canjear"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:enabled="false"
-                android:onClick="canjear"
-                android:text="+"
-                android:textColor="@color/black"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-
     </LinearLayout>
 
     <Button
@@ -241,5 +171,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.555555"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/mano_home_pass_v4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:alpha="0.25"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
