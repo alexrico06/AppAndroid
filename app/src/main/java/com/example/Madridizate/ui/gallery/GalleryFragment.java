@@ -117,7 +117,7 @@ public class GalleryFragment extends Fragment {
                                 Toast.makeText(getContext(), "EL CVV DEBE SER DE 3 DIGITOS", Toast.LENGTH_SHORT).show();
                             }
                         }else{
-                            Toast.makeText(getContext(), "FECHA DE CADUCIDAD: MM/YY", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(), "FECHA DE CADUCIDAD: 'MM/YY' ", Toast.LENGTH_SHORT).show();
                         }
                     }else{
                         Toast.makeText(getContext(), "RELLENE LA FECHA DE CADUCIDAD DE LA TARJETA INTRODUCIDA", Toast.LENGTH_SHORT).show();

@@ -168,7 +168,7 @@ public class RegistrarUserActivity extends AppCompatActivity {
                                     Toast.makeText(this, "INTRODUZCA UN TELEFONO", Toast.LENGTH_SHORT).show();
                                 }
                             } else {
-                                Toast.makeText(this, "FORMATO DE FECHA CORRECTO: DD/MM/YYYY", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(this, "FORMATO DE FECHA CORRECTO: 'DD/MM/YYYY' ", Toast.LENGTH_SHORT).show();
                             }
                         } else {
                             Toast.makeText(this, "INTRODUZCA SU FEHCA DE NACIMIENTO", Toast.LENGTH_SHORT).show();
