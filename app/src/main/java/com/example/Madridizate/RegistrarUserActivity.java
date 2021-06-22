@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.time.format.DateTimeFormatter;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -107,61 +108,67 @@ public class RegistrarUserActivity extends AppCompatActivity {
                 if (!datosP[1].equals("")) {
                     if (!datosP[2].equals("")) {
                         if (!datosP[5].equals("")) {
-                            if (!datosP[3].equals("")) {
-                                if (!datosP[4].equals("")) {
+                            Pattern patt = Pattern.compile("([0-9]{2})/([0-9]{2})/([0-9]{4})");
+                            Matcher match1 = patt.matcher(datosP[5]);
+                            if(match1.find()) {
+                                if (!datosP[3].equals("")) {
+                                    if (!datosP[4].equals("")) {
 
-                                    Pattern pattern = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
-                                    Matcher mather = pattern.matcher(datosP[4]);
+                                        Pattern pattern = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
+                                        Matcher mather = pattern.matcher(datosP[4]);
 
-                                    if (mather.find()) {
+                                        if (mather.find()) {
 
-                                        //DATOS DIRECCION
-                                        if (!datosD[0].equals("")) {
-                                            if (!datosD[1].equals("")) {
-                                                if (!datosD[4].equals("")) {
-                                                    if (!datosD[5].equals("")) {
+                                            //DATOS DIRECCION
+                                            if (!datosD[0].equals("")) {
+                                                if (!datosD[1].equals("")) {
+                                                    if (!datosD[4].equals("")) {
+                                                        if (!datosD[5].equals("")) {
 
-                                                        //DATO CONTRASEÑA
-                                                        if (!datosP[6].equals("")) {
+                                                            //DATO CONTRASEÑA
+                                                            if (!datosP[6].equals("")) {
 
-                                                            completo = true;
+                                                                completo = true;
+
+                                                            } else {
+
+                                                                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                                                                builder.setMessage("NO PUEDE DEJAR LA CONTRASEÑA VACIA ");
+
+                                                                builder.setNegativeButton("ACEPTAR", new DialogInterface.OnClickListener() {
+                                                                    public void onClick(DialogInterface dialog, int id) {
+                                                                        dialog.cancel();
+                                                                    }
+                                                                });
+
+                                                                AlertDialog dialog = builder.create();
+                                                                dialog.show();
+                                                            }
 
                                                         } else {
-
-                                                            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                                                            builder.setMessage("NO PUEDE DEJAR LA CONTRASEÑA VACIA ");
-
-                                                            builder.setNegativeButton("ACEPTAR", new DialogInterface.OnClickListener() {
-                                                                public void onClick(DialogInterface dialog, int id) {
-                                                                    dialog.cancel();
-                                                                }
-                                                            });
-
-                                                            AlertDialog dialog = builder.create();
-                                                            dialog.show();
+                                                            Toast.makeText(this, "INTRODUZCA LA CIUDAD", Toast.LENGTH_SHORT).show();
                                                         }
-
                                                     } else {
-                                                        Toast.makeText(this, "INTRODUZCA LA CIUDAD", Toast.LENGTH_SHORT).show();
+                                                        Toast.makeText(this, "INTRODUZCA EL CODIGO POSTAL", Toast.LENGTH_SHORT).show();
                                                     }
                                                 } else {
-                                                    Toast.makeText(this, "INTRODUZCA EL CODIGO POSTAL", Toast.LENGTH_SHORT).show();
+                                                    Toast.makeText(this, "INTRODUZCA EL NUMERO DE VIVIENDA", Toast.LENGTH_SHORT).show();
                                                 }
                                             } else {
-                                                Toast.makeText(this, "INTRODUZCA EL NUMERO DE VIVIENDA", Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(this, "INTRODUZCA UNA CALLE", Toast.LENGTH_SHORT).show();
                                             }
                                         } else {
-                                            Toast.makeText(this, "INTRODUZCA UNA CALLE", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(this, "INTRODUZCA UN CORREO CORRECTO", Toast.LENGTH_SHORT).show();
                                         }
-                                    } else {
-                                        Toast.makeText(this, "INTRODUZCA UN CORREO CORRECTO", Toast.LENGTH_SHORT).show();
-                                    }
 
+                                    } else {
+                                        Toast.makeText(this, "INTRODUZCA UN CORREO", Toast.LENGTH_SHORT).show();
+                                    }
                                 } else {
-                                    Toast.makeText(this, "INTRODUZCA UN CORREO", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(this, "INTRODUZCA UN TELEFONO", Toast.LENGTH_SHORT).show();
                                 }
                             } else {
-                                Toast.makeText(this, "INTRODUZCA UN TELEFONO", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(this, "FORMATO DE FECHA CORRECTO: DD/MM/YYYY", Toast.LENGTH_SHORT).show();
                             }
                         } else {
                             Toast.makeText(this, "INTRODUZCA SU FEHCA DE NACIMIENTO", Toast.LENGTH_SHORT).show();

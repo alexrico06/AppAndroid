@@ -17,6 +17,9 @@ import com.example.Madridizate.HiloCliente;
 import com.example.Madridizate.R;
 import com.example.Madridizate.User;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class GalleryFragment extends Fragment {
 
     private GalleryViewModel galleryViewModel;
@@ -91,7 +94,10 @@ public class GalleryFragment extends Fragment {
 
                 if(datosT[0].length() == 16){
                     if(!datosT[1].equals("")) {
-                        if (datosT[2].length() == 3) {
+                        Pattern diames = Pattern.compile("([0-9]{2})/([0-9]{2})");
+                        Matcher match1 = diames.matcher(datosT[1]);
+                        if(match1.find()) {
+                            if (datosT[2].length() == 3) {
 
                                 HiloCliente hilo = new HiloCliente(7, datosT, User.getEmail(), 't');
                                 hilo.start();
@@ -107,8 +113,11 @@ public class GalleryFragment extends Fragment {
                                 cvv.setEnabled(false);
                                 tipoTarjeta.setEnabled(false);
 
-                        } else {
-                            Toast.makeText(getContext(), "EL CVV DEBE SER DE 3 DIGITOS", Toast.LENGTH_SHORT).show();
+                            } else {
+                                Toast.makeText(getContext(), "EL CVV DEBE SER DE 3 DIGITOS", Toast.LENGTH_SHORT).show();
+                            }
+                        }else{
+                            Toast.makeText(getContext(), "FECHA DE CADUCIDAD: MM/YY", Toast.LENGTH_SHORT).show();
                         }
                     }else{
                         Toast.makeText(getContext(), "RELLENE LA FECHA DE CADUCIDAD DE LA TARJETA INTRODUCIDA", Toast.LENGTH_SHORT).show();
